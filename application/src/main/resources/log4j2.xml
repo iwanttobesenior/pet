@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+logging configuration file via xml
+created by Kul'baka Alex
+-->
+<configuration status="INFO">
+
+    <Appenders>
+        <File name="file" fileName="LOGS.log">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level
+                    %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue}
+                     - %msg%n"/>
+        </File>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level
+                    %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue}
+                     - %msg%n"/>
+        </Console>
+        <Console name="consoleErr" target="SYSTEM_ERR">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level
+                    %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue}
+                     - %msg%n"/>
+        </Console>
+        <File name="performanceLog" fileName="performance">
+            <PatternLayout pattern="%sn %d{yyyy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{3} %C{3}.%M(%F:%L) – %n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <logger name="org.example" level="DEBUG">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="console"/>
+        </logger>
+        <logger name="performance" level="DEBUG">
+            <AppenderRef ref="performanceLog"/>
+        </logger>
+        <!--default logger-->
+        <Root level="ERROR">
+            <AppenderRef ref="consoleErr"/>
+        </Root>
+    </Loggers>
+
+</configuration>

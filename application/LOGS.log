@@ -1,0 +1,36 @@
+23:49:13.408 DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+23:49:13.423 DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+12:02:22.418 DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+12:02:22.433 DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+13:03:38.435 DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+13:03:38.448 DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+13 февр. 2019 13:45:32.308 DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+13 февр. 2019 13:45:32.320 DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+13 13:48:12.434 DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+13 13:48:12.449 DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+13:53:01.472 DEBUG DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+13:53:01.484 DEBUG DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-13 14:00:46 DEBUG DEBUG - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-13 14:00:46 DEBUG DEBUG - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-15 20:56:41 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-15 20:56:41 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 09:15:34 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 09:15:34 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 09:31:40 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 09:31:40 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 09:34:35 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 09:34:35 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 09:37:16 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 09:37:16 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 09:38:38 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 09:38:38 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 16:48:03 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 16:48:03 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 19:18:49 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 19:18:49 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 19:26:25 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 19:26:25 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 19:27:55 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 19:27:55 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object
+2019-02-18 19:29:08 DEBUG                     DEBUG                      - SimpleDTOTransformer.untransform: {"name":"stuttgart","district":null,"region":null,"stations":null,"createAt":null,"updateAt":null,"createBy":null,"updateBy":null,"id":0} Entity object
+2019-02-18 19:29:08 DEBUG                     DEBUG                      - SimpleDTOTransformer.transform: {"name":"odessa","district":null,"region":null,"id":0} DTO object

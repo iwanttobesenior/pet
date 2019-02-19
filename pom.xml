@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--it will be right :Kul'baka-->
+    <groupId>org.Kulbaka.Alexander</groupId>
+    <artifactId>example</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <developers>
+        <developer>
+            <name>Kul'baka Alex</name>
+            <organization>home</organization>
+            <email>todo: add actual emailo</email>
+            <timezone>UTC +2</timezone>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+    <description>code example project</description>
+    <url>todo: add ref on git</url>
+
+    <modules>
+        <module>application</module>
+        <module>persistence</module>
+        <module>service</module>
+        <module>presentation</module>
+    </modules>
+
+    <properties>
+        <java.version>11</java.version>
+        <junit.version>4.12</junit.version>
+        <jersey.version>2.27</jersey.version>
+        <google.guava.version>23.0</google.guava.version>
+        <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+        <checker.framework.version>2.3.2</checker.framework.version>
+        <jax.rs.version>2.1</jax.rs.version>
+        <maven.build.war.plugin.version>2.6</maven.build.war.plugin.version>
+        <embedded.tomcat7.maven.plugin.version>2.2</embedded.tomcat7.maven.plugin.version>
+        <embedded.tomcat7.maven.plugin.PORT>9999</embedded.tomcat7.maven.plugin.PORT>
+        <embedded.tomcat7.maven.plugin.PATH>/example</embedded.tomcat7.maven.plugin.PATH>
+        <embedded.jetty.maven.plugin.version>9.4.14.v20181114</embedded.jetty.maven.plugin.version>
+        <log4j.version>2.11.1</log4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <apache.commons.lang3.version>3.8.1</apache.commons.lang3.version>
+        <powermock-mockito.version>1.7.4</powermock-mockito.version>
+        <powermock-module-junit4.version>2.0.0</powermock-module-junit4.version>
+        <jmockit.version>1.21</jmockit.version>
+    </properties>
+
+    <dependencies>
+        <!--logging-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <!--logging bridge-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <!--logging facade-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!--to string lib-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.commons.lang3.version}</version>
+        </dependency>
+        <!--main testing framework-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--Mocking-->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock-module-junit4.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--PowerMock-mockito-->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>${powermock-mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jmockit/jmockit -->
+        <dependency>
+            <groupId>org.jmockit</groupId>
+            <artifactId>jmockit</artifactId>
+            <version>${jmockit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--useful library,like argument validation-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${google.guava.version}</version>
+        </dependency>
+        <!--checker framework,
+        provide type annotation like @Nonnull,
+         for compile time validation-->
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>${checker.framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker</artifactId>
+            <version>${checker.framework.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
