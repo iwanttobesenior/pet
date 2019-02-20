@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/application/org.Kulbaka.Alexander.application.iml" filepath="$PROJECT_DIR$/.idea/modules/application/org.Kulbaka.Alexander.application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/org.Kulbaka.Alexander.persistence.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/org.Kulbaka.Alexander.persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/presentation/org.Kulbaka.Alexander.presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/presentation/org.Kulbaka.Alexander.presentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/org.Kulbaka.Alexander.service.iml" filepath="$PROJECT_DIR$/.idea/modules/service/org.Kulbaka.Alexander.service.iml" />
+    </modules>
+  </component>
+</project>

@@ -13,6 +13,7 @@ import javax.ws.rs.ApplicationPath;
 public class JerseyConfig extends ResourceConfig {
 
     /**
+     * {@code super} load configuration
      * Package that contain restful web services
      */
     public JerseyConfig() {

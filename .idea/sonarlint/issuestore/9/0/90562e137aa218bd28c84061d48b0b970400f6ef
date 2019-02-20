@@ -1,4 +1,5 @@
 
-Asquid:S1607&"$Fix or remove this skipped unit test(ΚόK8ςΖ-
-Gsquid:S16074"$Fix or remove this skipped unit test(‹β¨ψÿÿÿÿ8®ψ-
-Gsquid:S1607>"$Fix or remove this skipped unit test(Εθρ¶ψÿÿÿÿ8ÿ“-
+Fsquid:S1068E")Remove this unused "value" private field.(ΙH8κτ”­-
+Fsquid:S1068I")Remove this unused "value" private field.(ΙH8κτ”­-
+rsquid:S001004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹β¨ψÿÿÿÿ8κτ”­-
+rsquid:S00100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Εθρ¶ψÿÿÿÿ8κτ”­-

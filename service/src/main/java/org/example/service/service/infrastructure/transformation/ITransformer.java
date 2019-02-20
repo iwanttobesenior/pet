@@ -1,4 +1,4 @@
-package org.example.application.infrastructure.transformation.transformer;
+package org.example.service.service.infrastructure.transformation;
 
 import org.example.application.domain.dto.base.AbstractDTO;
 import org.example.application.domain.entity.base.AbstractEntity;
@@ -7,9 +7,8 @@ import org.example.application.domain.entity.base.AbstractEntity;
  * Transformation API
  *
  * @author Kul'baka Alex
- * @see org.example.application.infrastructure.transformation.transformer.impl.SimpleDTOTransformer
  */
-public interface Transformer {
+public interface ITransformer {
 
     <E extends AbstractEntity, D extends AbstractDTO<E>> D transform
             (final E entity, final Class<D> clazz);

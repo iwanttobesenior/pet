@@ -1,9 +1,10 @@
-package org.example.application.infrastructure.transformation.transformer.cache;
+package org.example.service.service.infrastructure.transformation.cache;
 
 import mockit.Mock;
 import mockit.MockUp;
 import org.example.application.infrastructure.util.transformation.ReflectionUtil;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -29,6 +30,7 @@ public class CacheFieldProvider_Test_ {
         }
     }
 
+    @Ignore
     @Test
     public void testGetFieldNamesAreCachedUsingMockupsAPI() {
         new MockReflectionUtil();

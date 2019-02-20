@@ -5,11 +5,14 @@ import org.example.application.domain.entity.geography.Station;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
 import org.example.application.domain.search.pagenation.IRangeCriteria;
 import org.example.application.infrastructure.exception.uncheked.execution.InvalidArgumentException;
-import org.example.application.infrastructure.util.check.Verifications;
-import org.example.application.infrastructure.util.common.CommonUtil;
+import org.example.persistence.repository.geography.ICityRepository;
 import org.example.service.service.ICityService;
+import org.springframework.stereotype.Service;
 
-import java.util.*;
+import javax.inject.Inject;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -17,29 +20,24 @@ import java.util.stream.Collectors;
  *
  * @author Kul'baka Alex
  */
+@Service
 public final class CityServiceImpl implements ICityService {
 
-    /**
-     * internal storage
-     * workaround
-     */
-    private final List<City> cities;
+    private final ICityRepository cityRepository;
 
-    public CityServiceImpl() {
-        cities = new ArrayList<>();
+    @Inject
+    public CityServiceImpl(final ICityRepository cityRepository) {
+        this.cityRepository = cityRepository;
     }
 
     @Override
     public List<City> findCities() {
-        return CommonUtil.getUnmodifiableList(cities);
+        return cityRepository.findAll();
     }
 
     @Override
     public void saveCity(final City city) {
-        Objects.requireNonNull(city, "for save city is should be initialized");
-        if (!cities.contains(city)) {
-            cities.add(city);
-        }
+        cityRepository.save(city);
     }
 
     /**
@@ -47,8 +45,7 @@ public final class CityServiceImpl implements ICityService {
      */
     @Override
     public Optional<City> findCityById(final long id) {
-        Verifications.checkArguments(id >= 1, "argument id " + id + " should be more than 0.");
-        return cities.stream().filter(city -> city.getId() == id).findFirst();
+        return Optional.ofNullable(cityRepository.findById(id));
     }
 
     /**
@@ -57,20 +54,9 @@ public final class CityServiceImpl implements ICityService {
     @Override
     public List<Station> searchStationByCriteria(final StationCriteriaImpl stationCriteria,
                                                  final IRangeCriteria rangeCriteria) {
+        final var stations = new HashSet<Station>();
+        cityRepository.findAll().stream().forEach(city -> stations.addAll(city.getStations()));
 
-        var optionalByStations = cities.stream().map(City::getStations).reduce((stationSet1, stationSet2) ->
-                {
-                    var stations = new HashSet<Station>();
-                    stations.addAll(stationSet1);
-                    stations.addAll(stationSet2);
-                    return stations;
-                }
-        );
-
-        if (optionalByStations.isEmpty()) {
-            return Collections.emptyList();
-        }
-
-        return optionalByStations.get().stream().filter(station -> station.match(stationCriteria)).collect(Collectors.toList());
+        return stations.stream().filter(station -> station.match(stationCriteria)).collect(Collectors.toList());
     }
 }

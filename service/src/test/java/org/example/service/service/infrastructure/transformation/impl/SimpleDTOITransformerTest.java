@@ -1,9 +1,9 @@
-package org.example.application.infrastructure.transformation.transformer.impl;
+package org.example.service.service.infrastructure.transformation.impl;
 
 import org.example.application.domain.dto.geography.CityDTO;
 import org.example.application.domain.entity.geography.City;
 import org.example.application.infrastructure.exception.uncheked.execution.InvalidArgumentException;
-import org.example.application.infrastructure.transformation.transformer.Transformer;
+import org.example.service.service.infrastructure.transformation.ITransformer;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author Kul'baka ALex
  */
-public class SimpleDTOTransformerTest {
+public class SimpleDTOITransformerTest {
 
-    private Transformer transformer;
+    private ITransformer transformer;
 
     @Before
     public void init() {

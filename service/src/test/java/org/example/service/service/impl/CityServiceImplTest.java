@@ -1,6 +1,7 @@
 package org.example.service.service.impl;
 
 import org.example.application.domain.entity.geography.City;
+import org.example.persistence.repository.geography.impl.InMemoryICityRepositoryImpl;
 import org.example.service.service.ICityService;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,7 @@ public class CityServiceImplTest {
 
     @Before
     public void init() {
-        this.cityService = new CityServiceImpl();
+        this.cityService = new CityServiceImpl(new InMemoryICityRepositoryImpl());
     }
 
     @Test

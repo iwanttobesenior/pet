@@ -5,12 +5,11 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.example.application.domain.dto.geography.CityDTO;
 import org.example.application.domain.entity.enums.StationType;
 import org.example.application.domain.entity.geography.City;
-import org.example.application.infrastructure.transformation.transformer.Transformer;
-import org.example.application.infrastructure.transformation.transformer.impl.SimpleDTOTransformer;
 import org.example.service.rest.base.AbstractResource;
 import org.example.service.service.ICityService;
-import org.example.service.service.impl.CityServiceImpl;
+import org.example.service.service.infrastructure.transformation.ITransformer;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -35,20 +34,30 @@ public class CityResource extends AbstractResource {
     /**
      * DTO <-> Entity transformer
      */
-    private final Transformer transformer;
+    private final ITransformer transformer;
 
-    public CityResource() {
-        cityService = new CityServiceImpl();
-        transformer = new SimpleDTOTransformer();
+    @Inject
+    public CityResource(final ICityService cityService, final ITransformer transformer) {
+        this.cityService = cityService;
+        this.transformer = transformer;
 
-        final City copenhagen = new City("Copenhagen");
+        final var copenhagen = new City("Copenhagen");
         copenhagen.setId(1L);
         copenhagen.addStation(StationType.SEA);
         copenhagen.addStation(StationType.RAILWAY);
         copenhagen.addStation(StationType.RIVER);
 
-        cityService.saveCity(copenhagen);
+        this.cityService.saveCity(copenhagen);
     }
+
+
+//    private ICityService cityService;
+//    private ITransformer transformer;
+//
+//    public CityResource() {
+//        cityService = new CityServiceImpl(new InMemoryICityRepositoryImpl());
+//        transformer = new SimpleDTOTransformer();
+//    }
 
     /**
      * Return all existing {@link City}'s. As {@link CityDTO}

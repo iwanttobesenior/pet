@@ -13,7 +13,7 @@
         <developer>
             <name>Kul'baka Alex</name>
             <organization>home</organization>
-            <email>todo: add actual emailo</email>
+            <email>todo: add actual email</email>
             <timezone>UTC +2</timezone>
             <roles>
                 <role>developer</role>
@@ -33,7 +33,7 @@
     <properties>
         <java.version>11</java.version>
         <junit.version>4.12</junit.version>
-        <jersey.version>2.27</jersey.version>
+        <jersey.version>2.28</jersey.version>
         <google.guava.version>23.0</google.guava.version>
         <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
         <checker.framework.version>2.3.2</checker.framework.version>
@@ -49,6 +49,7 @@
         <powermock-mockito.version>1.7.4</powermock-mockito.version>
         <powermock-module-junit4.version>2.0.0</powermock-module-junit4.version>
         <jmockit.version>1.21</jmockit.version>
+        <hibernate.version>5.4.1.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -135,6 +136,20 @@
             <artifactId>checker</artifactId>
             <version>${checker.framework.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-spring4</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <!--logging required by Spring framework-->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -18,7 +18,6 @@ import java.util.stream.Stream;
  * Util class for transformation Entity<->DTO
  *
  * @author Kul'baka Alex
- * @see org.example.application.infrastructure.transformation.transformer.Transformer
  * @see org.example.application.infrastructure.transformation.annotation.Ephemeral
  */
 public class ReflectionUtil {

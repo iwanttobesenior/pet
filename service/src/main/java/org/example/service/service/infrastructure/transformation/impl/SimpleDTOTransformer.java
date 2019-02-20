@@ -1,18 +1,19 @@
-package org.example.application.infrastructure.transformation.transformer.impl;
+package org.example.service.service.infrastructure.transformation.impl;
 
 import org.example.application.domain.dto.base.AbstractDTO;
 import org.example.application.domain.entity.base.AbstractEntity;
-import org.example.application.infrastructure.transformation.transformer.Transformer;
-import org.example.application.infrastructure.transformation.transformer.cache.CacheFieldProvider;
-import org.example.application.infrastructure.transformation.transformer.cache.FieldProvider;
 import org.example.application.infrastructure.util.check.Verifications;
 import org.example.application.infrastructure.util.common.CommonUtil;
 import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.service.service.infrastructure.transformation.ITransformer;
+import org.example.service.service.infrastructure.transformation.cache.CacheFieldProvider;
+import org.example.service.service.infrastructure.transformation.cache.FieldProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 /**
- * Implementation of {@link Transformer} provide default transformation engine
+ * Implementation of {@link ITransformer} provide default transformation engine
  * that uses {@link ReflectionUtil} to transform objects
  * <p>
  * type of {@code E} means Entity
@@ -20,7 +21,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author Kul'baka Alex
  */
-public final class SimpleDTOTransformer implements Transformer {
+@Component
+public final class SimpleDTOTransformer implements ITransformer {
 
     private static final Logger logger = LoggerFactory.getLogger(SimpleDTOTransformer.class);
     private final FieldProvider provider;

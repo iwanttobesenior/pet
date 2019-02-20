@@ -1,10 +1,12 @@
-package org.example.application.infrastructure.transformation.transformer.cache;
+package org.example.service.service.infrastructure.transformation.cache;
 
 import mockit.Expectations;
 import mockit.Mocked;
 import mockit.integration.junit4.JMockit;
 import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -24,6 +26,7 @@ public class CacheFieldProvider_Test {
         provider = new CacheFieldProvider();
     }
 
+    @Ignore
     @Test
     public void testGetFieldNamesAreCachedUsing_JMockit() {
         new Expectations() {
@@ -42,7 +45,7 @@ public class CacheFieldProvider_Test {
         assertTrue(ReflectionUtil.findSimilarFields(CacheFieldProviderTest.Source.class, CacheFieldProviderTest.Destination.class).isEmpty());
         final var fields2 = provider.getFieldNames(CacheFieldProviderTest.Source.class, CacheFieldProviderTest.Destination.class);
         assertFalse(fields.isEmpty());
-        assertEquals(fields, fields2);
+        Assert.assertEquals(fields, fields2);
 
     }
 }
