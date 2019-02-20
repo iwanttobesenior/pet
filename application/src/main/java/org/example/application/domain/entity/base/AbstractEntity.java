@@ -1,5 +1,6 @@
 package org.example.application.domain.entity.base;
 
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
 /**
@@ -7,6 +8,7 @@ import java.util.Objects;
  *
  * @author Kul'baka A.
  */
+@MappedSuperclass
 public abstract class AbstractEntity {
 
     /**

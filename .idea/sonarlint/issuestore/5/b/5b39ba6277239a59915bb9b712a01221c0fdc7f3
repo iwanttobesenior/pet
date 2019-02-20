@@ -1,4 +1,4 @@
 
+bsquid:UselessImportCheck"7Remove this unused import 'javax.ws.rs.core.MediaType'.(œ±‹¡8ïé -
 usquid:S00116"VRename this field "BAD_REQUEST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁšÈ‡8»ÎôÄ-
 rsquid:S00116"TRename this field "NOT_FOUND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†êğ8Ñ¬ÂÄ-
-bsquid:UselessImportCheck"7Remove this unused import 'javax.ws.rs.core.MediaType'.(œ±‹¡8ïé -

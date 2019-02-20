@@ -4,6 +4,8 @@ import org.example.application.domain.entity.base.AuditEntity;
 import org.example.application.domain.entity.enums.StationType;
 import org.example.application.infrastructure.util.common.CommonUtil;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,6 +16,8 @@ import java.util.Set;
  *
  * @author Kul'baka Alex
  */
+@Entity
+@Table(name = "CITIES")
 public final class City extends AuditEntity {
 
     private String name;

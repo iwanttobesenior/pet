@@ -7,6 +7,8 @@ import org.example.application.domain.entity.valueobject.Address;
 import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Objects;
 
 /**
@@ -15,6 +17,8 @@ import java.util.Objects;
  *
  * @author Kul'baka Alex
  */
+@Entity
+@Table(name = "STATIONS")
 public final class Station extends AuditEntity {
 
     private Address address;
