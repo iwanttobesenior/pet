@@ -8,6 +8,7 @@ import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -18,8 +19,9 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "STATIONS")
-public final class Station extends AuditEntity {
+public final class Station extends AuditEntity implements Serializable {
 
+    private static final long serialVersionUID = 4243193847902815389L;
     /**
      * The exact address of station location
      *

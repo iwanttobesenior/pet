@@ -6,6 +6,7 @@ import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.infrastructure.util.common.CommonUtil;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -18,8 +19,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "CITIES")
-public final class City extends AuditEntity {
+public final class City extends AuditEntity implements Serializable {
 
+    private static final long serialVersionUID = -5651833919277340882L;
+    
     private String name;
     /**
      * Name of the district where city is placed

@@ -1,14 +1,17 @@
 package org.example.application.domain.entity.person;
 
 import org.example.application.domain.entity.base.AuditEntity;
+import org.example.application.domain.entity.valueobject.Phone;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity(name = "ACCOUNTS")
 @Table
-public class Account extends AuditEntity {
+public class Account extends AuditEntity implements Serializable {
+
+    private static final long serialVersionUID = -4116198885518644286L;
 
     private String firstName;
 
@@ -17,6 +20,8 @@ public class Account extends AuditEntity {
     private String email;
 
     private String password;
+
+    private List<Phone> phone;
 
     public Account() {
     }
@@ -43,5 +48,10 @@ public class Account extends AuditEntity {
     @Column(name = "PASSWORD", length = 32)
     public String getPassword() {
         return password;
+    }
+
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
+    public List<Phone> getPhone() {
+        return phone;
     }
 }

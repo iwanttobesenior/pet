@@ -130,3 +130,11 @@ sservice/src/test/java/org/example/service/service/infrastructure/transformation
 qservice/src/test/java/org/example/service/service/infrastructure/transformation/cache/CacheFieldProviderTest.java,d\7\d74cd109818285c11bf2c9e91a8a997c92553bb2
 £
 sservice/src/test/java/org/example/service/service/infrastructure/transformation/impl/SimpleDTOITransformerTest.java,4\c\4cf822dae097551377cd6964c9da68b05c4260c7
+Œ
+\application/src/main/java/org/example/application/infrastructure/schema/SchemaGenerator.java,6\e\6eaab694b3915869aee086ac1b7d980c47b6fcc1
+H
+schema_MySQL5Dialect.sql,c\0\c042fd92903eb5de471f8f20d62f98d696f9cd75
+˜
+hpersistence/src/main/java/org/example/persistence/repository/geography/impl/HibernateCityRepository.java,3\a\3aad48d2eb21f095a0442e2c8d732a1b7d3f5ec3
+•
+epersistence/src/main/java/org/example/persistence/repository/configuration/SessionFactoryBuilder.java,b\1\b1521ea3d6b8f9998d87bdbcb3cbc5956030e99a

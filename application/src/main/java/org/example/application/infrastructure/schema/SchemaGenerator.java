@@ -6,6 +6,7 @@ import org.example.application.domain.entity.geography.Station;
 import org.example.application.domain.entity.person.Account;
 import org.example.application.domain.entity.valueobject.Address;
 import org.example.application.domain.entity.valueobject.Coordinates;
+import org.example.application.domain.entity.valueobject.Phone;
 import org.example.application.infrastructure.exception.uncheked.configuration.ConfigurationException;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -45,7 +46,10 @@ public final class SchemaGenerator {
                         .applySetting("hibernate.dialect", dialect.getName())
                         .build());
 
-        Set<Class<?>> entityClasses = Set.of(City.class, Country.class, Station.class, Account.class, Coordinates.class, Address.class);
+        Set<Class<?>> entityClasses = Set
+                .of(City.class, Country.class,
+                        Station.class, Account.class,
+                        Coordinates.class, Address.class, Phone.class);
         entityClasses.forEach(metadata::addAnnotatedClass);
         SchemaExport schema = new SchemaExport();
         schema.setDelimiter(STATEMENT_DELIMITER_IN_SQL_SCRIPT);

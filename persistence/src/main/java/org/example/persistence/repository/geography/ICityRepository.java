@@ -17,7 +17,7 @@ public interface ICityRepository {
     void save(final City city);
 
     /**
-     * Find {@link City} by current {@code id}
+     * Find {@link City} by current {@code id} as PK
      *
      * @return found entity or {@code null}
      */
