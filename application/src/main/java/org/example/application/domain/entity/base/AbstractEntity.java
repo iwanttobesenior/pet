@@ -1,5 +1,8 @@
 package org.example.application.domain.entity.base;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
@@ -16,6 +19,8 @@ public abstract class AbstractEntity {
      */
     private long id;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }

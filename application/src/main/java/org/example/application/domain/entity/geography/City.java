@@ -2,10 +2,10 @@ package org.example.application.domain.entity.geography;
 
 import org.example.application.domain.entity.base.AuditEntity;
 import org.example.application.domain.entity.enums.StationType;
+import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.infrastructure.util.common.CommonUtil;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -36,6 +36,12 @@ public final class City extends AuditEntity {
      */
     private Set<Station> stations;
 
+    /**
+     * City coordinates
+     */
+    private Coordinates coordinates;
+
+
     public City() {
     }
 
@@ -64,15 +70,37 @@ public final class City extends AuditEntity {
         stations.remove(wasteStation);
     }
 
-    public int getStationsCount() {
-        return stations.size();
-    }
-
     /**
      * @return unmodifiable collections of stations
      */
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "city",
+            orphanRemoval = true, cascade = CascadeType.ALL)
     public Set<Station> getStations() {
         return CommonUtil.getUnmodifiableSet(stations);
+    }
+
+    @Column(name = "CITY_NAME", nullable = false, length = 32)
+    public String getName() {
+        return name;
+    }
+
+    @Column(name = "DISTRICT", nullable = false, length = 32)
+    public String getDistrict() {
+        return district;
+    }
+
+    @Column(name = "REGION", nullable = false, length = 32)
+    public String getRegion() {
+        return region;
+    }
+
+    @Embedded
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public int getStationsCount() {
+        return stations.size();
     }
 
     @Override
@@ -87,9 +115,5 @@ public final class City extends AuditEntity {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), name);
-    }
-
-    public String getName() {
-        return name;
     }
 }

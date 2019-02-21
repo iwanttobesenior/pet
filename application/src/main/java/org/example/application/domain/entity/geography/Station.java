@@ -7,8 +7,7 @@ import org.example.application.domain.entity.valueobject.Address;
 import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
@@ -21,9 +20,27 @@ import java.util.Objects;
 @Table(name = "STATIONS")
 public final class Station extends AuditEntity {
 
+    /**
+     * The exact address of station location
+     *
+     * @see Address
+     */
     private Address address;
+    /**
+     * More precise location
+     *
+     * @see Coordinates
+     */
     private Coordinates coordinates;
+    /**
+     * Type of station
+     *
+     * @see StationType
+     */
     private final StationType stationType;
+    /**
+     * Locality wherein {@code this} is located
+     */
     private final City city;
 
     public Station(final StationType type, final City city) {
@@ -48,12 +65,26 @@ public final class Station extends AuditEntity {
         return true;
     }
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "CITY_ID")
     public City getCity() {
         return city;
     }
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "STATION_TYPE", nullable = false)
     public StationType getStationType() {
         return stationType;
+    }
+
+    @Embedded
+    public Address getAddress() {
+        return address;
+    }
+
+    @Embedded
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
     @Override

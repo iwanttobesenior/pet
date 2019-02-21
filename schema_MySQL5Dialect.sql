@@ -1,0 +1,17 @@
+drop table if exists ACCOUNTS;
+drop table if exists CITIES;
+drop table if exists COUNTRIES;
+drop table if exists STATIONS;
+create table ACCOUNTS (id bigint not null auto_increment, CREATED_AT datetime not null, UPDATE_AT datetime, EMAIL varchar(64), FIRST_NAME varchar(32), LAST_NAME varchar(32), PASSWORD varchar(32), CREATE_BY bigint, UPDATE_BY bigint, primary key (id)) engine=MyISAM;
+create table CITIES (id bigint not null auto_increment, CREATED_AT datetime not null, UPDATE_AT datetime, DISTRICT varchar(32) not null, CITY_NAME varchar(32) not null, REGION varchar(32) not null, stationsCount integer not null, CREATE_BY bigint, UPDATE_BY bigint, primary key (id)) engine=MyISAM;
+create table COUNTRIES (id bigint not null auto_increment, CREATED_AT datetime not null, UPDATE_AT datetime, CREATE_BY bigint, UPDATE_BY bigint, primary key (id)) engine=MyISAM;
+create table STATIONS (id bigint not null auto_increment, CREATED_AT datetime not null, UPDATE_AT datetime, STATION_TYPE varchar(255) not null, CREATE_BY bigint, UPDATE_BY bigint, CITY_ID bigint, primary key (id)) engine=MyISAM;
+alter table ACCOUNTS add constraint FKpivm0r199mjou9w41k2tmpy8s foreign key (CREATE_BY) references ACCOUNTS (id);
+alter table ACCOUNTS add constraint FK54qem1x308y1x8yta1p54ny33 foreign key (UPDATE_BY) references ACCOUNTS (id);
+alter table CITIES add constraint FKj83lamlnwgp88d9fkw0vaj1l foreign key (CREATE_BY) references ACCOUNTS (id);
+alter table CITIES add constraint FKp9yqhxvwc0c2ehdk5nsl2khum foreign key (UPDATE_BY) references ACCOUNTS (id);
+alter table COUNTRIES add constraint FKj3u47gx7rluajnwxxb45835s1 foreign key (CREATE_BY) references ACCOUNTS (id);
+alter table COUNTRIES add constraint FKcoaa7hyhm9or89c9q7pfi3xa6 foreign key (UPDATE_BY) references ACCOUNTS (id);
+alter table STATIONS add constraint FK2n9bnfvhp4663y5g4672n4vkn foreign key (CREATE_BY) references ACCOUNTS (id);
+alter table STATIONS add constraint FK1ei4cmte88qkf7bskfol4rb7g foreign key (UPDATE_BY) references ACCOUNTS (id);
+alter table STATIONS add constraint FKo539o7bif6yu9a1w38n8fcpmd foreign key (CITY_ID) references CITIES (id);
