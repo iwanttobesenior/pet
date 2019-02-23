@@ -54,4 +54,24 @@ public class Account extends AuditEntity implements Serializable {
     public List<Phone> getPhone() {
         return phone;
     }
+
+    private void setFirstName(final String firstName) {
+        this.firstName = firstName;
+    }
+
+    private void setLastName(final String lastName) {
+        this.lastName = lastName;
+    }
+
+    private void setEmail(final String email) {
+        this.email = email;
+    }
+
+    private void setPassword(final String password) {
+        this.password = password;
+    }
+
+    private void setPhone(final List<Phone> phone) {
+        this.phone = phone;
+    }
 }

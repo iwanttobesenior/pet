@@ -9,6 +9,7 @@ import org.example.persistence.repository.geography.ICityRepository;
 import org.example.service.service.ICityService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.List;
@@ -55,7 +56,7 @@ public final class CityServiceImpl implements ICityService {
     public List<Station> searchStationByCriteria(final StationCriteriaImpl stationCriteria,
                                                  final IRangeCriteria rangeCriteria) {
         final var stations = new HashSet<Station>();
-        cityRepository.findAll().stream().forEach(city -> stations.addAll(city.getStations()));
+        cityRepository.findAll().forEach(city -> stations.addAll(city.getStations()));
 
         return stations.stream().filter(station -> station.match(stationCriteria)).collect(Collectors.toList());
     }

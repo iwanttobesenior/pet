@@ -1,9 +1,8 @@
-package org.example.persistence.repository.geography.impl;
+package org.example.persistence.repository.geography.impl.inmemory;
 
 import org.example.application.domain.entity.geography.City;
 import org.example.application.infrastructure.util.common.CommonUtil;
 import org.example.persistence.repository.geography.ICityRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  *
  * @author Kul'baka Alex
  */
-@Repository
+
 public class InMemoryICityRepositoryImpl implements ICityRepository {
 
     /**

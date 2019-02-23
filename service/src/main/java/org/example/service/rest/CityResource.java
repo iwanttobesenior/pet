@@ -42,22 +42,14 @@ public class CityResource extends AbstractResource {
         this.transformer = transformer;
 
         final var copenhagen = new City("Copenhagen");
-        copenhagen.setId(1L);
         copenhagen.addStation(StationType.SEA);
         copenhagen.addStation(StationType.RAILWAY);
         copenhagen.addStation(StationType.RIVER);
+        copenhagen.setDistrict("Vesterbro");
+        copenhagen.setRegion("Capital Region of Denmark");
 
         this.cityService.saveCity(copenhagen);
     }
-
-
-//    private ICityService cityService;
-//    private ITransformer transformer;
-//
-//    public CityResource() {
-//        cityService = new CityServiceImpl(new InMemoryICityRepositoryImpl());
-//        transformer = new SimpleDTOTransformer();
-//    }
 
     /**
      * Return all existing {@link City}'s. As {@link CityDTO}

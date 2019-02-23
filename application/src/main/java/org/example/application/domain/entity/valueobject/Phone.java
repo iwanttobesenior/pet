@@ -13,7 +13,7 @@ public final class Phone extends AuditEntity implements Serializable {
     private static final long serialVersionUID = -6892594993554726249L;
 
     private String number;
-    
+
     private PhoneType phoneType;
 
     @Column(name = "NUMBER", nullable = false, length = 50)
@@ -24,5 +24,13 @@ public final class Phone extends AuditEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     public PhoneType getPhoneType() {
         return phoneType;
+    }
+
+    private void setNumber(final String number) {
+        this.number = number;
+    }
+
+    private void setPhoneType(final PhoneType phoneType) {
+        this.phoneType = phoneType;
     }
 }

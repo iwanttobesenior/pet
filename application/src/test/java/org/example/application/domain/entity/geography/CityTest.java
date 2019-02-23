@@ -42,17 +42,17 @@ public class CityTest {
         city.addStation(StationType.OCEAN);
         city.addStation(StationType.OCEAN);
 
-        assertEquals(1, city.getStationsCount());
+        assertEquals(1, city.showStationsCount());
     }
 
     @Test
     public void testRemoveStationValid_success() {
 
         Station station = city.addStation(StationType.RAILWAY);
-        assertEquals(1, city.getStationsCount());
+        assertEquals(1, city.showStationsCount());
 
         city.removeStation(station);
-        assertEquals(0, city.getStationsCount());
+        assertEquals(0, city.showStationsCount());
     }
 
     @Test(expected = NullPointerException.class)
@@ -74,10 +74,10 @@ public class CityTest {
 
         city.addStation(StationType.RIVER);
         city.addStation(StationType.SEA);
-        int i = city.getStationsCount();
+        int i = city.showStationsCount();
         city.removeStation(new Station(StationType.TAXI, city));
 
-        assertEquals(i, city.getStationsCount());
+        assertEquals(i, city.showStationsCount());
     }
 
     private boolean containsStation(final City city, final Station station) {

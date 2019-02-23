@@ -21,6 +21,10 @@ import java.util.Objects;
 @Table(name = "STATIONS")
 public final class Station extends AuditEntity implements Serializable {
 
+    public static final String FIELD_TRANSPORT_TYPE = "stationType";
+
+    public static final String FIELD_CITY = "city";
+
     private static final long serialVersionUID = 4243193847902815389L;
     /**
      * The exact address of station location
@@ -39,11 +43,11 @@ public final class Station extends AuditEntity implements Serializable {
      *
      * @see StationType
      */
-    private final StationType stationType;
+    private StationType stationType;
     /**
      * Locality wherein {@code this} is located
      */
-    private final City city;
+    private City city;
 
     public Station(final StationType type, final City city) {
         this.stationType = type;
@@ -87,6 +91,22 @@ public final class Station extends AuditEntity implements Serializable {
     @Embedded
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    private void setAddress(final Address address) {
+        this.address = address;
+    }
+
+    private void setCoordinates(final Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    private void setCity(final City city) {
+        this.city = city;
+    }
+
+    private void setStationType(final StationType stationType) {
+        this.stationType = stationType;
     }
 
     @Override

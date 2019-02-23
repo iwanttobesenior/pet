@@ -22,7 +22,7 @@ import java.util.Set;
 public final class City extends AuditEntity implements Serializable {
 
     private static final long serialVersionUID = -5651833919277340882L;
-    
+
     private String name;
     /**
      * Name of the district where city is placed
@@ -102,8 +102,28 @@ public final class City extends AuditEntity implements Serializable {
         return coordinates;
     }
 
-    public int getStationsCount() {
+    public int showStationsCount() {
         return stations.size();
+    }
+
+    private void setName(final String name) {
+        this.name = name;
+    }
+
+    public void setDistrict(final String district) {
+        this.district = district;
+    }
+
+    public void setRegion(final String region) {
+        this.region = region;
+    }
+
+    private void setStations(final Set<Station> stations) {
+        this.stations = stations;
+    }
+
+    private void setCoordinates(final Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 
     @Override

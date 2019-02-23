@@ -1,18 +1,21 @@
 package org.example.application.domain.entity.base;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
- * base abstract class for all business entities
+ * Base abstract class for all business entities
+ * Provides unique {@code id} for all entities
  *
- * @author Kul'baka A.
+ * @author Kul'baka Alex
  */
 @MappedSuperclass
 public abstract class AbstractEntity {
+
+    /**
+     * Constant that provide root package for all entities of project
+     */
+    public static final String ENTITY_PACKAGE_NAME = "org.example.application.domain.entity";
 
     /**
      * unique entity identifier
@@ -21,6 +24,7 @@ public abstract class AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     public long getId() {
         return id;
     }

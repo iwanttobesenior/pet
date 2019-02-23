@@ -14,36 +14,40 @@ import java.time.LocalDateTime;
  */
 @MappedSuperclass
 public abstract class AuditEntity extends AbstractEntity {
+    /**
+     * Name of field that need to change state,when hibernate uses {@code this} for interception
+     */
+    public static final String FIELD_CREATED_AT = "createdAt";
 
     /**
      * Timestamp of entity creation
      */
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
     /**
      * Timestamp of last entity modifications
      */
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 
     /**
      * Who created current entity
      */
-    private Account createBy;
+    private Account createdBy;
     /**
      * Who updated current entity
      */
-    private Account updateBy;
+    private Account updatedBy;
 
     /**
      * Field that will not be involved with update statement
      * can't be {@code null}
      */
     @Column(name = "CREATED_AT", nullable = false, updatable = false)
-    public LocalDateTime getCreateAt() {
-        return createAt;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     /**
@@ -51,31 +55,31 @@ public abstract class AuditEntity extends AbstractEntity {
      * should be {@code null} if no update action was yet
      */
     @Column(name = "UPDATE_AT", nullable = true, insertable = false)
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CREATE_BY", updatable = false)
-    public Account getCreateBy() {
-        return createBy;
+    public Account getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreateBy(Account createBy) {
-        this.createBy = createBy;
+    public void setCreatedBy(Account createdBy) {
+        this.createdBy = createdBy;
     }
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UPDATE_BY", insertable = false)
-    public Account getUpdateBy() {
-        return updateBy;
+    public Account getUpdatedBy() {
+        return updatedBy;
     }
 
-    public void setUpdateBy(Account updateBy) {
-        this.updateBy = updateBy;
+    public void setUpdatedBy(Account updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }

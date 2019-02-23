@@ -1,11 +1,12 @@
-package org.example.persistence.repository.geography.impl;
+package org.example.persistence.repository.geography.impl.hibernate;
 
 import org.example.application.domain.entity.geography.City;
-import org.example.persistence.repository.configuration.SessionFactoryBuilder;
+import org.example.persistence.configuration.SessionFactoryBuilder;
 import org.example.persistence.repository.geography.ICityRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaQuery;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * @author Kul'baka Alex
  */
+@Component
 public class HibernateCityRepository implements ICityRepository {
 
     private final SessionFactory sessionFactory;
@@ -35,7 +37,7 @@ public class HibernateCityRepository implements ICityRepository {
     public City findById(final long cityId) {
         Session session = sessionFactory.openSession();
         try (session) {
-            session.get(City.class, cityId);
+            return session.get(City.class, cityId);
         }
     }
 

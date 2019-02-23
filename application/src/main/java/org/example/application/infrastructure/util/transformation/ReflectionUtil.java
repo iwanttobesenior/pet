@@ -1,16 +1,20 @@
 package org.example.application.infrastructure.util.transformation;
 
+import org.example.application.domain.entity.base.AbstractEntity;
 import org.example.application.infrastructure.exception.uncheked.configuration.ConfigurationException;
 import org.example.application.infrastructure.exception.uncheked.execution.InvalidArgumentException;
 import org.example.application.infrastructure.transformation.annotation.Ephemeral;
 import org.example.application.infrastructure.util.check.Verifications;
+import org.reflections.Reflections;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,13 +26,13 @@ import java.util.stream.Stream;
  */
 public class ReflectionUtil {
 
-
     /**
      * you should't create utility instance
      * also
      * you should't extends utility class
      */
     private ReflectionUtil() {
+        /*NOP*/
     }
 
     /**
@@ -136,5 +140,29 @@ public class ReflectionUtil {
             }
         }
         throw new ConfigurationException("no such fields: " + fieldName + " in the class " + clazz);
+    }
+
+    /**
+     * Get all classes marked by {@code annotation}
+     * From {@link org.example.application.domain.entity} package
+     *
+     * @param annotation which marked needed classes
+     * @return Set of found classes
+     */
+    public static Set<Class<?>> getClassesByAnnotation(final Class<? extends Annotation> annotation) {
+        return getClassesFromSpecifiedPackageByGivenAnnotation(AbstractEntity.ENTITY_PACKAGE_NAME, annotation);
+    }
+
+    /**
+     * Get all classes marked by {@code annotation}
+     * from given {@code package}
+     *
+     * @param annotation which marked needed classes
+     * @param pack       wherein should look for suitable classes
+     * @return Set of found classes
+     */
+    public static Set<Class<?>> getClassesFromSpecifiedPackageByGivenAnnotation(final String pack, final Class<? extends Annotation> annotation) {
+        var reflections = new Reflections(pack);
+        return reflections.getTypesAnnotatedWith(annotation);
     }
 }

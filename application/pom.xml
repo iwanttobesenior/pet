@@ -24,6 +24,13 @@
             <version>${hibernate.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!--Reflections-->
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>${reflections.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
