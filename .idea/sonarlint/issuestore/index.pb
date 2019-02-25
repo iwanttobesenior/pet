@@ -144,3 +144,7 @@ rpersistence/src/main/java/org/example/persistence/repository/geography/impl/hib
 upersistence/src/main/java/org/example/persistence/repository/geography/impl/hibernate/HibernateStationRepository.java,3\b\3b0e0d979f572f3fed43f970a1d09233509067c5
 Š
 Zpersistence/src/main/java/org/example/persistence/configuration/SessionFactoryBuilder.java,7\f\7f8658e0313d0c14dbd2617fae933d4d57adee18
+–
+fservice/src/main/java/org/example/service/exception/handler/validation/ValidationExceptionHandler.java,d\0\d036aa723a2d432a27321cd4920fe5c3b0cd47e9
+¦
+vapplication/src/main/java/org/example/application/infrastructure/exception/uncheked/execution/ValidationException.java,4\9\492caf5c0a1d9bfdf9fac09096d900a831f46e2d

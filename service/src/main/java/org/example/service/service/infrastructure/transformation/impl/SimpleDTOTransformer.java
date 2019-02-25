@@ -35,7 +35,7 @@ public final class SimpleDTOTransformer implements ITransformer {
     @Override
     public <E extends AbstractEntity, D extends AbstractDTO<E>> D transform
     (final E entity, final Class<D> clazz) {
-        Verifications.checkArguments(entity, clazz);
+        Verifications.verifyArg(entity, clazz);
 
         final D dto = ReflectionUtil.newInstance(clazz);
 
@@ -54,7 +54,7 @@ public final class SimpleDTOTransformer implements ITransformer {
     @Override
     public <E extends AbstractEntity, D extends AbstractDTO<E>> E untransform
             (final D dto, final Class<E> clazz) {
-        Verifications.checkArguments(dto, clazz);
+        Verifications.verifyArg(dto, clazz);
 
         final E entity = ReflectionUtil.newInstance(clazz);
 

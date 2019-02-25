@@ -16,7 +16,7 @@ public class VerificationsTest {
     public void testCheckInvalidArgumentsThenThrowException() {
         final String msg = "test";
         try {
-            Verifications.checkArguments(false, msg);
+            Verifications.verifyArg(false, msg);
             fail();
         } catch (Exception e) {
             assertSame(e.getClass(), InvalidArgumentException.class);
@@ -28,7 +28,7 @@ public class VerificationsTest {
     public void testSeveralCheckInvalidArgumentsThenThrowException() {
         final String msg = "test";
         try {
-            Verifications.checkArguments(msg, true, false, true);
+            Verifications.verifyArg(msg, true, false, true);
             fail();
         } catch (Exception e) {
             assertSame(e.getClass(), InvalidArgumentException.class);
@@ -40,7 +40,7 @@ public class VerificationsTest {
     public void testCheckValidArgumentsNoException() {
         final String msg = "test";
         try {
-            Verifications.checkArguments(true, msg);
+            Verifications.verifyArg(true, msg);
             assertTrue(true);
         } catch (Exception w) {
             fail();
@@ -51,7 +51,7 @@ public class VerificationsTest {
     public void testSeveralCheckValidArgumentsNoException() {
         final String msg = "test";
         try {
-            Verifications.checkArguments(msg, true, true, true, true, true);
+            Verifications.verifyArg(msg, true, true, true, true, true);
             assertTrue(true);
         } catch (Exception e) {
             fail();

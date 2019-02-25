@@ -23,8 +23,8 @@ public class RangeCriteriaImpl implements IRangeCriteria {
     private final int rowCountOnPage;
 
     public RangeCriteriaImpl(int pageCount, final int rowCountOnPage) {
-        Verifications.checkArguments(pageCount >= 0, "incorrect page count");
-        Verifications.checkArguments(rowCountOnPage >= 0, "incorrect row count");
+        Verifications.verifyArg(pageCount >= 0, "incorrect page count");
+        Verifications.verifyArg(rowCountOnPage >= 0, "incorrect row count");
         this.pageCount = pageCount;
         this.rowCountOnPage = rowCountOnPage;
     }

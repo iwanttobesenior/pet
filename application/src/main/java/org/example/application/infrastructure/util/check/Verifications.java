@@ -18,7 +18,7 @@ public class Verifications {
      * @param message for description exception if it will occur
      * @throws InvalidArgumentException if expression is {@code false}
      */
-    public static void checkArguments(final boolean expresion, final String message) {
+    public static void verifyArg(final boolean expresion, final String message) {
         if (!expresion) {
             throw new InvalidArgumentException(message);
         }
@@ -30,7 +30,7 @@ public class Verifications {
      * @param message for description exception if it will occur
      * @throws InvalidArgumentException if any of arguments is {@code false}
      */
-    public static void checkArguments(final String message, final boolean... expressions) {
+    public static void verifyArg(final String message, final boolean... expressions) {
         for (boolean expresion : expressions) {
             if (!expresion) {
                 throw new InvalidArgumentException(message);
@@ -43,8 +43,8 @@ public class Verifications {
      *
      * @throws InvalidArgumentException if any of arguments is {@code null}
      */
-    public static void checkArguments(final Object param, final Class<?> clazz) {
-        checkArguments(param != null, "Source transformation object is not initialized");
-        checkArguments(clazz != null, "No class is defined for transformation");
+    public static void verifyArg(final Object param, final Class<?> clazz) {
+        verifyArg(param != null, "Source transformation object is not initialized");
+        verifyArg(clazz != null, "No class is defined for transformation");
     }
 }

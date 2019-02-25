@@ -8,6 +8,7 @@ import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -71,6 +72,7 @@ public final class Station extends AuditEntity implements Serializable {
         return true;
     }
 
+    @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CITY_ID")
     public City getCity() {

@@ -25,7 +25,7 @@ public final class StationCriteriaImpl {
     }
 
     private StationCriteriaImpl(final String cityName) {
-        Verifications.checkArguments(cityName != null, "to search by criteria , name should be initialized");
+        Verifications.verifyArg(cityName != null, "to search by criteria , name should be initialized");
         this.cityName = cityName;
     }
 

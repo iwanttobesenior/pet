@@ -88,8 +88,8 @@ public class ReflectionUtil {
      * @param fields to copy
      */
     public static void copyFields(Object src, Object dest, List<String> fields) {
-        Verifications.checkArguments(src != null, "Source object is not initialized");
-        Verifications.checkArguments(dest != null, "Destination object is not initialized");
+        Verifications.verifyArg(src != null, "Source object is not initialized");
+        Verifications.verifyArg(dest != null, "Destination object is not initialized");
         try {
             for (String field : fields) {
                 final var fld = collectFieldsAcrossAllHierarchyByFieldName(src.getClass(), field);
@@ -164,5 +164,19 @@ public class ReflectionUtil {
     public static Set<Class<?>> getClassesFromSpecifiedPackageByGivenAnnotation(final String pack, final Class<? extends Annotation> annotation) {
         var reflections = new Reflections(pack);
         return reflections.getTypesAnnotatedWith(annotation);
+    }
+
+    /**
+     * Provide class name wherein this method was invoked
+     * note:BAD PRACTICE
+     *
+     * @return full class name
+     */
+    public static String getCurrentClassName() {
+        try {
+            throw new RuntimeException();
+        } catch (RuntimeException e) {
+            return e.getStackTrace()[1].getClassName();
+        }
     }
 }

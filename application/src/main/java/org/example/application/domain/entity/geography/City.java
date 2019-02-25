@@ -6,6 +6,8 @@ import org.example.application.domain.entity.valueobject.Coordinates;
 import org.example.application.infrastructure.util.common.CommonUtil;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
@@ -82,6 +84,8 @@ public final class City extends AuditEntity implements Serializable {
         return CommonUtil.getUnmodifiableSet(stations);
     }
 
+    @Size(min = 2,max = 32)
+    @NotNull
     @Column(name = "CITY_NAME", nullable = false, length = 32)
     public String getName() {
         return name;

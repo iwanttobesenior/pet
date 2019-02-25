@@ -1,5 +1,6 @@
 package org.example.service.exception.handler.global;
 
+import org.example.application.infrastructure.util.transformation.ReflectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +14,7 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public final class GlobalExceptionHandler implements ExceptionMapper<Exception> {
 
-    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
     private final Response SERVER_ERROR;
 
     public GlobalExceptionHandler() {
