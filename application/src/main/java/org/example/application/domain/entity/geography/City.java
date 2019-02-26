@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TimeZone;
 
 /**
  * main locality that contains transport stations
@@ -21,9 +22,12 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "CITIES")
+@NamedQueries({@NamedQuery(name = "City.DELETE_ALL_QUERY", query = "delete from City")})
 public final class City extends AuditEntity implements Serializable {
 
     private static final long serialVersionUID = -5651833919277340882L;
+
+    public static final String DELETE_ALL_QUERY = "";
 
     private String name;
     /**
@@ -46,8 +50,13 @@ public final class City extends AuditEntity implements Serializable {
      */
     private Coordinates coordinates;
 
-
     public City() {
+    }
+
+    public static void main(String[] args) {
+        System.out.println(TimeZone.getDefault().getDisplayName());
+        System.out.println(TimeZone.getDefault().getID());
+        System.out.println(TimeZone.getDefault().toZoneId());
     }
 
     public City(final String name) {
@@ -84,7 +93,7 @@ public final class City extends AuditEntity implements Serializable {
         return CommonUtil.getUnmodifiableSet(stations);
     }
 
-    @Size(min = 2,max = 32)
+    @Size(min = 2, max = 32)
     @NotNull
     @Column(name = "CITY_NAME", nullable = false, length = 32)
     public String getName() {

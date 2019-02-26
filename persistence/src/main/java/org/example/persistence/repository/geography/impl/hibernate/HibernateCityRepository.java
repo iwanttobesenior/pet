@@ -12,21 +12,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
-import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 import static org.example.application.infrastructure.util.transformation.ReflectionUtil.getCurrentClassName;
 
 /**
- * Implementation of {@link ICityRepository}
+ * Implementation of {@link ICityRepository} by hibernate provider
  *
  * @author Kul'baka Alex
+ * @see SessionFactoryBuilder
  */
 @Component
 public class HibernateCityRepository implements ICityRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(getCurrentClassName());
-
     private final SessionFactory sessionFactory;
 
     @Inject
@@ -37,12 +36,13 @@ public class HibernateCityRepository implements ICityRepository {
     @Override
     public void save(final City city) {
         Transaction transaction = null;
-        Session session = sessionFactory.openSession();
+        final Session session = sessionFactory.openSession();
         try (session) {
             transaction = session.beginTransaction();
             session.saveOrUpdate(city);
             transaction.commit();
-        } finally {
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
             if (transaction != null) {
                 transaction.rollback();
             }
@@ -51,7 +51,7 @@ public class HibernateCityRepository implements ICityRepository {
 
     @Override
     public City findById(final long cityId) {
-        Session session = sessionFactory.openSession();
+        final Session session = sessionFactory.openSession();
         try (session) {
             return session.get(City.class, cityId);
         }
@@ -60,14 +60,15 @@ public class HibernateCityRepository implements ICityRepository {
     @Override
     public void delete(final int cityId) {
         Transaction transaction = null;
-        Session session = sessionFactory.openSession();
+        final Session session = sessionFactory.openSession();
         try (session) {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("delete from City where City.id = :cityId");
+            final Query query = session.createQuery("delete from City where City.id = :cityId");
             query.setParameter("cityId", cityId);
             query.executeUpdate();
             transaction.commit();
-        } finally {
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
             if (transaction != null) {
                 transaction.rollback();
             }
@@ -76,11 +77,53 @@ public class HibernateCityRepository implements ICityRepository {
 
     @Override
     public List<City> findAll() {
-        Session session = sessionFactory.openSession();
+        final Session session = sessionFactory.openSession();
         try (session) {
-            CriteriaQuery<City> query = session.getCriteriaBuilder().createQuery(City.class);
+            final var query = session.getCriteriaBuilder().createQuery(City.class);
             query.from(City.class);
             return session.createQuery(query).getResultList();
+        }
+    }
+
+    @Override
+    public void deleteAll() {
+        Transaction transaction = null;
+        final Session session = sessionFactory.openSession();
+        try (session) {
+            transaction = session.beginTransaction();
+            final Query query = session.createQuery(City.DELETE_ALL_QUERY);
+            final int countOfDeleted = query.executeUpdate();
+            logger.debug("Deleted {} cities ", countOfDeleted);
+            transaction.commit();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
+
+    @Override
+    public void saveAll(final List<City> cities) {
+        Transaction transaction = null;
+        final Session session = sessionFactory.openSession();
+        final int batchSize = session.getJdbcBatchSize();
+        try (session) {
+            transaction = session.beginTransaction();
+            for (int i = 0; i < cities.size(); i++) {
+                session.persist(cities.get(i));
+                // TODO: 26.02.2019 resolve
+                if (i % batchSize == 0 || i == cities.size() - 1) {
+                    session.flush();
+                    session.clear();
+                }
+            }
+            transaction.commit();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            if (transaction != null) {
+                transaction.rollback();
+            }
         }
     }
 }

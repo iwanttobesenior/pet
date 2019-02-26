@@ -54,4 +54,14 @@ public class InMemoryICityRepositoryImpl implements ICityRepository {
     public List<City> findAll() {
         return CommonUtil.getUnmodifiableList(cities);
     }
+
+    @Override
+    public void deleteAll() {
+        cities.clear();
+    }
+
+    @Override
+    public void saveAll(final List<City> cities) {
+        cities.addAll(cities);
+    }
 }

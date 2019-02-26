@@ -148,3 +148,5 @@ Zpersistence/src/main/java/org/example/persistence/configuration/SessionFactoryB
 fservice/src/main/java/org/example/service/exception/handler/validation/ValidationExceptionHandler.java,d\0\d036aa723a2d432a27321cd4920fe5c3b0cd47e9
 ¦
 vapplication/src/main/java/org/example/application/infrastructure/exception/uncheked/execution/ValidationException.java,4\9\492caf5c0a1d9bfdf9fac09096d900a831f46e2d
+B
+hs_err_pid3680.log,0\2\0251dd36b71345e130bd4bcf1b2faa2bc6a7e9c3

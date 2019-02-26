@@ -20,6 +20,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "STATIONS")
+@NamedQueries({@NamedQuery(name = "Station.DELETE_ALL_QUERY", query = "delete from Station")})
 public final class Station extends AuditEntity implements Serializable {
 
     public static final String FIELD_TRANSPORT_TYPE = "stationType";

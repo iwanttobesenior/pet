@@ -34,4 +34,14 @@ public interface ICityRepository {
      * @return {@code list<City>}
      */
     List<City> findAll();
+
+    /**
+     * Remove all {@link City}'s from table
+     */
+    void deleteAll();
+
+    /**
+     * save specified {@link City} instances
+     */
+    void saveAll(final List<City> cities);
 }

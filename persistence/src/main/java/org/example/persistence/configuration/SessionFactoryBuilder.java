@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * Hibernate configuration bean
@@ -32,8 +33,7 @@ public class SessionFactoryBuilder {
 
         ReflectionUtil
                 .getClassesByAnnotation(Entity.class)
-                .stream()
-                .map(metadataSources::addAnnotatedClass);
+                .forEach(metadataSources::addAnnotatedClass);
         /*
           Add interceptor to hibernate configuration
          */
