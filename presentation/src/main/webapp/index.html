@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title ng-bind="'TITLE' | translate"></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+</head>
+
+<body>
+
+<div ng-controller="TranslateCtrl">
+    <table>
+        <tbody>
+
+        <tr>
+            <td><a href="#" ng-click="changeLanguage('en')">EN</a></td>
+            <td><a href="#" ng-click="changeLanguage('ua')">UA</a></td>
+            <td><a href="#" ng-click="changeLanguage('ru')">RU</a></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div ng-bind="'TITLE' | translate"></div>
+
+<div ng-controller="CityCtrl">
+
+    <table width="width:100%">
+        <tr>
+            <th ng-bind="'CITY_NAME'|translate"></th>
+            <th ng-bind="'DISTRICT_NAME'|translate"></th>
+            <th ng-bind="'REGION_NAME'|translate"></th>
+        </tr>
+        <tr ng-repeat="city in cities">
+            <td ng-bind="city.name"></td>
+            <td ng-bind="city.district"></td>
+            <td ng-bind="city.region"></td>
+        </tr>
+    </table>
+
+</div>
+
+<script src="javascript/app.js"></script>
+<script src="javascript/controllers.js"></script>
+</body>
+</html>

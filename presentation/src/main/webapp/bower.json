@@ -1,0 +1,26 @@
+{
+  "name": "example-js",
+  "autors": [
+    "Kul'baka Alexander"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.7.7",
+    "angular-resource": "^1.7.7",
+    "angular-mocks": "^1.7.7"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.18.1",
+    "angular-translate-loader-static-files": "^2.18.1"
+  }
+}
