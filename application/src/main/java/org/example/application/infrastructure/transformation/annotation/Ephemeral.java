@@ -11,7 +11,7 @@ import java.lang.annotation.*;
  * {@link ReflectionUtil}
  *
  * @author Kul'baka Alex
- * @see org.example.application.domain.dto.geography.CityDTO
+ * @see org.example.service.rest.dto.geography.CityDTO
  */
 @Target(ElementType.FIELD)
 @Documented

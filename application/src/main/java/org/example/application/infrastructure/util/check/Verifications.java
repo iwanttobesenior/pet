@@ -9,7 +9,11 @@ import org.example.application.infrastructure.exception.uncheked.execution.Inval
  */
 public class Verifications {
 
+    /**
+     * @throws UnsupportedOperationException if someone tries create instant of this class via reflection
+     */
     private Verifications() {
+        throw new UnsupportedOperationException("you should't create instance of utility class");
     }
 
     /**

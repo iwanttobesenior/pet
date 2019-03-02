@@ -1,6 +1,6 @@
 package org.example.service.service.infrastructure.transformation.impl;
 
-import org.example.application.domain.dto.geography.CityDTO;
+import org.example.service.rest.dto.geography.CityDTO;
 import org.example.application.domain.entity.geography.City;
 import org.example.application.infrastructure.exception.uncheked.execution.InvalidArgumentException;
 import org.example.service.service.infrastructure.transformation.ITransformer;

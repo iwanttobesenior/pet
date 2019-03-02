@@ -30,9 +30,11 @@ public class ReflectionUtil {
      * you should't create utility instance
      * also
      * you should't extends utility class
+     *
+     * @throws UnsupportedOperationException if someone tries create instant of this class via reflection
      */
     private ReflectionUtil() {
-        /*NOP*/
+        throw new UnsupportedOperationException("you should't create instance of utility class");
     }
 
     /**

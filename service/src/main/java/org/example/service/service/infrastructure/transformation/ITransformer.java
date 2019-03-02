@@ -1,6 +1,6 @@
 package org.example.service.service.infrastructure.transformation;
 
-import org.example.application.domain.dto.base.AbstractDTO;
+import org.example.service.rest.dto.base.AbstractDTO;
 import org.example.application.domain.entity.base.AbstractEntity;
 
 /**

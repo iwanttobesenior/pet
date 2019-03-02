@@ -28,6 +28,7 @@
         <module>persistence</module>
         <module>service</module>
         <module>presentation</module>
+        <module>admin</module>
     </modules>
 
     <properties>
@@ -58,8 +59,10 @@
         <jaxb.version>2.2.11</jaxb.version>
         <activation.version>1.1.1</activation.version>
         <c3p0.connection.pool.version>0.9.1.2</c3p0.connection.pool.version>
-        <javax.el.api>3.0.0</javax.el.api>
-        <hikari.connection.pool>3.2.0</hikari.connection.pool>
+        <javax.el.api.version>3.0.0</javax.el.api.version>
+        <hikari.connection.pool.version>3.2.0</hikari.connection.pool.version>
+        <swagger.jerset2.version>1.5.22</swagger.jerset2.version>
+        <jersey.guava.version>2.25.1</jersey.guava.version>
     </properties>
 
     <dependencies>
@@ -163,7 +166,7 @@
         <dependency>
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>
-            <version>${javax.el.api}</version>
+            <version>${javax.el.api.version}</version>
         </dependency>
 
     </dependencies>

@@ -52,20 +52,23 @@ describe('Testing City Controller', function () {
     /**
      * Intercept http GET method,return test data
      */
-    it('should query cities', function () {
+    it('Should query cities', function () {
+        httpBackend.expectGET("l10n/locale-en.json").respond(
+            [
+                {}
+            ]);
         httpBackend.expectGET("/rest/cities").respond(
             [
                 {
                     'name': 'Odessa',
-                    'region': 'Odessa',
-                    'district': 'Odessa'
+                    'district': '',
+                    'region': 'Odessa'
                 }
-            ]
-        );
+            ]);
         httpBackend.flush();
         expect(scope.cities[0].name).toBe('Odessa');
-        expect(scope.cities[0].district).toBe('Odessa');
+        expect(scope.cities[0].district).toBe('');
         expect(scope.cities[0].region).toBe('Odessa');
-    });
 
+    });
 });

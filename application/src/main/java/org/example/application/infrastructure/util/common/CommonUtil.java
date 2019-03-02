@@ -2,6 +2,7 @@ package org.example.application.infrastructure.util.common;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.example.application.infrastructure.util.check.Verifications;
 
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +18,11 @@ import java.util.Set;
  */
 public final class CommonUtil {
 
+    /**
+     * @throws UnsupportedOperationException if someone tries create instant of this class via reflection
+     */
     private CommonUtil() {
+        throw new UnsupportedOperationException("you should't create instance of utility class");
     }
 
     /**

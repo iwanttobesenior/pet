@@ -1,6 +1,6 @@
 package org.example.service.rest;
 
-import org.example.application.domain.dto.geography.CityDTO;
+import org.example.service.rest.dto.geography.CityDTO;
 import org.example.service.jersey.configuration.JerseyConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
