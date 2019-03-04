@@ -9,9 +9,9 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
 import static org.example.application.infrastructure.util.transformation.ReflectionUtil.getCurrentClassName;
@@ -22,7 +22,7 @@ import static org.example.application.infrastructure.util.transformation.Reflect
  * @author Kul'baka Alex
  * @see SessionFactoryBuilder
  */
-@Component
+@Named
 public class HibernateCityRepository implements ICityRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(getCurrentClassName());

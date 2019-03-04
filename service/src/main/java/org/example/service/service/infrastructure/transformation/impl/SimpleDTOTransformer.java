@@ -10,7 +10,8 @@ import org.example.service.service.infrastructure.transformation.cache.CacheFiel
 import org.example.service.service.infrastructure.transformation.cache.FieldProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+
+import javax.inject.Named;
 
 /**
  * Implementation of {@link ITransformer} provide default transformation engine
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Component;
  *
  * @author Kul'baka Alex
  */
-@Component
+@Named
 public final class SimpleDTOTransformer implements ITransformer {
 
     private static final Logger logger = LoggerFactory.getLogger(SimpleDTOTransformer.class);

@@ -11,6 +11,7 @@ import org.example.service.service.ICityService;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
@@ -24,7 +25,7 @@ import java.util.stream.Collectors;
  *
  * @author Kul'baka Alex
  */
-@Service
+@Named
 public final class CityServiceImpl implements ICityService {
 
     private final ICityRepository cityRepository;

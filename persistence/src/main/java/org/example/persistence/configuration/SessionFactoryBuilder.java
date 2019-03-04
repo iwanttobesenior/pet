@@ -6,21 +6,20 @@ import org.example.persistence.interceptor.TimestampHibernateInterceptor;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
+import javax.inject.Named;
 import javax.persistence.Entity;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
-import java.util.Set;
 
 /**
  * Hibernate configuration bean
  *
  * @author Kul'baka Alex
  */
-@Component
+@Named
 public class SessionFactoryBuilder {
 
     private final SessionFactory sessionFactory;
@@ -76,6 +75,8 @@ public class SessionFactoryBuilder {
     public void destroy() {
         if (sessionFactory != null) {
             sessionFactory.close();
+            System.out.println("!!!!!!!");
+            // TODO: 04.03.2019
         }
     }
 
