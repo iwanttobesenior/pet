@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>index</title>
+</h:head>
+
+<h:body>
+
+    <div>
+        <h:outputText value="admin"></h:outputText>
+    </div>
+
+    <h:dataTable var="city" value="#{citiesBean.cityBeans}">
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{city.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">District</f:facet>
+            #{city.district}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Region</f:facet>
+            #{city.region}
+        </h:column>
+    </h:dataTable>
+
+</h:body>
+
+</html>

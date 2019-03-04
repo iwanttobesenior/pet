@@ -10,6 +10,7 @@
         <module name="application" />
         <module name="persistence" />
         <module name="presentation" />
+        <module name="rest" />
         <module name="service" />
       </profile>
     </annotationProcessing>

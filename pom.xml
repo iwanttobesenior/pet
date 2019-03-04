@@ -29,6 +29,7 @@
         <module>service</module>
         <module>presentation</module>
         <module>admin</module>
+        <module>rest</module>
     </modules>
 
     <properties>
