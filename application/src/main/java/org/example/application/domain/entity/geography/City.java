@@ -53,12 +53,6 @@ public final class City extends AuditEntity implements Serializable {
     public City() {
     }
 
-    public static void main(String[] args) {
-        System.out.println(TimeZone.getDefault().getDisplayName());
-        System.out.println(TimeZone.getDefault().getID());
-        System.out.println(TimeZone.getDefault().toZoneId());
-    }
-
     public City(final String name) {
         this.name = name;
     }

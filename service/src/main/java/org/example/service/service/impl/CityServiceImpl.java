@@ -8,7 +8,6 @@ import org.example.application.infrastructure.exception.uncheked.execution.Inval
 import org.example.application.infrastructure.exception.uncheked.execution.ValidationException;
 import org.example.persistence.repository.geography.ICityRepository;
 import org.example.service.service.ICityService;
-import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import javax.inject.Named;
