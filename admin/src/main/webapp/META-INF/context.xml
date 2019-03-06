@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+@see https://memorynotfound.com/install-and-configure-cdi-in-tomcat/
+-->
+<Context>
+    <Resurce
+            name="BeanManager"
+            auth="Container"
+            type="javax.enterprise.inject.spi.BeanManager"
+            factory="org.jboss.weld.resources.ManagerObjectFactory"
+    />
+</Context>

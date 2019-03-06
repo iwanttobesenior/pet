@@ -6,9 +6,11 @@ import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl
 import org.example.application.domain.search.pagenation.IRangeCriteria;
 import org.example.application.infrastructure.exception.uncheked.execution.InvalidArgumentException;
 import org.example.application.infrastructure.exception.uncheked.execution.ValidationException;
+import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
 import org.example.persistence.repository.geography.ICityRepository;
 import org.example.service.service.ICityService;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.Validation;
@@ -25,13 +27,15 @@ import java.util.stream.Collectors;
  * @author Kul'baka Alex
  */
 @Named
+@org.example.service.infrastructure.cdi.CityServiceImpl
+@ApplicationScoped
 public final class CityServiceImpl implements ICityService {
 
     private final ICityRepository cityRepository;
     private final Validator validator;
 
     @Inject
-    public CityServiceImpl(final ICityRepository cityRepository) {
+    public CityServiceImpl(final @DatabaseSourceHibernateImpl ICityRepository cityRepository) {
         this.cityRepository = cityRepository;
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         validator = validatorFactory.getValidator();

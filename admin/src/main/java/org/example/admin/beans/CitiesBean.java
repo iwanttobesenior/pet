@@ -1,34 +1,36 @@
 package org.example.admin.beans;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import java.util.ArrayList;
-import java.util.Arrays;
+import org.example.application.domain.entity.geography.City;
+import org.example.service.infrastructure.cdi.CityServiceImpl;
+import org.example.service.service.ICityService;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
 /**
  * Managed bean for represent info about {City}'s
+ * {@code @Named} instead {@code ManagedBean} in order to put the bean under control CDI
  *
  * @author Kul'baka Alex
  */
-@ManagedBean
+@Named
 @RequestScoped
-// TODO: 04.03.2019 CDI instead or together with spring
 public class CitiesBean {
 
-    private final List<CityBean> cityBeans;
+    private final ICityService cityService;
 
-    public CitiesBean() {
-        this.cityBeans = new ArrayList<>(Arrays
-                .asList(
-                        new CityBean("odessa", "", "odessa"),
-                        new CityBean("moscow", "", "moscow"),
-                        new CityBean("dnepr", "dnepr", "dnepr")
-                ));
+    @Inject
+    public CitiesBean(final @CityServiceImpl ICityService cityService) {
+        this.cityService = cityService;
     }
 
-    public List<CityBean> getCityBeans() {
-        return cityBeans;
+    public List<City> getCities() {
+        return cityService.findCities();
+    }
+
+    public void testLifeCycle() {
+
     }
 }

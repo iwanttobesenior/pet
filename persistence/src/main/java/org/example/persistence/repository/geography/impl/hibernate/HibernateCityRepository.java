@@ -2,6 +2,7 @@ package org.example.persistence.repository.geography.impl.hibernate;
 
 import org.example.application.domain.entity.geography.City;
 import org.example.persistence.configuration.SessionFactoryBuilder;
+import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
 import org.example.persistence.repository.geography.ICityRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +24,7 @@ import static org.example.application.infrastructure.util.transformation.Reflect
  * @see SessionFactoryBuilder
  */
 @Named
+@DatabaseSourceHibernateImpl
 public class HibernateCityRepository implements ICityRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(getCurrentClassName());
