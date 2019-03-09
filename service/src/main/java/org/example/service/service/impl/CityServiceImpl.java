@@ -8,9 +8,9 @@ import org.example.application.infrastructure.exception.uncheked.execution.Inval
 import org.example.application.infrastructure.exception.uncheked.execution.ValidationException;
 import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
 import org.example.persistence.repository.geography.ICityRepository;
+import org.example.service.infrastructure.cdi.DatabaseSourceCityServiceImpl;
 import org.example.service.service.ICityService;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.Validation;
@@ -27,8 +27,7 @@ import java.util.stream.Collectors;
  * @author Kul'baka Alex
  */
 @Named
-@org.example.service.infrastructure.cdi.CityServiceImpl
-@ApplicationScoped
+@DatabaseSourceCityServiceImpl
 public final class CityServiceImpl implements ICityService {
 
     private final ICityRepository cityRepository;

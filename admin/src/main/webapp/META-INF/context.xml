@@ -3,7 +3,7 @@
 @see https://memorynotfound.com/install-and-configure-cdi-in-tomcat/
 -->
 <Context>
-    <Resurce
+    <Resource
             name="BeanManager"
             auth="Container"
             type="javax.enterprise.inject.spi.BeanManager"

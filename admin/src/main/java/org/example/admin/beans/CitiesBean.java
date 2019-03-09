@@ -1,9 +1,10 @@
 package org.example.admin.beans;
 
 import org.example.application.domain.entity.geography.City;
-import org.example.service.infrastructure.cdi.CityServiceImpl;
+import org.example.service.infrastructure.cdi.DatabaseSourceCityServiceImpl;
 import org.example.service.service.ICityService;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,7 +23,7 @@ public class CitiesBean {
     private final ICityService cityService;
 
     @Inject
-    public CitiesBean(final @CityServiceImpl ICityService cityService) {
+    public CitiesBean(final @DatabaseSourceCityServiceImpl ICityService cityService) {
         this.cityService = cityService;
     }
 
@@ -30,7 +31,8 @@ public class CitiesBean {
         return cityService.findCities();
     }
 
+    @PostConstruct
     public void testLifeCycle() {
-
+        System.out.println("!");
     }
 }

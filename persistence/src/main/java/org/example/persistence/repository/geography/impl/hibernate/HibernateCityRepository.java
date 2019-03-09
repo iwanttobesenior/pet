@@ -31,7 +31,7 @@ public class HibernateCityRepository implements ICityRepository {
     private final SessionFactory sessionFactory;
 
     @Inject
-    public HibernateCityRepository(SessionFactoryBuilder factoryBuilder) {
+    public HibernateCityRepository(final SessionFactoryBuilder factoryBuilder) {
         this.sessionFactory = factoryBuilder.getSessionFactory();
     }
 
