@@ -36,7 +36,8 @@ public final class CityServiceImpl implements ICityService {
     @Inject
     public CityServiceImpl(final @DatabaseSourceHibernateImpl ICityRepository cityRepository) {
         this.cityRepository = cityRepository;
-        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+
+        var validatorFactory = Validation.buildDefaultValidatorFactory();
         validator = validatorFactory.getValidator();
     }
 
@@ -48,6 +49,7 @@ public final class CityServiceImpl implements ICityService {
     @Override
     public void saveCity(final City city) {
         var constraintViolations = validator.validate(city);
+        System.out.println(constraintViolations.size());
         if (!constraintViolations.isEmpty()) {
             throw new ValidationException
                     ("City - " + city + " validation failure : " + constraintViolations);

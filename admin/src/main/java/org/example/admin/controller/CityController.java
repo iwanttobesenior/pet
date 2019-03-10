@@ -1,10 +1,12 @@
-package org.example.admin.beans;
+package org.example.admin.controller;
 
+import org.example.admin.beans.CityBean;
 import org.example.application.domain.entity.geography.City;
 import org.example.service.infrastructure.cdi.DatabaseSourceCityServiceImpl;
 import org.example.service.service.ICityService;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,13 +19,13 @@ import java.util.List;
  * @author Kul'baka Alex
  */
 @Named
-@RequestScoped
-public class CitiesBean {
+@ApplicationScoped
+public class CityController {
 
     private final ICityService cityService;
 
     @Inject
-    public CitiesBean(final @DatabaseSourceCityServiceImpl ICityService cityService) {
+    public CityController(final @DatabaseSourceCityServiceImpl ICityService cityService) {
         this.cityService = cityService;
     }
 
@@ -31,8 +33,11 @@ public class CitiesBean {
         return cityService.findCities();
     }
 
-    @PostConstruct
-    public void testLifeCycle() {
-        System.out.println("!");
+    public void saveCity(final CityBean cityBean) {
+        final var newCity = new City();
+        newCity.setName(cityBean.getName());
+        newCity.setDistrict(cityBean.getDistrict());
+        newCity.setRegion(cityBean.getRegion());
+        cityService.saveCity(newCity);
     }
 }

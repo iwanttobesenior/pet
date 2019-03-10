@@ -12,7 +12,6 @@
 </h:head>
 
 <h:body>
-
     <div>
         <h:outputText value="admin"></h:outputText>
     </div>
@@ -21,9 +20,9 @@
 
     <div style="text-align: center">
         <p:panel header="Cities"
-                     style="width:600px;margin-left:auto;margin-right:auto">
+                 style="width:600px;margin-left:auto;margin-right:auto">
 
-            <p:dataTable var="city" value="#{citiesBean.cities}" sortBy="#{city.name}">
+            <p:dataTable id="citiesTable" var="city" value="#{cityController.cities}" sortBy="#{city.name}">
                 <p:column>
                     <f:facet name="header">Name</f:facet>
                     #{city.name}
@@ -39,7 +38,7 @@
                 <f:facet name="footer">
                     <div style="margin-top: 20px; text-align: right">
                         <p:commandButton value="Add city"
-                                         oncomplete="PF('cityDlg').show();" />
+                                         oncomplete="PF('cityDlg').show();"/>
                     </div>
                 </f:facet>
             </p:dataTable>

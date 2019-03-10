@@ -75,7 +75,6 @@ public class SessionFactoryBuilder {
     public void destroy() {
         if (sessionFactory != null) {
             sessionFactory.close();
-            System.out.println("!!!!!!!");
             // TODO: 04.03.2019
         }
     }

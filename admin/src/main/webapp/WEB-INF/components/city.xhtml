@@ -7,16 +7,32 @@
     <h:form id="cityForm">
         <p:dialog id="cityDialog" header="city details"
                   widgetVar="cityDlg" modal="true" closeOnEscape="true">
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="3">
                 <h:outputText value="Name"/>
-                <h:inputText value="#{currentCity.name}"/>
+                <h:inputText id="name" value="#{currentCity.name}">
+                    <f:validateBean disabled="true"/>
+                </h:inputText>
+
+                <h:message for="name" style="color:red"/>
+
                 <h:outputText value="District"/>
-                <h:inputText value="#{currentCity.district}"/>
-                <h:outputText value="Region"/>
-                <h:inputText value="#{currentCity.region}"/>
+                <h:inputText id="district" value="#{currentCity.district}">
+                    <f:validateBean disabled="true"/>
+                </h:inputText>
+                <h:message for="district" style="color:red"/>
+
+                <h:outputText value="Region">
+                    <f:validateBean disabled="true"/>
+                </h:outputText>
+                <h:inputText id="region" value="#{currentCity.region}"/>
+                <h:message for="region" style="color:red"/>
             </h:panelGrid>
             <div style="text-align: right;margin-top: 10px">
-                <p:commandButton oncomplete="PF('cityDlg').hide();" value="Save"/>
+                <p:commandButton
+                        oncomplete="PF('cityDlg').hide();"
+                        value="Save"
+                        actionListener="#{cityController.saveCity(currentCity)}"
+                        update="citiesTable"/>
                 <p:commandButton value="Cancel" oncomplete="PF('cityDlg').hide();"/>
             </div>
         </p:dialog>

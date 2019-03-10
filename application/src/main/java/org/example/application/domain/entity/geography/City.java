@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.TimeZone;
 
 /**
  * main locality that contains transport stations
@@ -23,7 +22,7 @@ import java.util.TimeZone;
 @Entity
 @Table(name = "CITIES")
 @NamedQueries({@NamedQuery(name = "City.DELETE_ALL_QUERY", query = "delete from City")})
-public final class City extends AuditEntity implements Serializable {
+public class City extends AuditEntity implements Serializable {
 
     private static final long serialVersionUID = -5651833919277340882L;
 
@@ -87,18 +86,25 @@ public final class City extends AuditEntity implements Serializable {
         return CommonUtil.getUnmodifiableSet(stations);
     }
 
-    @Size(min = 2, max = 32)
+    @Size(min = 2, max = 32,
+            message = "Name of city must contain more or equal that 2 symbols and less or equal that 32")
     @NotNull
     @Column(name = "CITY_NAME", nullable = false, length = 32)
     public String getName() {
         return name;
     }
 
+    @Size(min = 2, max = 32,
+            message = "Name of city district must contain more or equal that 2 symbols and less or equal that 32")
+    @NotNull
     @Column(name = "DISTRICT", nullable = false, length = 32)
     public String getDistrict() {
         return district;
     }
 
+    @Size(min = 2, max = 32,
+            message = "Name of city region must contain more or equal that 2 symbols and less or equal that 32")
+    @NotNull
     @Column(name = "REGION", nullable = false, length = 32)
     public String getRegion() {
         return region;
@@ -113,7 +119,7 @@ public final class City extends AuditEntity implements Serializable {
         return stations.size();
     }
 
-    private void setName(final String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

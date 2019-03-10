@@ -1,44 +1,18 @@
 package org.example.admin.beans;
 
+import org.example.application.domain.entity.geography.City;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 /**
- * Static info for test
+ * {@link CityBean} is value holder of the city data
+ * for admin project
+ *
+ * @author Kul'baka Alex
+ * @see City
  */
-public final class CityBean {
-
-    private String name;
-    private String district;
-    private String region;
-
-    public CityBean() {
-    }
-
-    public CityBean(final String name, final String district, final String region) {
-        this.name = name;
-        this.district = district;
-        this.region = region;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
+@ManagedBean(name = "currentCity")
+@ViewScoped
+public final class CityBean extends City {
 }
