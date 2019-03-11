@@ -25,7 +25,7 @@ import static org.example.application.infrastructure.util.transformation.Reflect
  */
 @Named
 @DatabaseSourceHibernateImpl
-public class HibernateCityRepository implements ICityRepository {
+public final class HibernateCityRepository implements ICityRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(getCurrentClassName());
     private final SessionFactory sessionFactory;
@@ -60,14 +60,15 @@ public class HibernateCityRepository implements ICityRepository {
     }
 
     @Override
-    public void delete(final int cityId) {
+    public void deleteById(final long cityId) {
         Transaction transaction = null;
         final Session session = sessionFactory.openSession();
         try (session) {
             transaction = session.beginTransaction();
-            final Query query = session.createQuery("delete from City where City.id = :cityId");
-            query.setParameter("cityId", cityId);
-            query.executeUpdate();
+            final var city = session.get(City.class, cityId);
+            if (city != null) {
+                session.delete(city);
+            }
             transaction.commit();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);

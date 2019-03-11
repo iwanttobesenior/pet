@@ -1,4 +1,4 @@
-package org.example.service.infrastructure.cdi;
+package org.example.service.infrastructure.cdi.annotation;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.*;

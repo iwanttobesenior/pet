@@ -13,7 +13,7 @@ import java.util.List;
  * @author Kul'baka Alex
  */
 
-public class InMemoryICityRepositoryImpl implements ICityRepository {
+public final class InMemoryICityRepositoryImpl implements ICityRepository {
 
     /**
      * Internal list of cities
@@ -46,8 +46,8 @@ public class InMemoryICityRepositoryImpl implements ICityRepository {
     }
 
     @Override
-    public void delete(final int cityId) {
-
+    public void deleteById(long cityId) {
+        /*NOP*/
     }
 
     @Override

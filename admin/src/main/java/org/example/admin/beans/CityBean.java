@@ -1,6 +1,7 @@
 package org.example.admin.beans;
 
 import org.example.application.domain.entity.geography.City;
+import org.example.service.infrastructure.transformation.ITransformable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -14,5 +15,69 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean(name = "currentCity")
 @ViewScoped
-public final class CityBean extends City {
+public final class CityBean implements ITransformable<City> {
+
+    private long id;
+    private String name;
+    private String district;
+    private String region;
+
+    /**
+     * Clear the input fields
+     */
+    public final void clear() {
+        setId(0);
+        setName("");
+        setDistrict("");
+        setRegion("");
+    }
+
+    public final void update(final City city) {
+        setName(city.getName());
+        setDistrict(city.getDistrict());
+        setRegion(city.getRegion());
+        setId(city.getId());
+    }
+
+    @Override
+    public void transform(final City city) {
+        /*NOP*/
+    }
+
+    @Override
+    public City unTransform(final City city) {
+        return city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

@@ -2,8 +2,9 @@ package org.example.rest.infrastructure.transformation.impl;
 
 import org.example.application.domain.entity.geography.City;
 import org.example.application.infrastructure.exception.uncheked.execution.InvalidArgumentException;
-import org.example.rest.dto.geography.CityDTO;
-import org.example.rest.infrastructure.transformation.ITransformer;
+import org.example.service.infrastructure.dto.geography.CityDTO;
+import org.example.service.infrastructure.transformation.ITransformer;
+import org.example.service.infrastructure.transformation.impl.SimpleDTOTransformer;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -58,7 +59,7 @@ public class SimpleDTOITransformerTest {
         final CityDTO dto = new CityDTO();
         dto.setName("stuttgart");
 
-        final City entity = transformer.untransform(dto, City.class);
+        final City entity = transformer.unTransform(dto, City.class);
 
         assertSame(entity.getClass(), City.class);
         assertEquals(dto.getName(), entity.getName());
@@ -68,7 +69,7 @@ public class SimpleDTOITransformerTest {
     public void testUntransformDTOAsNullToEntity_fail() {
         final CityDTO dto = null;
 
-        transformer.untransform(dto, City.class);
+        transformer.unTransform(dto, City.class);
 
         fail();
     }
@@ -80,7 +81,7 @@ public class SimpleDTOITransformerTest {
 
         final Class<City> entity = null;
 
-        transformer.untransform(dto, entity);
+        transformer.unTransform(dto, entity);
 
         fail();
     }

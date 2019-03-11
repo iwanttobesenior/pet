@@ -1,7 +1,9 @@
 package org.example.rest.infrastructure.transformation.cache;
 
 import org.example.application.infrastructure.util.transformation.ReflectionUtil;
-import org.example.rest.infrastructure.transformation.impl.SimpleDTOTransformer;
+import org.example.service.infrastructure.transformation.cache.CacheFieldProvider;
+import org.example.service.infrastructure.transformation.cache.FieldProvider;
+import org.example.service.infrastructure.transformation.impl.SimpleDTOTransformer;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

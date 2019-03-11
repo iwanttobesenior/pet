@@ -7,25 +7,24 @@
     <h:form id="cityForm">
         <p:dialog id="cityDialog" header="city details"
                   widgetVar="cityDlg" modal="true" closeOnEscape="true">
-            <h:panelGrid columns="3">
+            <h:panelGrid columns="2">
+
                 <h:outputText value="Name"/>
                 <h:inputText id="name" value="#{currentCity.name}">
                     <f:validateBean disabled="true"/>
                 </h:inputText>
 
-                <h:message for="name" style="color:red"/>
 
                 <h:outputText value="District"/>
                 <h:inputText id="district" value="#{currentCity.district}">
                     <f:validateBean disabled="true"/>
                 </h:inputText>
-                <h:message for="district" style="color:red"/>
 
-                <h:outputText value="Region">
+                <h:outputText value="Region"/>
+                <h:inputText id="region" value="#{currentCity.region}">
                     <f:validateBean disabled="true"/>
-                </h:outputText>
-                <h:inputText id="region" value="#{currentCity.region}"/>
-                <h:message for="region" style="color:red"/>
+                </h:inputText>
+
             </h:panelGrid>
             <div style="text-align: right;margin-top: 10px">
                 <p:commandButton

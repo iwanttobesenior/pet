@@ -1,6 +1,7 @@
-package org.example.rest.dto.base;
+package org.example.service.infrastructure.dto.base;
 
 import org.example.application.domain.entity.base.AbstractEntity;
+import org.example.service.infrastructure.transformation.ITransformable;
 
 /**
  * Base class for all DTO
@@ -8,7 +9,7 @@ import org.example.application.domain.entity.base.AbstractEntity;
  *
  * @author Kul'baka Alex
  */
-public abstract class AbstractDTO<T extends AbstractEntity> {
+public abstract class AbstractDTO<T extends AbstractEntity> implements ITransformable<T> {
 
     private long id;
 
@@ -17,6 +18,7 @@ public abstract class AbstractDTO<T extends AbstractEntity> {
      *
      * @param entity
      */
+    @Override
     public void transform(final T entity) {
         id = entity.getId();
     }
@@ -27,7 +29,8 @@ public abstract class AbstractDTO<T extends AbstractEntity> {
      * @param entity
      * @return Entity
      */
-    public T untransform(final T entity) {
+    @Override
+    public T unTransform(final T entity) {
         entity.setId(getId());
         return entity;
     }
@@ -36,7 +39,7 @@ public abstract class AbstractDTO<T extends AbstractEntity> {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 }

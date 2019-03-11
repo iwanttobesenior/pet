@@ -51,4 +51,8 @@ public class Verifications {
         verifyArg(param != null, "Source transformation object is not initialized");
         verifyArg(clazz != null, "No class is defined for transformation");
     }
+
+    public static void verifyArg(final Object param, final String errorMessage) {
+        verifyArg(param != null, errorMessage);
+    }
 }

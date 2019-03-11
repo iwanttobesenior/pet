@@ -3,6 +3,8 @@ package org.example.rest.infrastructure.transformation.cache;
 import mockit.Mock;
 import mockit.MockUp;
 import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.service.infrastructure.transformation.cache.CacheFieldProvider;
+import org.example.service.infrastructure.transformation.cache.FieldProvider;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

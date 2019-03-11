@@ -8,14 +8,13 @@ import org.example.application.infrastructure.exception.uncheked.execution.Inval
 import org.example.application.infrastructure.exception.uncheked.execution.ValidationException;
 import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
 import org.example.persistence.repository.geography.ICityRepository;
-import org.example.service.infrastructure.cdi.DatabaseSourceCityServiceImpl;
+import org.example.service.infrastructure.cdi.annotation.DatabaseSourceCityServiceImpl;
 import org.example.service.service.ICityService;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.Validation;
 import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -75,5 +74,20 @@ public final class CityServiceImpl implements ICityService {
         cityRepository.findAll().forEach(city -> stations.addAll(city.getStations()));
 
         return stations.stream().filter(station -> station.match(stationCriteria)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteById(long cityId) {
+        cityRepository.deleteById(cityId);
+    }
+
+    @Override
+    public void saveAll(List<City> cities) {
+        cityRepository.saveAll(cities);
+    }
+
+    @Override
+    public void deleteAll() {
+        cityRepository.deleteAll();
     }
 }

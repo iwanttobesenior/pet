@@ -4,6 +4,8 @@ import mockit.Expectations;
 import mockit.Mocked;
 import mockit.integration.junit4.JMockit;
 import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.service.infrastructure.transformation.cache.CacheFieldProvider;
+import org.example.service.infrastructure.transformation.cache.FieldProvider;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;

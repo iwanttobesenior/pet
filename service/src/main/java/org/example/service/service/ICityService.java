@@ -42,4 +42,22 @@ public interface ICityService {
      */
     List<Station> searchStationByCriteria(final StationCriteriaImpl stationCriteria,
                                           final IRangeCriteria rangeCriteria);
+
+    /**
+     * Delete {@link City} with specified identifier
+     *
+     * @param cityId
+     */
+    void deleteById(final long cityId);
+
+    /**
+     * Saves all specified city instances
+     * @param cities
+     */
+    void saveAll(final List<City> cities);
+
+    /**
+     * Removes all the cities
+     */
+    void deleteAll();
 }

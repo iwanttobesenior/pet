@@ -26,7 +26,7 @@ public interface ICityRepository {
     /**
      * Delete {@link City} from storage by current {@code cityId}
      */
-    void delete(final int cityId);
+    void deleteById(final long cityId);
 
     /**
      * Find all exist {@link City}
