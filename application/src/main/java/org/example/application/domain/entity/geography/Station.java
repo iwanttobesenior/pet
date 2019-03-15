@@ -51,6 +51,9 @@ public final class Station extends AuditEntity implements Serializable {
      */
     private City city;
 
+    public Station() {
+    }
+
     public Station(final StationType type, final City city) {
         this.stationType = type;
         this.city = city;

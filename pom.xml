@@ -64,6 +64,7 @@
         <hikari.connection.pool.version>3.2.0</hikari.connection.pool.version>
         <swagger.jerset2.version>1.5.22</swagger.jerset2.version>
         <jersey.guava.version>2.25.1</jersey.guava.version>
+        <apache-shiro.version>1.4.0</apache-shiro.version>
     </properties>
 
     <dependencies>
@@ -119,7 +120,7 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-mockito</artifactId>
-            <version>${powermock-mockito.version}</version>
+            <version>1.7.0RC4</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jmockit/jmockit -->
@@ -162,6 +163,13 @@
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>
             <version>${javax.el.api.version}</version>
+        </dependency>
+        <!--Lombok project-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

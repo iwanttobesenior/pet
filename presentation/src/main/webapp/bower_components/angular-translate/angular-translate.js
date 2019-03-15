@@ -48,7 +48,7 @@ function runTranslate($translate) {
     var preferred = $translate.preferredLanguage();
     if (angular.isString(preferred)) {
       $translate.use(preferred);
-      // $translate.use() will also remember the language.
+      // $translate.use() will also remember the i18n.
       // So, we don't need to call storage.put() here.
     } else {
       storage.put(key, $translate.use());
@@ -443,10 +443,10 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         var parts = temp.split('-');
 
         switch (parts.length) {
-          case 1: // language only
+          case 1: // i18n only
             parts[0] = parts[0].toLowerCase();
             break;
-          case 2: // language-script or language-region
+          case 2: // i18n-script or i18n-region
             parts[0] = parts[0].toLowerCase();
             if (parts[1].length === 4) { // parts[1] is script
               parts[1] = parts[1].charAt(0).toUpperCase() + parts[1].slice(1).toLowerCase();
@@ -454,7 +454,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
               parts[1] = parts[1].toUpperCase();
             }
             break;
-          case 3: // language-script-region
+          case 3: // i18n-script-region
             parts[0] = parts[0].toLowerCase();
             parts[1] = parts[1].charAt(0).toUpperCase() + parts[1].slice(1).toLowerCase();
             parts[2] = parts[2].toUpperCase();
@@ -474,7 +474,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
 
   var version = '2.18.1';
 
-  // tries to determine the browsers language
+  // tries to determine the browsers i18n
   var getFirstBrowserLanguage = function () {
 
     // internal purpose only
@@ -607,7 +607,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
       }
     }
 
-    // Check for a language code without region
+    // Check for a i18n code without region
     var parts = preferred.split('_');
 
     if (parts.length > 1 && indexOf(avail, lowercase(parts[0])) > -1) {
@@ -624,13 +624,13 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Registers a new translation table for specific language key.
+   * Registers a new translation table for specific i18n key.
    *
-   * To register a translation table for specific language, pass a defined language
+   * To register a translation table for specific i18n, pass a defined i18n
    * key as first parameter.
    *
    * <pre>
-   *  // register translation table for language: 'de_DE'
+   *  // register translation table for i18n: 'de_DE'
    *  $translateProvider.translations('de_DE', {
    *    'GREETING': 'Hallo Welt!'
    *  });
@@ -641,16 +641,16 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    *  });
    * </pre>
    *
-   * When registering multiple translation tables for for the same language key,
+   * When registering multiple translation tables for for the same i18n key,
    * the actual translation table gets extended. This allows you to define module
    * specific translation which only get added, once a specific module is loaded in
    * your app.
    *
    * Invoking this method with no arguments returns the translation table which was
-   * registered with no language key. Invoking it with a language key returns the
+   * registered with no i18n key. Invoking it with a i18n key returns the
    * related translation table.
    *
-   * @param {string} langKey A language key.
+   * @param {string} langKey A i18n key.
    * @param {object} translationTable A plain old JavaScript object that represents a translation table.
    *
    */
@@ -821,11 +821,11 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    *
    * @description
    * Tells the module which of the registered translation tables to use for translation
-   * at initial startup by passing a language key. Similar to `$translateProvider#use`
-   * only that it says which language to **prefer**.
+   * at initial startup by passing a i18n key. Similar to `$translateProvider#use`
+   * only that it says which i18n to **prefer**.
    * It is recommended to call this after {@link pascalprecht.translate.$translate#fallbackLanguage fallbackLanguage()}.
    *
-   * @param {string} langKey A language key.
+   * @param {string} langKey A i18n key.
    */
   this.preferredLanguage = function (langKey) {
     if (langKey) {
@@ -910,10 +910,10 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    *
    * @description
    * Tells the module which of the registered translation tables to use when missing translations
-   * at initial startup by passing a language key. Similar to `$translateProvider#use`
-   * only that it says which language to **fallback**.
+   * at initial startup by passing a i18n key. Similar to `$translateProvider#use`
+   * only that it says which i18n to **fallback**.
    *
-   * @param {string||array} langKey A language key.
+   * @param {string||array} langKey A i18n key.
    *
    */
   this.fallbackLanguage = function (langKey) {
@@ -950,13 +950,13 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Set which translation table to use for translation by given language key. When
-   * trying to 'use' a language which isn't provided, it'll throw an error.
+   * Set which translation table to use for translation by given i18n key. When
+   * trying to 'use' a i18n which isn't provided, it'll throw an error.
    *
    * You actually don't have to use this method since `$translateProvider#preferredLanguage`
    * does the job too.
    *
-   * @param {string} langKey A language key.
+   * @param {string} langKey A i18n key.
    */
   this.use = function (langKey) {
     if (langKey) {
@@ -976,9 +976,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * This returns the current browser/client's language key. The result is processed with the configured uniform tag resolver.
+   * This returns the current browser/client's i18n key. The result is processed with the configured uniform tag resolver.
    *
-   * @returns {string} the current client/browser language key
+   * @returns {string} the current client/browser i18n key
    */
   this.resolveClientLocale = function () {
     return getLocale();
@@ -990,7 +990,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Tells the module which key must represent the choosed language by a user in the storage.
+   * Tells the module which key must represent the choosed i18n by a user in the storage.
    *
    * @param {string} key A key for the storage.
    */
@@ -1186,7 +1186,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    *
    * @description
    * If force async reload is enabled, async loader will always be called
-   * even if $translationTable already contains the language key, adding
+   * even if $translationTable already contains the i18n key, adding
    * possible new entries to the $translationTable.
    *
    * Example:
@@ -1209,8 +1209,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Tells angular-translate which language tag should be used as a result when determining
-   * the current browser language.
+   * Tells angular-translate which i18n tag should be used as a result when determining
+   * the current browser i18n.
    *
    * This setting must be set before invoking {@link pascalprecht.translate.$translateProvider#methods_determinePreferredLanguage determinePreferredLanguage()}.
    *
@@ -1268,12 +1268,12 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Tells angular-translate to try to determine on its own which language key
-   * to set as preferred language. When `fn` is given, angular-translate uses it
-   * to determine a language key, otherwise it uses the built-in `getLocale()`
+   * Tells angular-translate to try to determine on its own which i18n key
+   * to set as preferred i18n. When `fn` is given, angular-translate uses it
+   * to determine a i18n key, otherwise it uses the built-in `getLocale()`
    * method.
    *
-   * The `getLocale()` returns a language key in the format `[lang]_[country]` or
+   * The `getLocale()` returns a i18n key in the format `[lang]_[country]` or
    * `[lang]` depending on what the browser provides.
    *
    * Use this method at your own risk, since not all browsers return a valid
@@ -1300,14 +1300,14 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Registers a set of language keys the app will work with. Use this method in
+   * Registers a set of i18n keys the app will work with. Use this method in
    * combination with
    * {@link pascalprecht.translate.$translateProvider#determinePreferredLanguage determinePreferredLanguage}.
    * When available languages keys are registered, angular-translate
-   * tries to find the best fitting language key depending on the browsers locale,
-   * considering your language key convention.
+   * tries to find the best fitting i18n key depending on the browsers locale,
+   * considering your i18n key convention.
    *
-   * @param {object} languageKeys Array of language keys the your app will use
+   * @param {object} languageKeys Array of i18n keys the your app will use
    * @param {object=} aliases Alias map.
    */
   this.registerAvailableLanguageKeys = function (languageKeys, aliases) {
@@ -1466,8 +1466,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @param {object=} [interpolateParams={}] An object hash for dynamic values
    * @param {string=} [interpolationId=undefined] The id of the interpolation to use (use default unless set via useInterpolation())
    * @param {string=} [defaultTranslationText=undefined] the optional default translation text that is written as
-   *                                        as default text in case it is not found in any configured language
-   * @param {string=} [forceLanguage=false] A language to be used instead of the current language
+   *                                        as default text in case it is not found in any configured i18n
+   * @param {string=} [forceLanguage=false] A i18n to be used instead of the current i18n
    * @param {string=} [sanitizeStrategy=undefined] force sanitize strategy for this call instead of using the configured one (use default unless set)
    * @returns {object} promise
    */
@@ -1539,20 +1539,20 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
 
         if ($storageFactory && !promise) {
           // looks like there's no pending promise for $preferredLanguage or
-          // $uses. Maybe there's one pending for a language that comes from
+          // $uses. Maybe there's one pending for a i18n that comes from
           // storage.
           var langKey = Storage.get($storageKey);
           promise = langPromises[langKey];
 
           if ($fallbackLanguage && $fallbackLanguage.length) {
             var index = indexOf($fallbackLanguage, langKey);
-            // maybe the language from storage is also defined as fallback language
-            // we increase the fallback language index to not search in that language
-            // as fallback, since it's probably the first used language
+            // maybe the i18n from storage is also defined as fallback i18n
+            // we increase the fallback i18n index to not search in that i18n
+            // as fallback, since it's probably the first used i18n
             // in that case the index starts after the first element
             fallbackIndex = (index === 0) ? 1 : 0;
 
-            // but we can make sure to ALWAYS fallback to preferred language at least
+            // but we can make sure to ALWAYS fallback to preferred i18n at least
             if (indexOf($fallbackLanguage, $preferredLanguage) < 0) {
               $fallbackLanguage.push($preferredLanguage);
             }
@@ -1563,7 +1563,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
 
       if (!promiseToWaitFor) {
         // no promise to wait for? okay. Then there's no loader registered
-        // nor is a one pending for language that comes from storage.
+        // nor is a one pending for i18n that comes from storage.
         // We can just translate.
         determineTranslation(translationId, interpolateParams, interpolationId, defaultTranslationText, uses, sanitizeStrategy).then(deferred.resolve, deferred.reject);
       } else {
@@ -1610,8 +1610,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @private
      *
      * @description
-     * Makes actual use of a language by setting a given language key as used
-     * language and informs registered interpolators to also use the given
+     * Makes actual use of a i18n by setting a given i18n key as used
+     * i18n and informs registered interpolators to also use the given
      * key as locale.
      *
      * @param {string} key Locale key.
@@ -1619,7 +1619,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
     var useLanguage = function (key) {
       $uses = key;
 
-      // make sure to store new language key before triggering success event
+      // make sure to store new i18n key before triggering success event
       if ($storageFactory) {
         Storage.put($translate.storageKey(), $uses);
       }
@@ -1646,14 +1646,14 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @description
      * Kicks off registered async loader using `$injector` and applies existing
      * loader options. When resolved, it updates translation tables accordingly
-     * or rejects with given language key.
+     * or rejects with given i18n key.
      *
      * @param {string} key Language key.
      * @return {Promise} A promise.
      */
     var loadAsync = function (key) {
       if (!key) {
-        throw 'No language key specified for loading.';
+        throw 'No i18n key specified for loading.';
       }
 
       var deferred = $q.defer();
@@ -1764,10 +1764,10 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      *
      * @description
      * Returns a promise that will resolve to the translation
-     * or be rejected if no translation was found for the language.
-     * This function is currently only used for fallback language translation.
+     * or be rejected if no translation was found for the i18n.
+     * This function is currently only used for fallback i18n translation.
      *
-     * @param langKey The language to translate to.
+     * @param langKey The i18n to translate to.
      * @param translationId
      * @param interpolateParams
      * @param Interpolator
@@ -1809,9 +1809,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      *
      * @description
      * Returns a translation
-     * This function is currently only used for fallback language translation.
+     * This function is currently only used for fallback i18n translation.
      *
-     * @param langKey The language to translate to.
+     * @param langKey The i18n to translate to.
      * @param translationId
      * @param interpolateParams
      * @param Interpolator
@@ -1891,13 +1891,13 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
             deferred.resolve(data);
           },
           function () {
-            // Look in the next fallback language for a translation.
+            // Look in the next fallback i18n for a translation.
             // It delays the resolving by passing another promise to resolve.
             return resolveForFallbackLanguage(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator, defaultTranslationText, sanitizeStrategy).then(deferred.resolve, deferred.reject);
           }
         );
       } else {
-        // No translation found in any fallback language
+        // No translation found in any fallback i18n
         // if a default translation text is set in the directive, then return this as a result
         if (defaultTranslationText) {
           deferred.resolve(defaultTranslationText);
@@ -2002,7 +2002,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         }
 
         // since we couldn't translate the inital requested translation id,
-        // we try it now with one or more fallback languages, if fallback language(s) is
+        // we try it now with one or more fallback languages, if fallback i18n(s) is
         // configured.
         if (uses && $fallbackLanguage && $fallbackLanguage.length) {
           fallbackTranslation(translationId, interpolateParams, Interpolator, defaultTranslationText, sanitizeStrategy)
@@ -2060,7 +2060,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         }
 
         // since we couldn't translate the inital requested translation id,
-        // we try it now with one or more fallback languages, if fallback language(s) is
+        // we try it now with one or more fallback languages, if fallback i18n(s) is
         // configured.
         if (uses && $fallbackLanguage && $fallbackLanguage.length) {
           fallbackIndex = 0;
@@ -2117,11 +2117,11 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Returns the language key for the preferred language.
+     * Returns the i18n key for the preferred i18n.
      *
-     * @param {string} langKey language String or Array to be used as preferredLanguage (changing at runtime)
+     * @param {string} langKey i18n String or Array to be used as preferredLanguage (changing at runtime)
      *
-     * @return {string} preferred language key
+     * @return {string} preferred i18n key
      */
     $translate.preferredLanguage = function (langKey) {
       if (langKey) {
@@ -2164,18 +2164,18 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Returns the language key for the fallback languages or sets a new fallback stack.
+     * Returns the i18n key for the fallback languages or sets a new fallback stack.
      * It is recommended to call this before {@link pascalprecht.translate.$translateProvider#preferredLanguage preferredLanguage()}.
      *
-     * @param {string=} langKey language String or Array of fallback languages to be used (to change stack at runtime)
+     * @param {string=} langKey i18n String or Array of fallback languages to be used (to change stack at runtime)
      *
-     * @return {string||array} fallback language key
+     * @return {string||array} fallback i18n key
      */
     $translate.fallbackLanguage = function (langKey) {
       if (langKey !== undefined && langKey !== null) {
         fallbackStack(langKey);
 
-        // as we might have an async loader initiated and a new translation language might have been defined
+        // as we might have an async loader initiated and a new translation i18n might have been defined
         // we need to add the promise to the stack also. So - iterate.
         if ($loaderFactory) {
           if ($fallbackLanguage && $fallbackLanguage.length) {
@@ -2202,7 +2202,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Sets the first key of the fallback language stack to be used for translation.
+     * Sets the first key of the fallback i18n stack to be used for translation.
      * Therefore all languages in the fallback array BEFORE this key will be skipped!
      *
      * @param {string=} langKey Contains the langKey the iteration shall start with. Set to false if you want to
@@ -2229,9 +2229,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Returns the language key of language that is currently loaded asynchronously.
+     * Returns the i18n key of i18n that is currently loaded asynchronously.
      *
-     * @return {string} language key
+     * @return {string} i18n key
      */
     $translate.proposedLanguage = function () {
       return $nextLang;
@@ -2257,13 +2257,13 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Returns a language key based on available languages and language aliases. If a
-     * language key cannot be resolved, returns undefined.
+     * Returns a i18n key based on available languages and i18n aliases. If a
+     * i18n key cannot be resolved, returns undefined.
      *
      * If no or a falsy key is given, returns undefined.
      *
      * @param {string} [key] Language key
-     * @return {string|undefined} Language key or undefined if no language key is found.
+     * @return {string|undefined} Language key or undefined if no i18n key is found.
      */
     $translate.negotiateLocale = negotiateLocale;
 
@@ -2273,16 +2273,16 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Tells angular-translate which language to use by given language key. This method is
-     * used to change language at runtime. It also takes care of storing the language
-     * key in a configured store to let your app remember the choosed language.
+     * Tells angular-translate which i18n to use by given i18n key. This method is
+     * used to change i18n at runtime. It also takes care of storing the i18n
+     * key in a configured store to let your app remember the choosed i18n.
      *
-     * When trying to 'use' a language which isn't available it tries to load it
+     * When trying to 'use' a i18n which isn't available it tries to load it
      * asynchronously with registered loaders.
      *
-     * Returns promise object with loaded language file data or string of the currently used language.
+     * Returns promise object with loaded i18n file data or string of the currently used i18n.
      *
-     * If no or a falsy key is given it returns the currently used language key.
+     * If no or a falsy key is given it returns the currently used i18n key.
      * The returned string will be ```undefined``` if setting up $translate hasn't finished.
      * @example
      * $translate.use("en_US").then(function(data){
@@ -2290,7 +2290,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
        * });
      *
      * @param {string=} key Language key
-     * @return {object|string} Promise with loaded language data or the language key if a falsy param was given.
+     * @return {object|string} Promise with loaded i18n data or the i18n key if a falsy param was given.
      */
     $translate.use = function (key) {
       if (!key) {
@@ -2302,9 +2302,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
 
       $rootScope.$emit('$translateChangeStart', {language : key});
 
-      // Try to get the aliased language key
+      // Try to get the aliased i18n key
       var aliasedKey = negotiateLocale(key);
-      // Ensure only registered language keys will be loaded
+      // Ensure only registered i18n keys will be loaded
       if ($availableLanguageKeys.length > 0 && !aliasedKey) {
         return $q.reject(key);
       }
@@ -2313,7 +2313,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         key = aliasedKey;
       }
 
-      // if there isn't a translation table for the language we've requested,
+      // if there isn't a translation table for the i18n we've requested,
       // we load it asynchronously
       $nextLang = key;
       if (($forceAsyncReloadEnabled || !$translationTable[key]) && $loaderFactory && !langPromises[key]) {
@@ -2343,7 +2343,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
           deferred.resolve(translation.key);
           return translation;
         }, function (key) {
-          // find first available fallback language if that request has failed
+          // find first available fallback i18n if that request has failed
           if (!$uses && $fallbackLanguage && $fallbackLanguage.length > 0 && $fallbackLanguage[0] !== key) {
             return $translate.use($fallbackLanguage[0]).then(deferred.resolve, deferred.reject);
           } else {
@@ -2364,9 +2364,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * This returns the current browser/client's language key. The result is processed with the configured uniform tag resolver.
+     * This returns the current browser/client's i18n key. The result is processed with the configured uniform tag resolver.
      *
-     * @returns {string} the current client/browser language key
+     * @returns {string} the current client/browser i18n key
      */
     $translate.resolveClientLocale = function () {
       return getLocale();
@@ -2449,10 +2449,10 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * // this will drop all currently existent translation tables and reload those which are
      * // currently in use
      * $translate.refresh();
-     * // this will refresh a translation table for the en_US language
+     * // this will refresh a translation table for the en_US i18n
      * $translate.refresh('en_US');
      *
-     * @param {string} langKey A language key of the table, which has to be refreshed
+     * @param {string} langKey A i18n key of the table, which has to be refreshed
      *
      * @return {promise} Promise, which will be resolved in case a translation tables refreshing
      * process is finished successfully, and reject if not.
@@ -2469,15 +2469,15 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
       //private helper
       function loadNewData(languageKey) {
         var promise = loadAsync(languageKey);
-        //update the load promise cache for this language
+        //update the load promise cache for this i18n
         langPromises[languageKey] = promise;
         //register a data handler for the promise
         promise.then(function (data) {
-            //clear the cache for this language
+            //clear the cache for this i18n
             $translationTable[languageKey] = {};
-            //add the new data for this language
+            //add the new data for this i18n
             translations(languageKey, data.table);
-            //track that we updated this language
+            //track that we updated this i18n
             updatedLanguages[languageKey] = true;
           },
           //handle rejection to appease the $q validation
@@ -2509,7 +2509,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
       );
 
       if (!langKey) {
-        // if there's no language key specified we refresh ALL THE THINGS!
+        // if there's no i18n key specified we refresh ALL THE THINGS!
         var languagesToReload = $fallbackLanguage && $fallbackLanguage.slice() || [];
         if ($uses && languagesToReload.indexOf($uses) === -1) {
           languagesToReload.push($uses);
@@ -2517,7 +2517,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         $q.all(languagesToReload.map(loadNewData)).then(deferred.resolve, deferred.reject);
 
       } else if ($translationTable[langKey]) {
-        //just refresh the specified language cache
+        //just refresh the specified i18n cache
         loadNewData(langKey).then(deferred.resolve, deferred.reject);
 
       } else {
@@ -2534,8 +2534,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      *
      * @description
      * Returns a translation instantly from the internal state of loaded translation. All rules
-     * regarding the current language, the preferred language of even fallback languages will be
-     * used except any promise handling. If a language was not found, an asynchronous loading
+     * regarding the current i18n, the preferred i18n of even fallback languages will be
+     * used except any promise handling. If a i18n was not found, an asynchronous loading
      * will be invoked in the background.
      *
      * @param {string|array} translationId A token which represents a translation id
@@ -2544,7 +2544,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      *                                     each key is the translation id and the value the translation.
      * @param {object=} [interpolateParams={}] Params
      * @param {string=} [interpolationId=undefined] The id of the interpolation to use (use default unless set via useInterpolation())
-     * @param {string=} [forceLanguage=false] A language to be used instead of the current language
+     * @param {string=} [forceLanguage=false] A i18n to be used instead of the current i18n
      * @param {string=} [sanitizeStrategy=undefined] force sanitize strategy for this call instead of using the configured one (use default unless set)
      *
      * @return {string|object} translation
@@ -2675,7 +2675,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Returns whether the service is "ready" to translate (i.e. loading 1st language).
+     * Returns whether the service is "ready" to translate (i.e. loading 1st i18n).
      *
      * See also {@link pascalprecht.translate.$translate#methods_onReady onReady()}.
      *
@@ -2696,7 +2696,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Calls the function provided or resolved the returned promise after the service is "ready" to translate (i.e. loading 1st language).
+     * Calls the function provided or resolved the returned promise after the service is "ready" to translate (i.e. loading 1st i18n).
      *
      * See also {@link pascalprecht.translate.$translate#methods_isReady isReady()}.
      *
@@ -2722,11 +2722,11 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * This function simply returns the registered language keys being defined before in the config phase
-     * With this, an application can use the array to provide a language selection dropdown or similar
+     * This function simply returns the registered i18n keys being defined before in the config phase
+     * With this, an application can use the array to provide a i18n selection dropdown or similar
      * without any additional effort
      *
-     * @returns {object} returns the list of possibly registered language keys and mapping or null if not defined
+     * @returns {object} returns the list of possibly registered i18n keys and mapping or null if not defined
      */
     $translate.getAvailableLanguageKeys = function () {
       if ($availableLanguageKeys.length > 0) {
@@ -2741,9 +2741,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * @methodOf pascalprecht.translate.$translate
      *
      * @description
-     * Returns translation table by the given language key.
+     * Returns translation table by the given i18n key.
      *
-     * Unless a language is provided it returns a translation table of the current one.
+     * Unless a i18n is provided it returns a translation table of the current one.
      * Note: If translation dictionary is currently downloading or in progress
      * it will return null.
      *
@@ -2781,7 +2781,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         }
       }
 
-      // Also, if there are any fallback language registered, we start
+      // Also, if there are any fallback i18n registered, we start
       // loading them asynchronously as soon as we can.
       if ($fallbackLanguage && $fallbackLanguage.length) {
         var processAsyncResult = function (translation) {
@@ -3255,7 +3255,7 @@ function translateDirective($translate, $interpolate, $compile, $parse, $rootSco
         // Replaced watcher on translateLanguage with event listener
         scope.$on('translateLanguageChanged', updateTranslations);
 
-        // Ensures the text will be refreshed after the current language was changed
+        // Ensures the text will be refreshed after the current i18n was changed
         // w/ $translate.use(...)
         var unbind = $rootScope.$on('$translateChangeSuccess', updateTranslations);
 
@@ -3426,7 +3426,7 @@ function translateAttrDirective($translate, $rootScope) {
       // Replaced watcher on translateLanguage with event listener
       scope.$on('translateLanguageChanged', updateTranslations);
 
-      // Ensures the text will be refreshed after the current language was changed
+      // Ensures the text will be refreshed after the current i18n was changed
       // w/ $translate.use(...)
       var unbind = $rootScope.$on('$translateChangeSuccess', updateTranslations);
 

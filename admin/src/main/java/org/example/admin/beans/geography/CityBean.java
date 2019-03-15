@@ -1,5 +1,9 @@
-package org.example.admin.beans;
+package org.example.admin.beans.geography;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.example.application.domain.entity.geography.City;
 import org.example.service.infrastructure.transformation.ITransformable;
 
@@ -15,6 +19,9 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean(name = "currentCity")
 @ViewScoped
+@Getter
+@Setter
+@ToString
 public final class CityBean implements ITransformable<City> {
 
     private long id;
@@ -47,37 +54,5 @@ public final class CityBean implements ITransformable<City> {
     @Override
     public City unTransform(final City city) {
         return city;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 }

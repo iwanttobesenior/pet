@@ -1,0 +1,20 @@
+application.name=Example
+author=Автор
+
+city.caption=міста
+city.name=Назва
+city.district=Район
+city.region=Регіон
+city.details=деталі міста
+
+#Buttons
+button.edit=змінити
+button.remove=вилучити
+button.add=Додати місто
+button.save=зберегти
+button.cancel=Скасувати
+
+#Login
+login.name=Логін
+login.password=Пароль
+login.login=Увійти

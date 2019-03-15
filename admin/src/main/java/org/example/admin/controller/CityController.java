@@ -1,6 +1,6 @@
 package org.example.admin.controller;
 
-import org.example.admin.beans.CityBean;
+import org.example.admin.beans.geography.CityBean;
 import org.example.application.domain.entity.geography.City;
 import org.example.service.infrastructure.cdi.annotation.DatabaseSourceCityServiceImpl;
 import org.example.service.infrastructure.cdi.annotation.SimpleTransformerImpl;

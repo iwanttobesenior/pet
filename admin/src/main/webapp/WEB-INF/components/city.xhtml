@@ -5,22 +5,22 @@
                 xmlns:f="http://java.sun.com/jsf/core">
 
     <h:form id="cityForm">
-        <p:dialog id="cityDialog" header="city details"
+        <p:dialog id="cityDialog" header="#{msg['city.details']}"
                   widgetVar="cityDlg" modal="true" closeOnEscape="true">
             <h:panelGrid columns="2">
 
-                <h:outputText value="Name"/>
+                <h:outputText value="#{msg['city.name']}"/>
                 <h:inputText id="name" value="#{currentCity.name}">
                     <f:validateBean disabled="true"/>
                 </h:inputText>
 
 
-                <h:outputText value="District"/>
+                <h:outputText value="#{msg['city.district']}"/>
                 <h:inputText id="district" value="#{currentCity.district}">
                     <f:validateBean disabled="true"/>
                 </h:inputText>
 
-                <h:outputText value="Region"/>
+                <h:outputText value="#{msg['city.region']}"/>
                 <h:inputText id="region" value="#{currentCity.region}">
                     <f:validateBean disabled="true"/>
                 </h:inputText>
@@ -29,10 +29,10 @@
             <div style="text-align: right;margin-top: 10px">
                 <p:commandButton
                         oncomplete="PF('cityDlg').hide();"
-                        value="Save"
+                        value="#{msg['button.save']}"
                         actionListener="#{cityController.saveCity(currentCity)}"
                         update="citiesTable"/>
-                <p:commandButton value="Cancel" oncomplete="PF('cityDlg').hide();"/>
+                <p:commandButton value="#{msg['button.cancel']}" oncomplete="PF('cityDlg').hide();"/>
             </div>
         </p:dialog>
     </h:form>
