@@ -675,7 +675,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552676567198" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552676857686" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -2613,7 +2613,7 @@
       <workItem from="1552474090077" duration="11401000" />
       <workItem from="1552493393689" duration="11102000" />
       <workItem from="1552560928774" duration="12944000" />
-      <workItem from="1552634988554" duration="20227000" />
+      <workItem from="1552634988554" duration="20518000" />
     </task>
     <servers />
   </component>
@@ -2650,7 +2650,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="545713000" />
+    <option name="totallyTimeSpent" value="546004000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2663,7 +2663,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.621118" side_tool="true" weight="0.32443365" />
       <window_info id="Designer" order="1" />
@@ -2684,7 +2683,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" weight="0.8680124" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.82298136" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" visible="true" weight="0.82298136" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.3462733" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32919255" />
