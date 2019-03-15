@@ -4,14 +4,18 @@ import org.example.application.domain.entity.base.AuditEntity;
 import org.example.application.domain.entity.valueobject.Phone;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity(name = "ACCOUNTS")
+@Entity(name = "USERS")
 @Table
-public class Account extends AuditEntity implements Serializable {
+public class User extends AuditEntity implements Serializable {
 
     private static final long serialVersionUID = -4116198885518644286L;
+
+    private String username;
 
     private String firstName;
 
@@ -23,10 +27,10 @@ public class Account extends AuditEntity implements Serializable {
 
     private List<Phone> phone;
 
-    public Account() {
+    public User() {
     }
 
-    public Account(String email) {
+    public User(String email) {
         this.email = email;
     }
 
@@ -45,7 +49,9 @@ public class Account extends AuditEntity implements Serializable {
         return email;
     }
 
-    @Column(name = "PASSWORD", length = 32)
+    @NotNull
+    @Size(min = 4, max = 32)
+    @Column(name = "PASSWORD", length = 32, nullable = false)
     public String getPassword() {
         return password;
     }
@@ -53,6 +59,13 @@ public class Account extends AuditEntity implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
     public List<Phone> getPhone() {
         return phone;
+    }
+
+    @NotNull
+    @Size(min = 2, max = 32)
+    @Column(name = "USERNAME", length = 32, unique = true, nullable = false)
+    public String getUsername() {
+        return username;
     }
 
     private void setFirstName(final String firstName) {
@@ -73,5 +86,9 @@ public class Account extends AuditEntity implements Serializable {
 
     private void setPhone(final List<Phone> phone) {
         this.phone = phone;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

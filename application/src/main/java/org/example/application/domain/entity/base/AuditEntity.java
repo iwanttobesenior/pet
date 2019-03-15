@@ -1,6 +1,6 @@
 package org.example.application.domain.entity.base;
 
-import org.example.application.domain.entity.person.Account;
+import org.example.application.domain.entity.person.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -31,11 +31,11 @@ public abstract class AuditEntity extends AbstractEntity {
     /**
      * Who created current entity
      */
-    private Account createdBy;
+    private User createdBy;
     /**
      * Who updated current entity
      */
-    private Account updatedBy;
+    private User updatedBy;
 
     /**
      * Field that will not be involved with update statement
@@ -65,21 +65,21 @@ public abstract class AuditEntity extends AbstractEntity {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CREATE_BY", updatable = false)
-    public Account getCreatedBy() {
+    public User getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(Account createdBy) {
+    public void setCreatedBy(User createdBy) {
         this.createdBy = createdBy;
     }
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UPDATE_BY", insertable = false)
-    public Account getUpdatedBy() {
+    public User getUpdatedBy() {
         return updatedBy;
     }
 
-    public void setUpdatedBy(Account updatedBy) {
+    public void setUpdatedBy(User updatedBy) {
         this.updatedBy = updatedBy;
     }
 }

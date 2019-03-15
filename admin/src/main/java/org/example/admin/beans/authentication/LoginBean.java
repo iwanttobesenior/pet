@@ -28,6 +28,7 @@ public final class LoginBean {
 
     private final static Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
     private final static String INDEX_PAGE = "index.xhtml";
+    private final static String LOGIN_PAGE = "login.xhtml";
 
     private String username;
     private String password;
@@ -36,8 +37,8 @@ public final class LoginBean {
         final Subject subject = SecurityUtils.getSubject();
         final var token = new UsernamePasswordToken(getUsername(), getPassword());
 
-        subject.login(token);
         try {
+            subject.login(token);
             FacesContext.getCurrentInstance().getExternalContext().redirect(INDEX_PAGE);
         } catch (UnknownAccountException e) {
             error("Unknown account");
@@ -53,6 +54,17 @@ public final class LoginBean {
             logger.error(e.getMessage(), e);
         } finally {
             token.clear();
+        }
+    }
+
+    public void logout() {
+        final Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.logout();
+            FacesContext.getCurrentInstance().getExternalContext().redirect(LOGIN_PAGE);
+        } catch (IOException e) {
+            error("error," + e.getMessage());
+            logger.error(e.getMessage(), e);
         }
     }
 

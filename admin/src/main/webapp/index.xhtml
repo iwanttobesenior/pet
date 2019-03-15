@@ -1,22 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets" xml:lang="en" lang="en"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/WEB-INF/layout/standart.xhtml">
 
-
-<f:view locale="#{language.locale}">
-
-    <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>index</title>
-        <h:outputStylesheet library="css" name="main.css"/>
-    </h:head>
-
-    <h:body>
-
+    <ui:define name="content">
         <h:panelGrid columns="3">
             <p:commandLink value="UA"
                            actionListener="#{language.setLanguage('uk')}" update="@all"/>
@@ -26,9 +14,10 @@
                            actionListener="#{language.setLanguage('ru')}" update="@all"/>
         </h:panelGrid>
 
-        <div>
-            <h:outputText value="#{msg['application.name']}"></h:outputText>
-        </div>
+        <h:panelGrid columns="1">
+            <p:commandLink value="logout" actionListener="#{loginBean.logout}" style="text-align: right"
+                           update="@all"/>
+        </h:panelGrid>
 
         <ui:include src="/WEB-INF/components/city.xhtml"/>
 
@@ -66,7 +55,5 @@
                 </p:dataTable>
             </p:panel>
         </div>
-
-    </h:body>
-</f:view>
-</html>
+    </ui:define>
+</ui:composition>
