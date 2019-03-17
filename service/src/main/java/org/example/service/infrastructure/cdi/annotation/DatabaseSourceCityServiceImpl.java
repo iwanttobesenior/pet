@@ -1,15 +1,18 @@
 package org.example.service.infrastructure.cdi.annotation;
 
+import org.example.service.service.geography.ICityService;
+import org.example.service.service.geography.impl.CityServiceImpl;
+
 import javax.inject.Qualifier;
 import java.lang.annotation.*;
 
 /**
  * This annotation suggests CDI container(for example, Weld) to inject impl of
- * {@link org.example.service.service.ICityService}
+ * {@link ICityService}
  * dependencies
  *
  * @author Kul'baka Alex
- * @see org.example.service.service.impl.CityServiceImpl
+ * @see CityServiceImpl
  */
 @Qualifier
 @Documented

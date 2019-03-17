@@ -27,9 +27,9 @@
     </context-param>
 
     <!--Apache shiro context-->
-    <listener>
+   <!-- <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
-    </listener>
+    </listener>-->
     <!--Apache shiro filter-->
     <filter>
         <filter-name>ShiroFilter</filter-name>

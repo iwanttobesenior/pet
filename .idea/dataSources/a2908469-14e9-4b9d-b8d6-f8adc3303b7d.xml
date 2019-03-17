@@ -1517,16 +1517,26 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="360" parent="284" name="UK_plsmwdm5wdgie8jvxs4k4ca8h">
+    <column id="360" parent="284" name="User_ID">
+      <Position>3</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="361" parent="284" name="UK_plsmwdm5wdgie8jvxs4k4ca8h">
       <ColNames>phone_ID</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="361" parent="284" name="FKbqym7mkfi196s21lth5rt3ibb">
+    <index id="362" parent="284" name="FKbqym7mkfi196s21lth5rt3ibb">
       <ColNames>USERS_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="284" name="UK_plsmwdm5wdgie8jvxs4k4ca8h">
+    <index id="363" parent="284" name="FKqmbfg8r9142tehp4r5pm1f3su">
+      <ColNames>User_ID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="364" parent="284" name="UK_plsmwdm5wdgie8jvxs4k4ca8h">
       <ColNames>phone_ID</ColNames>
       <UnderlyingIndexName>UK_plsmwdm5wdgie8jvxs4k4ca8h</UnderlyingIndexName>
     </key>

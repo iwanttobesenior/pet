@@ -3,12 +3,13 @@ package org.example.persistence.repository.geography.impl.hibernate;
 import org.apache.commons.lang3.StringUtils;
 import org.example.application.domain.entity.geography.Station;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
+import org.example.application.infrastructure.util.transformation.ReflectionUtil;
 import org.example.persistence.configuration.SessionFactoryBuilder;
 import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
+import org.example.persistence.repository.base.BaseHibernateRepository;
 import org.example.persistence.repository.geography.IStationRepository;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,19 +24,18 @@ import java.util.List;
  */
 @Named
 @DatabaseSourceHibernateImpl
-public class HibernateStationRepository implements IStationRepository {
+public class HibernateStationRepository extends BaseHibernateRepository implements IStationRepository {
 
-    private final SessionFactory sessionFactory;
+    private static final Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
 
     @Inject
     public HibernateStationRepository(final SessionFactoryBuilder sessionFactoryBuilder) {
-        this.sessionFactory = sessionFactoryBuilder.getSessionFactory();
+        super(sessionFactoryBuilder);
     }
 
     @Override
     public List<Station> findAllByCriteria(final StationCriteriaImpl stationCriteria) {
-        Session session = sessionFactory.openSession();
-        try (session) {
+        return executeWithOutTransaction(session -> {
             final var cb = session.getCriteriaBuilder();
             final var cq = cb.createQuery(Station.class);
 
@@ -55,6 +55,6 @@ public class HibernateStationRepository implements IStationRepository {
             final var query = session.createQuery(cq);
 
             return query.getResultList();
-        }
+        });
     }
 }

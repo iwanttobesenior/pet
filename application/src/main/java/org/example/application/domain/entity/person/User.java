@@ -9,9 +9,21 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity(name = "USERS")
-@Table
+/**
+ * @author Kul'baka Alex
+ */
+@Entity
+@Table(name = "USERS")
+@NamedQueries
+        ({
+                @NamedQuery(name = "User.FIND_ALL_QUERY", query = "from User"),
+                @NamedQuery(name = "User.DELETE_ALL_QUERY", query = "delete from User")
+
+        })
 public class User extends AuditEntity implements Serializable {
+
+    public static final String FIND_ALL_QUERY = "";
+    public static final String DELETE_ALL_QUERY = "";
 
     private static final long serialVersionUID = -4116198885518644286L;
 
@@ -88,7 +100,7 @@ public class User extends AuditEntity implements Serializable {
         this.phone = phone;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 }

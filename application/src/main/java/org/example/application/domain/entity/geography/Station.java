@@ -20,12 +20,16 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "STATIONS")
-@NamedQueries({@NamedQuery(name = "Station.DELETE_ALL_QUERY", query = "delete from Station")})
+@NamedQueries({
+        @NamedQuery(name = "Station.DELETE_ALL_QUERY", query = "delete from Station"),
+        @NamedQuery(name = "Station.FIND_ALL_QUERY", query = "from Station")
+})
 public final class Station extends AuditEntity implements Serializable {
 
     public static final String FIELD_TRANSPORT_TYPE = "stationType";
-
     public static final String FIELD_CITY = "city";
+    public static final String FIND_ALL_QUERY = "";
+    public static final String DELETE_ALL_QUERY = "";
 
     private static final long serialVersionUID = 4243193847902815389L;
     /**

@@ -5,7 +5,7 @@ import org.example.application.domain.entity.geography.City;
 import org.example.service.infrastructure.cdi.annotation.DatabaseSourceCityServiceImpl;
 import org.example.service.infrastructure.cdi.annotation.SimpleTransformerImpl;
 import org.example.service.infrastructure.transformation.ITransformer;
-import org.example.service.service.ICityService;
+import org.example.service.service.geography.ICityService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

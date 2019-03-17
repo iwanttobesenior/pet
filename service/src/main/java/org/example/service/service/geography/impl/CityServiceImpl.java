@@ -1,4 +1,4 @@
-package org.example.service.service.impl;
+package org.example.service.service.geography.impl;
 
 import org.example.application.domain.entity.geography.City;
 import org.example.application.domain.entity.geography.Station;
@@ -9,7 +9,7 @@ import org.example.application.infrastructure.exception.uncheked.execution.Valid
 import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
 import org.example.persistence.repository.geography.ICityRepository;
 import org.example.service.infrastructure.cdi.annotation.DatabaseSourceCityServiceImpl;
-import org.example.service.service.ICityService;
+import org.example.service.service.geography.ICityService;
 
 import javax.inject.Inject;
 import javax.inject.Named;

@@ -1,4 +1,4 @@
-package org.example.service.service;
+package org.example.service.service.geography;
 
 import org.example.application.domain.entity.geography.City;
 import org.example.application.domain.entity.geography.Station;

@@ -2,7 +2,8 @@ package org.example.service.service.impl;
 
 import org.example.application.domain.entity.geography.City;
 import org.example.persistence.repository.geography.impl.inmemory.InMemoryICityRepositoryImpl;
-import org.example.service.service.ICityService;
+import org.example.service.service.geography.ICityService;
+import org.example.service.service.geography.impl.CityServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 

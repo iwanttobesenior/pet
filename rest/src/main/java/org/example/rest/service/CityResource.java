@@ -6,7 +6,7 @@ import org.example.application.domain.entity.enums.StationType;
 import org.example.application.domain.entity.geography.City;
 import org.example.service.infrastructure.dto.geography.CityDTO;
 import org.example.rest.service.base.AbstractResource;
-import org.example.service.service.ICityService;
+import org.example.service.service.geography.ICityService;
 import org.example.service.infrastructure.transformation.ITransformer;
 
 import javax.inject.Inject;
