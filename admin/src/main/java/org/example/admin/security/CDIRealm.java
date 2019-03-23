@@ -1,6 +1,7 @@
 package org.example.admin.security;
 
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -13,17 +14,22 @@ import org.slf4j.LoggerFactory;
 import java.util.Optional;
 
 /**
- * Custom
+ * Custom CDI Realm
  *
  * @author Kul'baka Alex
  */
-public class CDIRealm extends AuthorizingRealm {
+public final class CDIRealm extends AuthorizingRealm {
 
     private static final Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
     private final IUserService userService;
 
     public CDIRealm(final IUserService userService) {
         this.userService = userService;
+
+        final HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        hashedCredentialsMatcher.setHashAlgorithmName("SHA-256");
+        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);
+        setCredentialsMatcher(hashedCredentialsMatcher);
     }
 
     @Override

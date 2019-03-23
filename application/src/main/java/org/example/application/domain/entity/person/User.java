@@ -92,7 +92,7 @@ public class User extends AuditEntity implements Serializable {
         this.email = email;
     }
 
-    private void setPassword(final String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 

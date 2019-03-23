@@ -1,6 +1,7 @@
 package org.example.service.service.person.impl;
 
 import org.example.application.domain.entity.person.User;
+import org.example.application.infrastructure.util.security.SecurityUtil;
 import org.example.persistence.repository.person.IUserRepository;
 import org.example.service.service.person.IUserService;
 
@@ -25,6 +26,9 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void save(final User user) {
+        final String password = user.getPassword();
+        final String encryptedPassword = SecurityUtil.encryptSHA(password);
+        user.setPassword(encryptedPassword);
         userRepository.save(user);
     }
 
