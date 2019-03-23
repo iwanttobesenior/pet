@@ -8,4 +8,3 @@ ENV MYSQL_ROOT_PASSWORD=root \
        MYSQL_DATABASE=example
 
 VOLUME C:/Users/User/Desktop/dockervolumes/mysql/example
-

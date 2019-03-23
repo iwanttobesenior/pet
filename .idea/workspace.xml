@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/security/CDIRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/security/CDIRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/shiro.ini" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/shiro.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/example/application/domain/entity/person/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/example/application/domain/entity/person/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/example/service/service/person/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/example/service/service/person/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql.dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mysql.dockerfile" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,15 +94,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="das://1c62260c-1f13-4857-a20a-20081faa5bf0/schema/example/table/USERS">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1c62260c-1f13-4857-a20a-20081faa5bf0/console_1.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -134,11 +120,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysql.dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="252">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Jenkinsfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -221,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/language/LanguageBean.java" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/txt/message_ru_RU.txt" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/txt/message_uk_UA.txt" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/ui/message_ru_RU.properties" />
@@ -272,6 +266,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1c62260c-1f13-4857-a20a-20081faa5bf0/console.sql" />
         <option value="$PROJECT_DIR$/sample.dockerfile" />
         <option value="$PROJECT_DIR$/mysql.dockerfile" />
+        <option value="$PROJECT_DIR$/Jenkinsfile" />
       </list>
     </option>
   </component>
@@ -318,7 +313,7 @@
     <option name="jreName" value="#JAVA_HOME" />
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1260" />
@@ -356,7 +351,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553355941041" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553380254725" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -367,7 +362,7 @@
     <property name="project.structure.proportion" value="0.12890625" />
     <property name="project.structure.side.proportion" value="0.49434388" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -2313,7 +2308,8 @@
       <workItem from="1553165596891" duration="8797000" />
       <workItem from="1553245631686" duration="3297000" />
       <workItem from="1553260489873" duration="6036000" />
-      <workItem from="1553336360626" duration="4602000" />
+      <workItem from="1553336360626" duration="9215000" />
+      <workItem from="1553377089227" duration="1516000" />
     </task>
     <servers />
   </component>
@@ -2350,7 +2346,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="642677000" />
+    <option name="totallyTimeSpent" value="648806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2363,6 +2359,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.621118" side_tool="true" weight="0.32443365" />
       <window_info id="Designer" order="1" />
@@ -2372,7 +2369,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.621118" side_tool="true" weight="0.32443365" />
       <window_info id="Learn" order="6" weight="0.32928804" />
       <window_info id="Web" order="7" sideWeight="0.61490685" side_tool="true" weight="0.36084142" />
-      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.378882" visible="true" weight="0.31553397" />
+      <window_info content_ui="combo" id="Project" order="8" sideWeight="0.378882" weight="0.32038835" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32763976" />
@@ -2383,7 +2380,7 @@
       <window_info anchor="bottom" id="Docker" order="7" sideWeight="0.49838188" weight="0.7468944" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50161815" side_tool="true" weight="0.7468944" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.5574534" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.95341617" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.3462733" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32919255" />
@@ -2408,8 +2405,8 @@
       <window_info anchor="right" id="Database" order="11" weight="0.32928804" />
       <window_info anchor="right" id="Bean Validation" order="12" weight="0.32928804" />
       <window_info anchor="right" id="JSF" order="13" weight="0.32928804" />
-      <window_info anchor="right" id="CDI" order="14" weight="0.20711975" />
-      <window_info anchor="right" id="Preview" order="15" weight="0.32928804" />
+      <window_info anchor="right" id="Preview" order="14" weight="0.32928804" />
+      <window_info anchor="right" id="CDI" order="15" weight="0.20711975" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2535,13 +2532,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/repository/geography/ICityRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/repository/geography/IStationRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -2967,6 +2957,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sample.dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql.dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.dockerignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -3001,17 +3005,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample.dockerfile">
+    <entry file="file://$PROJECT_DIR$/Jenkinsfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysql.dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="189">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
