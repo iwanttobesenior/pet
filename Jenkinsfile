@@ -1,1 +1,0 @@
-echo 'hello fron jenkins pipeline@'
