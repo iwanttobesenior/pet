@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -347,7 +346,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553427638493" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553429130380" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -2307,7 +2306,7 @@
       <workItem from="1553336360626" duration="9215000" />
       <workItem from="1553377089227" duration="6202000" />
       <workItem from="1553422366925" duration="868000" />
-      <workItem from="1553427465312" duration="776000" />
+      <workItem from="1553427465312" duration="1461000" />
     </task>
     <servers />
   </component>
@@ -2344,7 +2343,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="655136000" />
+    <option name="totallyTimeSpent" value="655821000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
