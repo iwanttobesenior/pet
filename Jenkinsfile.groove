@@ -31,7 +31,6 @@ pipeline {
                 echo 'deliver stage start.'
                 sh './jenkins/scripts/deliver.sh'
                 echo 'deliver stage finish.'
-                echo 'deliver stage end.'
             }
         }
     }
