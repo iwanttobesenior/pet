@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'build stage start!!!!!!!!!.'
                 echo 'build stage start.'
                 sh 'mvn -B -DskipTests clean package'
                 echo 'build stage finish.'
@@ -15,7 +16,9 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo 'test stage start.'
                 sh 'mvn test'
+                echo 'test stage finish.'
             }
             post {
                 always {
@@ -25,7 +28,10 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                echo 'deliver stage start.'
                 sh './jenkins/scripts/deliver.sh'
+                echo 'deliver stage finish.'
+                echo 'deliver stage end.'
             }
         }
     }
