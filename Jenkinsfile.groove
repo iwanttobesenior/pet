@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo 'build stage start!!!!!!!!!.'
                 echo 'build stage start.'
+                echo 'build stage start2.'
                 sh 'mvn -B -DskipTests clean package'
                 echo 'build stage finish.'
             }
