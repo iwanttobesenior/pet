@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 /**
  * Rest web service that handles {@link City}-related requests
  * format - json
- * <p>
  * Documented by {@code Swagger}
  *
  * @author Kul'baka Alex
@@ -44,15 +43,6 @@ public final class CityResource extends AbstractResource {
     public CityResource(final ICityService cityService, final ITransformer transformer) {
         this.cityService = cityService;
         this.transformer = transformer;
-
-        final var copenhagen = new City("Copenhagen");
-        copenhagen.addStation(StationType.SEA);
-        copenhagen.addStation(StationType.RAILWAY);
-        copenhagen.addStation(StationType.RIVER);
-        copenhagen.setDistrict("Vesterbro");
-        copenhagen.setRegion("Capital Region of Denmark");
-
-        this.cityService.saveCity(copenhagen);
     }
 
     /**

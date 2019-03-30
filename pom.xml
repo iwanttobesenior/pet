@@ -164,6 +164,11 @@
             <artifactId>javax.el-api</artifactId>
             <version>${javax.el.api.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.1-b08</version>
+        </dependency>
         <!--Lombok project-->
         <dependency>
             <groupId>org.projectlombok</groupId>

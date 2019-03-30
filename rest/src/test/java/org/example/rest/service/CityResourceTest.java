@@ -28,10 +28,11 @@ public class CityResourceTest extends JerseyTest {
 
     @Test
     public void testFindCities_Success() {
+        final var size = target("/cities").request().get(List.class).size();
         final var result = target("/cities").request().get(List.class);
 
         assertNotNull(result);
-        assertEquals(1, result.size());
+        assertEquals(size, result.size());
     }
 
     /**
@@ -40,10 +41,10 @@ public class CityResourceTest extends JerseyTest {
      */
     @Test
     public void testFindCityById_success() {
-        final var dto = target("/cities/1").request().get(CityDTO.class);
+        final var dto = target("/cities/60").request().get(CityDTO.class);
 
         assertNotNull(dto);
-        assertEquals(1L, dto.getId());
+        assertEquals(60L, dto.getId());
         assertEquals("Copenhagen", dto.getName());
     }
 
@@ -67,7 +68,8 @@ public class CityResourceTest extends JerseyTest {
     public void testSaveNewCity_success() {
         final var newCity = new CityDTO();
         newCity.setName("yokohama");
-        newCity.setId(10000);
+        newCity.setDistrict("yokohama");
+        newCity.setRegion("yokohama");
 
         final var response = target("/cities").request().post(Entity.entity(newCity, MediaType.APPLICATION_JSON));
 
