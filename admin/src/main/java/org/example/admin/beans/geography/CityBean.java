@@ -1,6 +1,5 @@
 package org.example.admin.beans.geography;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

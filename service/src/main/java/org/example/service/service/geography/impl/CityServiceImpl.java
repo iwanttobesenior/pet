@@ -48,7 +48,6 @@ public final class CityServiceImpl implements ICityService {
     @Override
     public void saveCity(final City city) {
         var constraintViolations = validator.validate(city);
-        System.out.println(constraintViolations.size());
         if (!constraintViolations.isEmpty()) {
             throw new ValidationException
                     ("City - " + city + " validation failure : " + constraintViolations);
@@ -57,7 +56,7 @@ public final class CityServiceImpl implements ICityService {
     }
 
     /**
-     * @throws InvalidArgumentException if id <= 0 (which is unacceptable value for id.)
+     * @throws InvalidArgumentException if {@code id <= 0} (which is unacceptable value for id.)
      */
     @Override
     public Optional<City> findCityById(final long id) {
