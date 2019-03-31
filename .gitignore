@@ -7,3 +7,5 @@ target/
 .log
 .idea
 Jenkinsfile.groove___jb_old___
+admin/src/test/resources/application.properties
+persistence/src/test/resources/application.properties
