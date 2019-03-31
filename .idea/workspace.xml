@@ -8,7 +8,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="" />
+    <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/persistence/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/application/target/" />
@@ -149,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="153">
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -238,7 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/login.xhtml" />
         <option value="$PROJECT_DIR$/application/src/main/java/org/example/application/infrastructure/util/transformation/ReflectionUtil.java" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/ui/message_en.properties" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/txt/message_uk.txt" />
@@ -289,6 +290,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/rest/src/main/java/org/example/rest/service/CityResource.java" />
         <option value="$PROJECT_DIR$/rest/src/test/java/org/example/rest/service/CityResourceTest.java" />
+        <option value="$PROJECT_DIR$/persistence/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -3047,7 +3049,7 @@
       <workItem from="1553863009938" duration="6785000" />
       <workItem from="1553946034670" duration="9735000" />
       <workItem from="1554018457935" duration="3477000" />
-      <workItem from="1554023561641" duration="1932000" />
+      <workItem from="1554023561641" duration="2339000" />
     </task>
     <servers />
   </component>
@@ -3084,7 +3086,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="721162000" />
+    <option name="totallyTimeSpent" value="721569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3097,6 +3099,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="JRebel" order="0" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
       <window_info id="Structure" order="1" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
@@ -3116,7 +3119,7 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="7" sideWeight="0.49838188" weight="0.7468944" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.50161815" side_tool="true" visible="true" weight="0.742236" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50161815" side_tool="true" weight="0.742236" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.8338509" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
@@ -3132,7 +3135,7 @@
       <window_info anchor="bottom" id="JRebel Executor" order="21" />
       <window_info anchor="bottom" id="JRebel Console" order="22" sideWeight="0.5008091" side_tool="true" weight="0.6413044" />
       <window_info anchor="bottom" id="Analysis" order="23" weight="0.68167704" />
-      <window_info anchor="right" id="Jenkins" visible="true" weight="0.32928804" />
+      <window_info anchor="right" id="Jenkins" weight="0.32928804" />
       <window_info anchor="right" id="JRebel Setup Guide" order="0" weight="0.40048543" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -3738,8 +3741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="153">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
         </state>
       </provider>
     </entry>
