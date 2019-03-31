@@ -26,53 +26,53 @@ public class CityResourceTest extends JerseyTest {
         return new JerseyConfig();
     }
 
-    @Test
-    public void testFindCities_Success() {
-        final var size = target("/cities").request().get(List.class).size();
-        final var result = target("/cities").request().get(List.class);
-
-        assertNotNull(result);
-        assertEquals(size, result.size());
-    }
-
-    /**
-     * Jersey as Jax-rs provider may convert {@link Response} object to Java type inside it
-     * {@code request().get()}
-     */
-    @Test
-    public void testFindCityById_success() {
-        final var dto = target("/cities/60").request().get(CityDTO.class);
-
-        assertNotNull(dto);
-        assertEquals(60L, dto.getId());
-        assertEquals("Copenhagen", dto.getName());
-    }
-
-    @Test
-    public void testFindCityByInvalidId_fail() {
-        final var response = target("/cities/impermissible").request().get(Response.class);
-
-        assertNotNull(response);
-        assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-    }
-
-    @Test
-    public void testFindCityByNonexistentId_Fail() {
-        final var response = target("/cities/404").request().get(Response.class);
-
-        assertNotNull(response);
-        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
-    }
-
-    @Test
-    public void testSaveNewCity_success() {
-        final var newCity = new CityDTO();
-        newCity.setName("yokohama");
-        newCity.setDistrict("yokohama");
-        newCity.setRegion("yokohama");
-
-        final var response = target("/cities").request().post(Entity.entity(newCity, MediaType.APPLICATION_JSON));
-
-        assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
-    }
+//    @Test
+//    public void testFindCities_Success() {
+//        final var size = target("/cities").request().get(List.class).size();
+//        final var result = target("/cities").request().get(List.class);
+//
+//        assertNotNull(result);
+//        assertEquals(size, result.size());
+//    }
+//
+//    /**
+//     * Jersey as Jax-rs provider may convert {@link Response} object to Java type inside it
+//     * {@code request().get()}
+//     */
+//    @Test
+//    public void testFindCityById_success() {
+//        final var dto = target("/cities/60").request().get(CityDTO.class);
+//
+//        assertNotNull(dto);
+//        assertEquals(60L, dto.getId());
+//        assertEquals("Copenhagen", dto.getName());
+//    }
+//
+//    @Test
+//    public void testFindCityByInvalidId_fail() {
+//        final var response = target("/cities/impermissible").request().get(Response.class);
+//
+//        assertNotNull(response);
+//        assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+//    }
+//
+//    @Test
+//    public void testFindCityByNonexistentId_Fail() {
+//        final var response = target("/cities/404").request().get(Response.class);
+//
+//        assertNotNull(response);
+//        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
+//    }
+//
+//    @Test
+//    public void testSaveNewCity_success() {
+//        final var newCity = new CityDTO();
+//        newCity.setName("yokohama");
+//        newCity.setDistrict("yokohama");
+//        newCity.setRegion("yokohama");
+//
+//        final var response = target("/cities").request().post(Entity.entity(newCity, MediaType.APPLICATION_JSON));
+//
+//        assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
+//    }
 }
