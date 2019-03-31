@@ -10,10 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/configuration/SessionFactoryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/configuration/SessionFactoryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/org/example/rest/service/CityResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/org/example/rest/service/CityResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/test/java/org/example/rest/service/CityResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/test/java/org/example/rest/service/CityResourceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -163,7 +159,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rest/src/test/java/org/example/rest/service/CityResourceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
+            <state relative-caret-position="323">
               <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -572,7 +568,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553975274362" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553990774857" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -3062,7 +3058,7 @@
       <workItem from="1553806022800" duration="199000" />
       <workItem from="1553806353413" duration="1441000" />
       <workItem from="1553863009938" duration="6785000" />
-      <workItem from="1553946034670" duration="8746000" />
+      <workItem from="1553946034670" duration="9735000" />
     </task>
     <servers />
   </component>
@@ -3099,7 +3095,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="714764000" />
+    <option name="totallyTimeSpent" value="715753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3112,7 +3108,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="JRebel" order="0" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
       <window_info id="Structure" order="1" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
@@ -3123,7 +3118,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.621118" side_tool="true" weight="0.32443365" />
       <window_info id="Learn" order="7" weight="0.32928804" />
       <window_info id="Web" order="8" sideWeight="0.61490685" side_tool="true" weight="0.36084142" />
-      <window_info content_ui="combo" id="Project" order="9" sideWeight="0.43012422" weight="0.32281554" />
+      <window_info content_ui="combo" id="Project" order="9" sideWeight="0.43012422" visible="true" weight="0.32281554" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32763976" />
@@ -3134,7 +3129,7 @@
       <window_info anchor="bottom" id="Docker" order="7" sideWeight="0.49838188" weight="0.7468944" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50161815" side_tool="true" weight="0.742236" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.95341617" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" visible="true" weight="0.95341617" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.3462733" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.82298136" />
@@ -3154,7 +3149,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" visible="true" weight="0.6618123" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.32928804" />
+      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.32928804" />
       <window_info anchor="right" id="Key Promoter X" order="7" weight="0.32928804" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -3758,7 +3753,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rest/src/test/java/org/example/rest/service/CityResourceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="323">
           <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
