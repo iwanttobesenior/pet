@@ -324,7 +324,7 @@
   <component name="MavenRunner">
     <option name="jreName" value="#JAVA_HOME" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1260" />
@@ -358,7 +358,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554150242493" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554151222083" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -3074,7 +3074,7 @@
       <workItem from="1554023561641" duration="6759000" />
       <workItem from="1554030745742" duration="6249000" />
       <workItem from="1554060192680" duration="1722000" />
-      <workItem from="1554100351206" duration="7691000" />
+      <workItem from="1554100351206" duration="8515000" />
     </task>
     <servers />
   </component>
@@ -3111,7 +3111,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="741651000" />
+    <option name="totallyTimeSpent" value="742475000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3123,7 +3123,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <layout>
       <window_info id="JRebel" order="0" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
       <window_info id="Structure" order="1" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
