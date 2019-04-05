@@ -27,6 +27,7 @@ import java.io.IOException;
 public final class LoginBean {
 
     private final static Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
+
     private final static String INDEX_PAGE = "index.xhtml";
     private final static String LOGIN_PAGE = "login.xhtml";
 

@@ -13,6 +13,8 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.BufferedReader;
+import java.io.Reader;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -100,4 +102,5 @@ public final class CityResource extends AbstractResource {
 
         return ok(transformer.transform(cityById.get(), CityDTO.class));
     }
+
 }

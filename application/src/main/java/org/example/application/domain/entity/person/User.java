@@ -62,8 +62,8 @@ public class User extends AuditEntity implements Serializable {
     }
 
     @NotNull
-    @Size(min = 4, max = 32)
-    @Column(name = "PASSWORD", length = 32, nullable = false)
+    @Size(min = 4, max = 120)
+    @Column(name = "PASSWORD", length = 120, nullable = false)
     public String getPassword() {
         return password;
     }

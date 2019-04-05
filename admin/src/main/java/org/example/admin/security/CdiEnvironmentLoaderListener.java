@@ -17,8 +17,8 @@ public class CdiEnvironmentLoaderListener extends EnvironmentLoaderListener {
 
     @Override
     protected WebEnvironment createEnvironment(final ServletContext servletContext) {
-        WebEnvironment webEnvironment = super.createEnvironment(servletContext);
-        RealmSecurityManager realmSecurityManager = (RealmSecurityManager) webEnvironment.getSecurityManager();
+        final WebEnvironment webEnvironment = super.createEnvironment(servletContext);
+        final RealmSecurityManager realmSecurityManager = (RealmSecurityManager) webEnvironment.getSecurityManager();
         realmSecurityManager.setRealm(new CDIRealm(userService));
         return webEnvironment;
     }

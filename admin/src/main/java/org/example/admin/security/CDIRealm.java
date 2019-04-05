@@ -14,13 +14,15 @@ import org.slf4j.LoggerFactory;
 import java.util.Optional;
 
 /**
- * Custom CDI Realm
+ * Authorization component that integrates with {@link IUserService} to fetch
+ * user by login
  *
  * @author Kul'baka Alex
  */
 public final class CDIRealm extends AuthorizingRealm {
 
     private static final Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
+
     private final IUserService userService;
 
     public CDIRealm(final IUserService userService) {
@@ -44,11 +46,11 @@ public final class CDIRealm extends AuthorizingRealm {
 
         try {
             String password = Optional.ofNullable(username).flatMap(name -> userService.findByUsername(username)).map(User::getPassword)
-                    .orElseThrow(() -> new UnknownAccountException("No user found with name " + username));
+                    .orElseThrow(() -> new UnknownAccountException("No user found with name :" + username));
 
             return new SimpleAuthenticationInfo(username, password.toCharArray(), getName());
         } catch (final Exception e) {
-            String message = "There was an error while authenticating user " + username;
+            final String message = "There was an error while authenticating user :" + username;
             logger.error(message, e);
             throw new AuthenticationException(message, e);
         }
