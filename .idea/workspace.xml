@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -140,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="303">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,7 +164,7 @@
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,19 +173,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="399">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/admin/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="61">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -237,7 +247,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/layout/standart.xhtml" />
         <option value="$PROJECT_DIR$/admin/src/main/webapp/resources/css/main.css" />
         <option value="$PROJECT_DIR$/application/src/main/java/org/example/application/infrastructure/exception/uncheked/persistence/PersistenceException.java" />
         <option value="$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/repository/base/BaseHibernateRepository.java" />
@@ -260,7 +269,6 @@
         <option value="$PROJECT_DIR$/mysql.dockerfile" />
         <option value="$PROJECT_DIR$/Jenkinsfile.groove" />
         <option value="$PROJECT_DIR$/service/src/test/java/org/example/service/service/impl/CityServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/org/example/service/infrastructure/transformation/ITransformable.java" />
         <option value="$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/configuration/SessionFactoryBuilder.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/org/example/service/service/geography/impl/CityServiceImpl.java" />
@@ -268,7 +276,6 @@
         <option value="$PROJECT_DIR$/admin/src/test/resources/application.properties" />
         <option value="$PROJECT_DIR$/persistence/src/test/resources/application.properties" />
         <option value="$PROJECT_DIR$/persistence/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java" />
         <option value="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/shiro.ini" />
         <option value="$PROJECT_DIR$/application/src/main/java/org/example/application/domain/entity/person/User.java" />
         <option value="$PROJECT_DIR$/sample.dockerfile" />
@@ -288,6 +295,9 @@
         <option value="$PROJECT_DIR$/admin/tomcat-alpine.dockerfile" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java" />
       </list>
     </option>
   </component>
@@ -434,6 +444,17 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+              <item name="i18n" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -448,7 +469,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554796143542" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554796479810" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -3174,7 +3195,7 @@
       <workItem from="1554709442254" duration="17758000" />
       <workItem from="1554735636507" duration="9083000" />
       <workItem from="1554749570181" duration="1977000" />
-      <workItem from="1554782656988" duration="2816000" />
+      <workItem from="1554782656988" duration="3129000" />
     </task>
     <servers />
   </component>
@@ -3211,7 +3232,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="847781000" />
+    <option name="totallyTimeSpent" value="848094000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3235,7 +3256,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.621118" side_tool="true" weight="0.32443365" />
       <window_info id="Learn" order="7" weight="0.32928804" />
       <window_info id="Web" order="8" sideWeight="0.61490685" side_tool="true" weight="0.36084142" />
-      <window_info active="true" content_ui="combo" id="Project" order="9" sideWeight="0.43012422" visible="true" weight="0.29692557" />
+      <window_info content_ui="combo" id="Project" order="9" sideWeight="0.43012422" weight="0.29692557" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32763976" />
@@ -3249,7 +3270,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.63975155" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.3462733" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.4363354" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.69409937" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32919255" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="16" weight="0.32919255" />
@@ -3343,17 +3364,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/org/example/service/service/person/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-          <folding>
-            <element signature="e#1384#1385#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/repository/person/IUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -3659,30 +3669,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java">
+    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="61">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="303">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="456">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
