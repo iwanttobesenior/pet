@@ -8,6 +8,8 @@ import org.example.service.infrastructure.transformation.ITransformer;
 import org.example.service.service.geography.ICityService;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.faces.push.Push;
+import javax.faces.push.PushContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
@@ -26,6 +28,10 @@ public class CityController {
     private final ITransformer transformer;
 
     @Inject
+    @Push
+    private PushContext cityChannel;
+
+    @Inject
     public CityController(final @DatabaseSourceCityServiceImpl ICityService cityService,
                           final @SimpleTransformerImpl ITransformer transformer) {
         this.cityService = cityService;
@@ -39,6 +45,8 @@ public class CityController {
     public void saveCity(final CityBean cityBean) {
         final var city = transformer.unTransform(cityBean, City.class);
         cityService.saveCity(city);
+
+        cityChannel.send("city was added with name : " + cityBean.getName());
     }
 
     public void update(final City city, final CityBean cityBean) {
