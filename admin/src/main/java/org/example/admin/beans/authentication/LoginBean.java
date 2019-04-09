@@ -10,21 +10,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * User data holder bean
  *
  * @author Kul'baka Alex
  */
-@ManagedBean
+@Named
 @ViewScoped
 @Getter
 @Setter
-public final class LoginBean {
+public final class LoginBean implements Serializable {
+
+    private static final long serialVersionUID = 8768055731921192107L;
 
     private final static Logger logger = LoggerFactory.getLogger(ReflectionUtil.getCurrentClassName());
 

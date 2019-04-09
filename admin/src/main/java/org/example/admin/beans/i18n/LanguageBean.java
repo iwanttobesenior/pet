@@ -1,9 +1,10 @@
 package org.example.admin.beans.i18n;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
+import java.io.Serializable;
 import java.util.Locale;
 
 /**
@@ -11,9 +12,11 @@ import java.util.Locale;
  *
  * @author Kul'baka Alex
  */
-@ManagedBean(name = "language")
+@Named(value = "language")
 @SessionScoped
-public class LanguageBean {
+public class LanguageBean implements Serializable {
+
+    private static final long serialVersionUID = 6766056761626166606L;
 
     private Locale locale;
 

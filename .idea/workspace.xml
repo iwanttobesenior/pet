@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50a48b3d-b8df-4c6e-8144-1e7cdfd86802" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,6 +112,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="das://5d8f3740-4d10-4c26-80b8-52af4c9b9d59/schema/example/table/USERS">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -132,20 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="189">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -153,7 +150,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.faces/2.2.14/javax.faces-2.2.14-sources.jar!/javax/faces/bean/ViewScoped.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1596">
+            <state relative-caret-position="428">
               <caret line="118" column="18" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
             </state>
           </provider>
@@ -162,20 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="456">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -186,8 +171,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="2856">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -241,6 +235,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/layout/standart.xhtml" />
         <option value="$PROJECT_DIR$/admin/src/main/webapp/resources/css/main.css" />
         <option value="$PROJECT_DIR$/application/src/main/java/org/example/application/infrastructure/exception/uncheked/persistence/PersistenceException.java" />
         <option value="$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/repository/base/BaseHibernateRepository.java" />
@@ -263,6 +258,7 @@
         <option value="$PROJECT_DIR$/mysql.dockerfile" />
         <option value="$PROJECT_DIR$/Jenkinsfile.groove" />
         <option value="$PROJECT_DIR$/service/src/test/java/org/example/service/service/impl/CityServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/org/example/service/infrastructure/transformation/ITransformable.java" />
         <option value="$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/configuration/SessionFactoryBuilder.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/org/example/service/service/geography/impl/CityServiceImpl.java" />
@@ -270,11 +266,13 @@
         <option value="$PROJECT_DIR$/admin/src/test/resources/application.properties" />
         <option value="$PROJECT_DIR$/persistence/src/test/resources/application.properties" />
         <option value="$PROJECT_DIR$/persistence/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java" />
         <option value="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/shiro.ini" />
         <option value="$PROJECT_DIR$/application/src/main/java/org/example/application/domain/entity/person/User.java" />
         <option value="$PROJECT_DIR$/sample.dockerfile" />
         <option value="$PROJECT_DIR$/rest/src/main/java/org/example/rest/service/CityResource.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/security/CdiEnvironmentLoaderListener.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/presentation/pom.xml" />
         <option value="$PROJECT_DIR$/.dockerignore" />
         <option value="$PROJECT_DIR$/rest/src/test/java/org/example/rest/infrastructure/transformation/impl/SimpleDTOITransformerTest.java" />
@@ -285,13 +283,9 @@
         <option value="$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/admin/tomcat.dockerfile" />
         <option value="$PROJECT_DIR$/admin/.dockerignore" />
+        <option value="$PROJECT_DIR$/admin/pom.xml" />
         <option value="$PROJECT_DIR$/admin/tomcat-alpine.dockerfile" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/admin/pom.xml" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -357,7 +351,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -438,24 +432,13 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-              <item name="i18n" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,7 +446,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554797904670" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554795842092" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -3189,8 +3172,7 @@
       <workItem from="1554709442254" duration="17758000" />
       <workItem from="1554735636507" duration="9083000" />
       <workItem from="1554749570181" duration="1977000" />
-      <workItem from="1554782656988" duration="4542000" />
-      <workItem from="1554798114398" duration="785000" />
+      <workItem from="1554782656988" duration="2498000" />
     </task>
     <servers />
   </component>
@@ -3227,7 +3209,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="850292000" />
+    <option name="totallyTimeSpent" value="847463000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3240,7 +3222,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="JRebel" order="0" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
       <window_info id="Structure" order="1" sideWeight="0.5698758" side_tool="true" weight="0.33656958" />
@@ -3251,11 +3232,11 @@
       <window_info id="Favorites" order="6" sideWeight="0.621118" side_tool="true" weight="0.32443365" />
       <window_info id="Learn" order="7" weight="0.32928804" />
       <window_info id="Web" order="8" sideWeight="0.61490685" side_tool="true" weight="0.36084142" />
-      <window_info active="true" content_ui="combo" id="Project" order="9" sideWeight="0.43012422" visible="true" weight="0.29692557" />
+      <window_info content_ui="combo" id="Project" order="9" sideWeight="0.43012422" weight="0.29692557" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32919255" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32763976" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49676377" weight="0.7748447" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49676377" visible="true" weight="0.7748447" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.9363354" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -3265,7 +3246,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919093" weight="0.63975155" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.3462733" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.69409937" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.4363354" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32919255" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="16" weight="0.32919255" />
@@ -3359,6 +3340,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/org/example/service/service/person/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+          <folding>
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/src/main/java/org/example/persistence/repository/person/IUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -3609,6 +3601,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -3616,10 +3622,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jenkinsfile.groove">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.faces/2.2.14/javax.faces-2.2.14-sources.jar!/javax/faces/bean/ManagedBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.faces/2.2.14/javax.faces-2.2.14-sources.jar!/javax/faces/bean/ViewScoped.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="118" column="18" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -3634,70 +3677,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Jenkinsfile.groove">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.faces/2.2.14/javax.faces-2.2.14-sources.jar!/javax/faces/bean/ViewScoped.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="118" column="18" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/authentication/LoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/i18n/LanguageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/.dockerignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/org/example/admin/beans/geography/CityBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
