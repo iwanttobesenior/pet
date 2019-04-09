@@ -8,6 +8,7 @@ import org.example.service.infrastructure.transformation.ITransformable;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 
 
 /**
@@ -22,7 +23,9 @@ import javax.inject.Named;
 @Getter
 @Setter
 @ToString
-public final class CityBean implements ITransformable<City> {
+public final class CityBean implements ITransformable<City>, Serializable {
+
+    private static final long serialVersionUID = 1161015131911112101L;
 
     private long id;
     private String name;

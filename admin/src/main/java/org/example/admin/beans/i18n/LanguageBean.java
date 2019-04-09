@@ -16,6 +16,8 @@ import java.util.Locale;
 @SessionScoped
 public class LanguageBean implements Serializable {
 
+    private static final long serialVersionUID = 6766056761626166606L;
+
     private Locale locale;
 
     /**
