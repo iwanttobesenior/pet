@@ -14,3 +14,19 @@ app.controller('TranslateCtrl', ['$translate', '$scope', function ($translate, $
         $translate.use(lang);
     }
 }]);
+
+app.controller('SseCtrl', ['$scope', function ($scope) {
+    $scope.currentTime = '';
+
+    if (typeof (EventSource) !== 'undefined') {
+        var source = new EventSource("/rest/time");
+
+        source.onmessage = function (evt) {
+            $scope.currentTime = evt.data;
+            $scope.$apply();
+        }
+    } else {
+        console.log('sse not supported');
+    }
+
+}]);

@@ -6,11 +6,6 @@
 
     <ui:define name="content">
 
-        <f:websocket channel="cityChannel" onmessage="function show(message) {
-            alert(message);
-        }"/>
-
-
         <h:panelGrid columns="3">
             <p:commandLink value="UA"
                            actionListener="#{language.setLanguage('uk')}" update="@all"/>

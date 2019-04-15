@@ -65,9 +65,22 @@
         <swagger.jerset2.version>1.5.22</swagger.jerset2.version>
         <jersey.guava.version>2.25.1</jersey.guava.version>
         <apache-shiro.version>1.4.0</apache-shiro.version>
+        <jmh.version>1.19</jmh.version>
     </properties>
 
     <dependencies>
+        <!--JMH-->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <!--logging-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

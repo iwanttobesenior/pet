@@ -11,6 +11,19 @@
 
     <artifactId>rest</artifactId>
 
+    <properties>
+        <jersey.glassfish.scope>compile</jersey.glassfish.scope>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>glassfish</id>
+            <properties>
+                <jersey.glassfish.scope>provided</jersey.glassfish.scope>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,25 +46,35 @@
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-grizzly2-http</artifactId>
+            <scope>${jersey.glassfish.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
+            <scope>${jersey.glassfish.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
+            <scope>${jersey.glassfish.scope}</scope>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.jersey.bundles.repackaged</groupId>
             <artifactId>jersey-guava</artifactId>
             <version>${jersey.guava.version}</version>
+            <scope>${jersey.glassfish.scope}</scope>
         </dependency>
-
+        <!--SSE provider-->
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-sse</artifactId>
+            <scope>${jersey.glassfish.scope}</scope>
+        </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-common</artifactId>
+            <scope>${jersey.glassfish.scope}</scope>
         </dependency>
         <!--Test web services-->
         <dependency>
@@ -69,6 +92,7 @@
             <groupId>org.glassfish.jersey.ext</groupId>
             <artifactId>jersey-spring4</artifactId>
             <version>${jersey.version}</version>
+            <scope>${jersey.glassfish.scope}</scope>
         </dependency>
 
         <dependency>

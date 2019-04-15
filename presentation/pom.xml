@@ -28,7 +28,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${maven.build.war.plugin.version}</version>
                 <configuration>
-                    <warName>presentation</warName>
+                    <warName>client</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>

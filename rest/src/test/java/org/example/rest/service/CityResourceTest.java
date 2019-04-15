@@ -1,18 +1,23 @@
 package org.example.rest.service;
 
+import org.example.application.domain.entity.geography.City;
 import org.example.rest.configuration.JerseyConfig;
 import org.example.service.infrastructure.dto.geography.CityDTO;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletionStage;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 /**
  * Integration test
@@ -26,7 +31,7 @@ public class CityResourceTest extends JerseyTest {
         return new JerseyConfig();
     }
 
-//    @Test
+    //    @Test
 //    public void testFindCities_Success() {
 //        final var size = target("/cities").request().get(List.class).size();
 //        final var result = target("/cities").request().get(List.class);
@@ -64,15 +69,54 @@ public class CityResourceTest extends JerseyTest {
 //        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
 //    }
 //
+    @Test
+    public void testSaveNewCity_success() {
+
+        Instant start = Instant.now();
+
+        final var newCity = new CityDTO();
+
+
+        newCity.setName("yokohamaCity");
+        newCity.setDistrict("yokohamaCity");
+        newCity.setRegion("yokohamaCity");
+
+        final var response = target("/cities").request().post(Entity.entity(newCity, MediaType.APPLICATION_JSON));
+
+        assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
+
+        List<Map<String, String>> result = target("/cities").request().get(List.class);
+        assertNotNull(result);
+        assertTrue(result.stream().anyMatch(item -> item.get("name").equals("yokohamaCity")));
+
+        Instant finish = Instant.now();
+        System.out.println(Duration.between(start, finish).toMillis());
+    }
+
 //    @Test
-//    public void testSaveNewCity_success() {
+//    public void testSaveNewCity_success_reactive() {
+//
+//        Instant start = Instant.now();
+//
 //        final var newCity = new CityDTO();
-//        newCity.setName("yokohama");
-//        newCity.setDistrict("yokohama");
-//        newCity.setRegion("yokohama");
+//        newCity.setName("Reactive");
+//        newCity.setDistrict("Reactive");
+//        newCity.setRegion("Reactive");
 //
-//        final var response = target("/cities").request().post(Entity.entity(newCity, MediaType.APPLICATION_JSON));
+//        CompletionStage<Response> completion = target().request("/cities")
+//                .rx()
+//                .post(Entity.entity(newCity, MediaType.APPLICATION_JSON));
+//        completion.thenAccept(response -> {
+//            assertEquals(response.getStatus(), Response.Status.NO_CONTENT.getStatusCode());
 //
-//        assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
+//            target("/cities").request().rx().get(Response.class).thenAccept(resp -> {
+//                List<Map<String, String>> cities = (List<Map<String, String>>) resp.getEntity();
+//                assertNotNull(cities);
+//                assertTrue(cities.stream().anyMatch(item -> item.get("name").equals("Reactive")));
+//            });
+//        });
+//
+//        Instant finish = Instant.now();
+//        System.out.println(Duration.between(start, finish).toMillis());
 //    }
 }
