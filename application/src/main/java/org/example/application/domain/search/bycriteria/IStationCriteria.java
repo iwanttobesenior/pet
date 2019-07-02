@@ -1,4 +1,7 @@
 package org.example.application.domain.search.bycriteria;
 
-public interface IStationCriteria {
+/**
+ * for future
+ */
+interface IStationCriteria {
 }

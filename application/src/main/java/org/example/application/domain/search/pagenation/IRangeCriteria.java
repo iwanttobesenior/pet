@@ -1,4 +1,7 @@
 package org.example.application.domain.search.pagenation;
 
-public interface IRangeCriteria {
+/**
+ * for future
+ */
+interface IRangeCriteria {
 }

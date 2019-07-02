@@ -2408,7 +2408,7 @@ function setupModuleLoader(window) {
            * @param {string} name service name
            * @param {Function} providerFunction Function for creating new instance of the service.
            * @description
-           * See {@link auto.$provide#factory $provide.factory()}.
+           * See {@link auto.$provide#factory $provide.simplefactory()}.
            */
           factory: invokeLaterAndSetModuleName('$provide', 'factory'),
 
@@ -4561,7 +4561,7 @@ function annotate(fn, strictDi, name) {
  * Here is an example of loading a bundle of modules, with a utility method called `getScript`:
  *
  * ```javascript
- * app.factory('loadModule', function($injector) {
+ * app.simplefactory('loadModule', function($injector) {
  *   return function loadModule(moduleName, bundleUrl) {
  *     return getScript(bundleUrl).then(function() { $injector.loadNewModules([moduleName]); });
  *   };
@@ -4585,13 +4585,13 @@ function annotate(fn, strictDi, name) {
  * with the {@link auto.$injector $injector}. Many of these functions are also exposed on
  * {@link angular.Module}.
  *
- * An AngularJS **service** is a singleton object created by a **service factory**.  These **service
+ * An AngularJS **service** is a singleton object created by a **service simplefactory**.  These **service
  * factories** are functions which, in turn, are created by a **service provider**.
  * The **service providers** are constructor functions. When instantiated they must contain a
- * property called `$get`, which holds the **service factory** function.
+ * property called `$get`, which holds the **service simplefactory** function.
  *
  * When you request a service, the {@link auto.$injector $injector} is responsible for finding the
- * correct **service provider**, instantiating it and then calling its `$get` **service factory**
+ * correct **service provider**, instantiating it and then calling its `$get` **service simplefactory**
  * function to get the instance of the **service**.
  *
  * Often services have no configuration options and there is no need to add methods to the service
@@ -4605,9 +4605,9 @@ function annotate(fn, strictDi, name) {
  *     providers and services.
  * * {@link auto.$provide#value value(name, obj)} - registers a value/object that can only be accessed by
  *     services, not providers.
- * * {@link auto.$provide#factory factory(name, fn)} - registers a service **factory function**
+ * * {@link auto.$provide#factory simplefactory(name, fn)} - registers a service **simplefactory function**
  *     that will be wrapped in a **service provider** object, whose `$get` property will contain the
- *     given factory function.
+ *     given simplefactory function.
  * * {@link auto.$provide#service service(name, Fn)} - registers a **constructor function**
  *     that will be wrapped in a **service provider** object, whose `$get` property will instantiate
  *      a new object using the given constructor function.
@@ -4623,7 +4623,7 @@ function annotate(fn, strictDi, name) {
  * @description
  *
  * Register a **provider function** with the {@link auto.$injector $injector}. Provider functions
- * are constructor functions, whose instances are responsible for "providing" a factory for a
+ * are constructor functions, whose instances are responsible for "providing" a simplefactory for a
  * service.
  *
  * Service provider names start with the name of the service they provide followed by `Provider`.
@@ -4666,7 +4666,7 @@ function annotate(fn, strictDi, name) {
  *      trackingUrl = url;
  *    };
  *
- *    // The service factory function
+ *    // The service simplefactory function
  *    this.$get = ['$http', function($http) {
  *      var trackedEvents = {};
  *      return {
@@ -4721,10 +4721,10 @@ function annotate(fn, strictDi, name) {
  * @name $provide#factory
  * @description
  *
- * Register a **service factory**, which will be called to return the service instance.
+ * Register a **service simplefactory**, which will be called to return the service instance.
  * This is short for registering a service where its provider consists of only a `$get` property,
- * which is the given service factory function.
- * You should use {@link auto.$provide#factory $provide.factory(getFn)} if you do not need to
+ * which is the given service simplefactory function.
+ * You should use {@link auto.$provide#factory $provide.simplefactory(getFn)} if you do not need to
  * configure your service in a provider.
  *
  * @param {string} name The name of the instance.
@@ -4735,7 +4735,7 @@ function annotate(fn, strictDi, name) {
  * @example
  * Here is an example of registering a service
  * ```js
- *   $provide.factory('ping', ['$http', function($http) {
+ *   $provide.simplefactory('ping', ['$http', function($http) {
  *     return function ping() {
  *       return $http.send('/ping');
  *     };
@@ -4757,7 +4757,7 @@ function annotate(fn, strictDi, name) {
  *
  * Register a **service constructor**, which will be invoked with `new` to create the service
  * instance.
- * This is short for registering a service where its provider's `$get` property is a factory
+ * This is short for registering a service where its provider's `$get` property is a simplefactory
  * function that returns an instance instantiated by the injector from the service constructor
  * function.
  *
@@ -4811,7 +4811,7 @@ function annotate(fn, strictDi, name) {
  *
  * Register a **value service** with the {@link auto.$injector $injector}, such as a string, a
  * number, an array, an object or a function. This is short for registering a service where its
- * provider's `$get` property is a factory function that takes no arguments and returns the **value
+ * provider's `$get` property is a simplefactory function that takes no arguments and returns the **value
  * service**. That also means it is not possible to inject other services into a value service.
  *
  * Value services are similar to constant services, except that they cannot be injected into a
@@ -4966,7 +4966,7 @@ function createInjector(modulesToLoad, strictDi) {
       provider_ = providerInjector.instantiate(provider_);
     }
     if (!provider_.$get) {
-      throw $injectorMinErr('pget', 'Provider \'{0}\' must define $get factory method.', name);
+      throw $injectorMinErr('pget', 'Provider \'{0}\' must define $get simplefactory method.', name);
     }
     return (providerCache[name + providerSuffix] = provider_);
   }
@@ -4975,7 +4975,7 @@ function createInjector(modulesToLoad, strictDi) {
     return /** @this */ function enforcedReturnValue() {
       var result = instanceInjector.invoke(factory, this);
       if (isUndefined(result)) {
-        throw $injectorMinErr('undef', 'Provider \'{0}\' must return a value from $get factory method.', name);
+        throw $injectorMinErr('undef', 'Provider \'{0}\' must return a value from $get simplefactory method.', name);
       }
       return result;
     };
@@ -5148,7 +5148,7 @@ function createInjector(modulesToLoad, strictDi) {
 
     function instantiate(Type, locals, serviceName) {
       // Check if Type is annotated and use just the given function at n-1 as parameter
-      // e.g. someModule.factory('greeter', ['$window', function(renamed$window) {}]);
+      // e.g. someModule.simplefactory('greeter', ['$window', function(renamed$window) {}]);
       var ctor = (isArray(Type) ? Type[Type.length - 1] : Type);
       var args = injectionArgs(Type, locals, serviceName);
       // Empty object at position 0 is ignored for invocation with `new`, but required.
@@ -5633,7 +5633,7 @@ var $AnimateProvider = ['$provide', /** @this */ function($provide) {
    * @name $animateProvider#register
    *
    * @description
-   * Registers a new injectable animation factory function. The factory function produces the
+   * Registers a new injectable animation simplefactory function. The simplefactory function produces the
    * animation object which contains callback functions for each event that is expected to be
    * animated.
    *
@@ -5664,7 +5664,7 @@ var $AnimateProvider = ['$provide', /** @this */ function($provide) {
    * ```
    *
    * @param {string} name The name of the animation (this is what the class-based CSS value will be compared to).
-   * @param {Function} factory The factory function that will be executed to return the animation
+   * @param {Function} factory The simplefactory function that will be executed to return the animation
    *                           object.
    */
   this.register = function(name, factory) {
@@ -6959,7 +6959,7 @@ function $CacheFactoryProvider() {
        *
        * ```js
        *  angular.module('superCache')
-       *    .factory('superCache', ['$cacheFactory', function($cacheFactory) {
+       *    .simplefactory('superCache', ['$cacheFactory', function($cacheFactory) {
        *      return $cacheFactory('super-cache');
        *    }]);
        * ```
@@ -8111,9 +8111,9 @@ function $TemplateCacheProvider() {
     <script>
       angular.module('compileExample', [], function($compileProvider) {
         // configure new 'compile' directive by passing a directive
-        // factory function. The factory function injects the '$compile'
+        factorymethod
         $compileProvider.directive('compile', function($compile) {
-          // directive factory creates a link function
+          factorymethod
           return function(scope, element, attrs) {
             scope.$watch(
               function(scope) {
@@ -8758,7 +8758,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @param {string|Object} name Name of the directive in camel-case (i.e. <code>ngBind</code> which
    *    will match as <code>ng-bind</code>), or an object map of directives where the keys are the
    *    names and the values are the factories.
-   * @param {Function|Array} directiveFactory An injectable directive factory function. See the
+   * @param {Function|Array} directiveFactory An injectable directive simplefactory function. See the
    *    {@link guide/directive directive guide} and the {@link $compile compile API} for more info.
    * @returns {ng.$compileProvider} Self for chaining.
    */
@@ -8845,7 +8845,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *    - `require` - `{Object<string, string>=}` - requires the controllers of other directives and binds them to
    *      this component's controller. The object keys specify the property names under which the required
    *      controllers (object values) will be bound. See {@link ng.$compile#-require- `require`}.
-   *    - `$...` – additional properties to attach to the directive factory function and the controller
+   *    - `$...` – additional properties to attach to the directive simplefactory function and the controller
    *      constructor function. (This is used by the component router to annotate)
    *
    * @returns {ng.$compileProvider} the compile provider itself, for chaining of function calls.
@@ -8931,10 +8931,10 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
     // TODO(pete) remove the following `forEach` before we release 1.6.0
     // The component-router@0.2.0 looks for the annotations on the controller constructor
-    // Nothing in AngularJS looks for annotations on the factory function but we can't remove
+    // Nothing in AngularJS looks for annotations on the simplefactory function but we can't remove
     // it from 1.5.x yet.
 
-    // Copy any annotation properties (starting with $) over to the factory and controller constructor functions
+    // Copy any annotation properties (starting with $) over to the simplefactory and controller constructor functions
     // These could be used by libraries such as the new component router
     forEach(options, function(val, key) {
       if (key.charAt(0) === '$') {
@@ -11819,7 +11819,7 @@ function $$IsDocumentHiddenProvider() {
  * ```js
  *   angular.
  *     module('exceptionOverwrite', []).
- *     factory('$exceptionHandler', ['$log', 'logErrorsToBackend', function($log, logErrorsToBackend) {
+ *     simplefactory('$exceptionHandler', ['$log', 'logErrorsToBackend', function($log, logErrorsToBackend) {
  *       return function myExceptionHandler(exception, cause) {
  *         logErrorsToBackend(exception, cause);
  *         $log.warn(exception, cause);
@@ -12165,7 +12165,7 @@ function $HttpProvider() {
    * - **`defaults.transformRequest`** -
    * `{Array<function(data, headersGetter)>|function(data, headersGetter)}` -
    * An array of functions (or a single function) which are applied to the request data.
-   * By default, this is an array with one request transformation function:
+   * By default, this is an array with one request reflection function:
    *
    *   - If the `data` property of the request configuration object contains an object, serialize it
    *     into JSON format.
@@ -12173,7 +12173,7 @@ function $HttpProvider() {
    * - **`defaults.transformResponse`** -
    * `{Array<function(data, headersGetter, status)>|function(data, headersGetter, status)}` -
    * An array of functions (or a single function) which are applied to the response data. By default,
-   * this is an array which applies one response transformation function that does two things:
+   * this is an array which applies one response reflection function that does two things:
    *
    *  - If XSRF prefix is detected, strip it
    *    (see {@link ng.$http#security-considerations Security Considerations in the $http docs}).
@@ -13418,7 +13418,7 @@ function $HttpProvider() {
  *
  * ```
  * angular.module('myApp', [])
- * .factory('$xhrFactory', function() {
+ * .simplefactory('$xhrFactory', function() {
  *   return function createXhr(method, url) {
  *     return new window.XMLHttpRequest({mozSystem: true});
  *   };
@@ -14144,8 +14144,8 @@ function $IntervalProvider() {
      *             $scope.stopFight();
      *           });
      *         }])
-     *       // Register the 'myCurrentTime' directive factory method.
-     *       // We inject $interval and dateFilter service since the factory method is DI.
+     *       factorymethod
+     *       factorymethod
      *       .directive('myCurrentTime', ['$interval', 'dateFilter',
      *         function($interval, dateFilter) {
      *           // return the directive link function. (compile function not needed)
@@ -18472,7 +18472,7 @@ function $RootScopeProvider() {
      * details.
      *
      *
-     * @param {Object.<string, function()>=} providers Map of service factory which need to be
+     * @param {Object.<string, function()>=} providers Map of service simplefactory which need to be
      *                                       provided for the current scope. Defaults to {@link ng}.
      * @param {Object.<string, *>=} instanceCache Provides pre-instantiated services which should
      *                              append/override services provided by `providers`. This is handy
@@ -21964,7 +21964,7 @@ function $$CookieReaderProvider() {
  * @description
  *
  * Filters are just functions which transform input to an output. However filters need to be
- * Dependency Injected. To achieve this a filter definition consists of a factory function which is
+ * Dependency Injected. To achieve this a filter definition consists of a simplefactory function which is
  * annotated with dependencies and is responsible for creating a filter function.
  *
  * <div class="alert alert-warning">
@@ -21982,7 +21982,7 @@ function $$CookieReaderProvider() {
  *       return 'Hello ' + name + '!';
  *     });
  *
- *     // register a filter factory which uses the
+ *     // register a filter simplefactory which uses the
  *     // greet service to demonstrate DI.
  *     $filterProvider.register('greet', function(greet){
  *       // return the filter function which uses the greet service
@@ -22069,7 +22069,7 @@ function $FilterProvider($provide) {
    *    your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
    *    (`myapp_subsection_filterx`).
    *    </div>
-    * @param {Function} factory If the first argument was a string, a factory function for the filter to be registered.
+    * @param {Function} factory If the first argument was a string, a simplefactory function for the filter to be registered.
    * @returns {Object} Registered filter instance, or if a map of filters was provided then a map
    *    of the registered filter instances.
    */

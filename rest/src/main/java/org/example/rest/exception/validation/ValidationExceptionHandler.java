@@ -1,7 +1,7 @@
 package org.example.rest.exception.validation;
 
 import org.example.application.infrastructure.exception.uncheked.execution.ValidationException;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

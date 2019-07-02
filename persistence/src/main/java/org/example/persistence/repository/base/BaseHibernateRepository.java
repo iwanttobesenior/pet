@@ -1,7 +1,7 @@
 package org.example.persistence.repository.base;
 
 import org.example.application.infrastructure.exception.uncheked.persistence.PersistenceException;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.example.persistence.configuration.SessionFactoryBuilder;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

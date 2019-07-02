@@ -1,13 +1,13 @@
 package org.example.service.infrastructure.transformation.cache;
 
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * This class caches field names for each transformation pair
+ * This class caches field names for each reflection pair
  *
  * @author Kul'baka Alex
  * @see FieldProvider
@@ -15,7 +15,7 @@ import java.util.Map;
 public final class CacheFieldProvider extends FieldProvider {
 
     /**
-     * Mapping between transformation pair({@code src} class and {@code dest} class names)
+     * Mapping between reflection pair({@code src} class and {@code dest} class names)
      * and field list
      */
     private final Map<String, List<String>> cache;

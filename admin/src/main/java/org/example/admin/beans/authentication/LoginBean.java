@@ -5,7 +5,7 @@ import lombok.Setter;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

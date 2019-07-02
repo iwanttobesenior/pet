@@ -3,7 +3,7 @@ package org.example.service.infrastructure.transformation.impl;
 import org.example.application.domain.entity.base.AbstractEntity;
 import org.example.application.infrastructure.util.check.Verifications;
 import org.example.application.infrastructure.util.common.CommonUtil;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.example.service.infrastructure.cdi.annotation.SimpleTransformerImpl;
 import org.example.service.infrastructure.transformation.ITransformable;
 import org.example.service.infrastructure.transformation.ITransformer;
@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 import javax.inject.Named;
 
 /**
- * Implementation of {@link ITransformer} provide default transformation engine
+ * Implementation of {@link ITransformer} provide default reflection engine
  * that uses {@link ReflectionUtil} to transform objects
  * <p>
  * type of {@code E} means Entity
@@ -64,7 +64,7 @@ public final class SimpleDTOTransformer implements ITransformer {
 
     @Override
     public <T extends AbstractEntity, P extends ITransformable<T>> void transform(final T entity, final P destination) {
-        Verifications.verifyArg(entity, entity + " Source transformation object is not initialized");
+        Verifications.verifyArg(entity, entity + " Source reflection object is not initialized");
         Verifications.verifyArg(destination, destination + " Destination object is not initialized");
 
         handleTransformation(entity, destination);

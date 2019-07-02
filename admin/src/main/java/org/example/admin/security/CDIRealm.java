@@ -6,7 +6,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.example.application.domain.entity.person.User;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.example.service.service.person.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

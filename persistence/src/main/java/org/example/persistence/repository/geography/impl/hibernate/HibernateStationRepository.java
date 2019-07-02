@@ -3,7 +3,7 @@ package org.example.persistence.repository.geography.impl.hibernate;
 import org.apache.commons.lang3.StringUtils;
 import org.example.application.domain.entity.geography.Station;
 import org.example.application.domain.search.bycriteria.impl.StationCriteriaImpl;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.example.persistence.configuration.SessionFactoryBuilder;
 import org.example.persistence.infrastructure.cdi.DatabaseSourceHibernateImpl;
 import org.example.persistence.repository.base.BaseHibernateRepository;

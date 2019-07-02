@@ -14,7 +14,7 @@ public abstract class AbstractDTO<T extends AbstractEntity> implements ITransfor
     private long id;
 
     /**
-     * Entity -> DTO transformation
+     * Entity -> DTO reflection
      *
      * @param entity
      */

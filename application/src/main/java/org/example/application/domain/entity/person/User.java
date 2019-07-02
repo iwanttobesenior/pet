@@ -2,6 +2,7 @@ package org.example.application.domain.entity.person;
 
 import org.example.application.domain.entity.base.AuditEntity;
 import org.example.application.domain.entity.valueobject.Phone;
+import org.openjdk.jmh.annotations.Benchmark;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

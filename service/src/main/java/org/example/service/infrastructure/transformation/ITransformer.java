@@ -3,7 +3,7 @@ package org.example.service.infrastructure.transformation;
 import org.example.application.domain.entity.base.AbstractEntity;
 
 /**
- * Represents transformation engine to convert business entities
+ * Represents reflection engine to convert business entities
  * into DTO objects
  *
  * @author Kul'baka Alex

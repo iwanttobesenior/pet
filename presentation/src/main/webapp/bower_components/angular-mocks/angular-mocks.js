@@ -1481,7 +1481,7 @@ angular.mock.$httpBackendDecorator =
   ['$rootScope', '$timeout', '$delegate', createHttpBackendMock];
 
 /**
- * General factory function for $httpBackend mock.
+ * General factorymethod function for $httpBackend mock.
  * Returns instance for unit testing (when no arguments specified):
  *   - passing through is disabled
  *   - auto flushing is disabled

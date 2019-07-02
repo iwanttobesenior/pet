@@ -9,13 +9,13 @@ import java.nio.charset.Charset;
  *
  * @author Kul'baka Alex
  */
-public class SecurityUtil {
+public final class SecurityUtil {
 
     /**
      * you should't create instance of util {@code class}
      */
     private SecurityUtil() {
-
+        throw new UnsupportedOperationException("you should't create instance of utility class");
     }
 
     /**
@@ -27,7 +27,7 @@ public class SecurityUtil {
         return Hashing.sha256().hashString(password, Charset.forName("UTF-8")).toString();
     }
 
-    private String generateSalt() {
+    private static String generateSalt() {
         // TODO: 18.03.2019
         return null;
     }

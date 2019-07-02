@@ -15,6 +15,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.concurrent.CompletionStage;
 
 import static org.junit.Assert.*;
@@ -93,7 +95,7 @@ public class CityResourceTest extends JerseyTest {
         System.out.println(Duration.between(start, finish).toMillis());
     }
 
-//    @Test
+    //    @Test
 //    public void testSaveNewCity_success_reactive() {
 //
 //        Instant start = Instant.now();
@@ -119,4 +121,31 @@ public class CityResourceTest extends JerseyTest {
 //        Instant finish = Instant.now();
 //        System.out.println(Duration.between(start, finish).toMillis());
 //    }
+//    @SuppressWarnings("unchecked")
+//    @Test
+//    public void testSaveCitySuccess() throws Throwable {
+//        var city = new CityDTO();
+//        city.setName("Kiev");
+//        city.setDistrict("Kiev");
+//        city.setRegion("Kiev");
+//
+//        var cf = target("cities").request().rx()
+//                .post(Entity.entity(city, MediaType.APPLICATION_JSON)).thenAccept(response ->
+//                        assertEquals(response.getStatus(), Response.Status.NO_CONTENT.getStatusCode())
+//                ).thenCompose(v -> target("cities").request().rx().get(Response.class)).thenAccept(response -> {
+//                    List<Map<String, String>> cities = (List<Map<String, String>>) response.readEntity(List.class);
+//                    assertNotNull(cities);
+//                    assertTrue(cities.stream().anyMatch(item -> item.get("name").equals("Kiev")));
+//                }).toCompletableFuture();
+//
+//        try {
+//            cf.join();
+//        } catch (CompletionException e) {
+//            if (e.getCause() != null) {
+//                throw e.getCause();
+//            }
+//            fail(e.getMessage());
+//        }
+//    }
+
 }

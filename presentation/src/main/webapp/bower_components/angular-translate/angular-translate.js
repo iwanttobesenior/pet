@@ -762,7 +762,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @description
    * Adds interpolation services to angular-translate, so it can manage them.
    *
-   * @param {object} factory Interpolation service factory
+   * @param {object} factory Interpolation service simplefactory
    */
   this.addInterpolation = function (factory) {
     $interpolatorFactories.push(factory);
@@ -789,7 +789,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    *
    * @description
    * Tells angular-translate which interpolation style to use as default, application-wide.
-   * Simply pass a factory/service name. The interpolation service has to implement
+   * Simply pass a simplefactory/service name. The interpolation service has to implement
    * the correct interface.
    *
    * @param {string} factory Interpolation service name.
@@ -1131,9 +1131,9 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * @methodOf pascalprecht.translate.$translateProvider
    *
    * @description
-   * Expects a factory name which later gets instantiated with `$injector`.
+   * Expects a simplefactory name which later gets instantiated with `$injector`.
    * This method can be used to tell angular-translate to use a custom
-   * missingTranslationHandler. Just build a factory which returns a function
+   * missingTranslationHandler. Just build a simplefactory which returns a function
    * and expects a translation id as argument.
    *
    * Example:
@@ -1142,7 +1142,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    *    $translateProvider.useMissingTranslationHandler('customHandler');
    *  });
    *
-   *  app.factory('customHandler', function (dep1, dep2) {
+   *  app.simplefactory('customHandler', function (dep1, dep2) {
    *    return function (translationId) {
    *      // something with translationId and dep1 and dep2
    *    };
@@ -1857,7 +1857,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
      * absent
      */
     var translateByHandler = function (translationId, interpolateParams, defaultTranslationText, sanitizeStrategy) {
-      // If we have a handler factory - we might also call it here to determine if it provides
+      // If we have a handler simplefactory - we might also call it here to determine if it provides
       // a default text for a translationid that can't be found anywhere in our tables
       if ($missingTranslationHandlerFactory) {
         return $injector.get($missingTranslationHandlerFactory)(translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy);

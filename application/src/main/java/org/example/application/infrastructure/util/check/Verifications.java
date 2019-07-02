@@ -7,7 +7,7 @@ import org.example.application.infrastructure.exception.uncheked.execution.Inval
  *
  * @author Kul'baka Alex
  */
-public class Verifications {
+public final class Verifications {
 
     /**
      * @throws UnsupportedOperationException if someone tries create instant of this class via reflection
@@ -48,8 +48,8 @@ public class Verifications {
      * @throws InvalidArgumentException if any of arguments is {@code null}
      */
     public static void verifyArg(final Object param, final Class<?> clazz) {
-        verifyArg(param != null, "Source transformation object is not initialized");
-        verifyArg(clazz != null, "No class is defined for transformation");
+        verifyArg(param != null, "Source reflection object is not initialized");
+        verifyArg(clazz != null, "No class is defined for reflection");
     }
 
     public static void verifyArg(final Object param, final String errorMessage) {

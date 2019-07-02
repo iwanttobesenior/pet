@@ -1,7 +1,7 @@
 package org.example.application.infrastructure.schema;
 
 import org.example.application.infrastructure.exception.uncheked.configuration.ConfigurationException;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.dialect.Dialect;

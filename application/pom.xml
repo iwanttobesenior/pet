@@ -36,6 +36,19 @@
             <artifactId>reflections</artifactId>
             <version>${reflections.version}</version>
         </dependency>
+        <!--classpath scanner-->
+        <dependency>
+            <groupId>eu.infomas</groupId>
+            <artifactId>annotation-detector</artifactId>
+            <version>${eu.infomas.annotation.detector.version}</version>
+        </dependency>
+        <!--classpath scanner-->
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>${io.github.classpathgraph.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

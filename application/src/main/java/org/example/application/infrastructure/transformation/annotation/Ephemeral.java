@@ -1,6 +1,6 @@
 package org.example.application.infrastructure.transformation.annotation;
 
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 
 import java.lang.annotation.*;
 

@@ -1,6 +1,6 @@
 package org.example.service.infrastructure.transformation.cache;
 
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 
 import java.util.HashMap;
 import java.util.List;

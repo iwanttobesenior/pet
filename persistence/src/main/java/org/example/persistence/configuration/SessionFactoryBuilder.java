@@ -1,7 +1,7 @@
 package org.example.persistence.configuration;
 
 import org.example.application.infrastructure.exception.uncheked.persistence.PersistenceException;
-import org.example.application.infrastructure.util.transformation.ReflectionUtil;
+import org.example.application.infrastructure.util.reflection.ReflectionUtil;
 import org.example.persistence.interceptor.TimestampHibernateInterceptor;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

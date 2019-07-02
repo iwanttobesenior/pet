@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
-import static org.example.application.infrastructure.util.transformation.ReflectionUtil.getCurrentClassName;
+import static org.example.application.infrastructure.util.reflection.ReflectionUtil.getCurrentClassName;
 
 /**
  * Implementation of {@link ICityRepository} by hibernate provider

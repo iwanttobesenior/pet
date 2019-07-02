@@ -8,17 +8,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="admin" />
         <module name="application" />
+        <module name="manager" />
         <module name="persistence" />
         <module name="presentation" />
         <module name="rest" />
         <module name="service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11">
-      <module name="org.Kulbaka.Alexander.application" target="11" />
-      <module name="org.Kulbaka.Alexander.persistence" target="11" />
-      <module name="org.Kulbaka.Alexander.presentation" target="11" />
-      <module name="org.Kulbaka.Alexander.service" target="11" />
+    <bytecodeTargetLevel>
+      <module name="admin" target="11" />
+      <module name="application" target="11" />
+      <module name="example" target="11" />
+      <module name="manager" target="11" />
+      <module name="persistence" target="11" />
+      <module name="presentation" target="11" />
+      <module name="rest" target="11" />
+      <module name="service" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

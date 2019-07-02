@@ -32,22 +32,6 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-            <!--embedded tomcat server -->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.tomcat.maven</groupId>-->
-                <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
-                <!--<version>${embedded.tomcat7.maven.plugin.version}</version>-->
-                <!--<configuration>-->
-                    <!--<path>${embedded.tomcat7.maven.plugin.PATH}</path>-->
-                    <!--<port>${embedded.tomcat7.maven.plugin.PORT}</port>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--&lt;!&ndash;embedded jetty server&ndash;&gt;-->
-            <!--<plugin>-->
-                <!--<groupId>org.eclipse.jetty</groupId>-->
-                <!--<artifactId>jetty-maven-plugin</artifactId>-->
-                <!--<version>${embedded.jetty.maven.plugin.version}</version>-->
-            <!--</plugin>-->
         </plugins>
 
     </build>

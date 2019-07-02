@@ -1,9 +1,0 @@
-
-_squid:UnusedPrivateMethodf"3Remove this unused private "setCoordinates" method.(î¹¸ã8ºã÷ª‘-
-Psquid:S1948)"-Make "coordinates" transient or serializable.(¡³âßúÿÿÿÿ8Ş»Ò‘-
-]squid:UnusedPrivateMethodj",Remove this unused private "setCity" method.(¡©ÌŒúÿÿÿÿ8Áíš«‘-
-_squid:UnusedPrivateMethodn"3Remove this unused private "setStationType" method.(ğ´¸í8ğ¥¦«‘-
-`squid:UnusedPrivateMethodb"/Remove this unused private "setAddress" method.(ÅÎËîùÿÿÿÿ8ºã÷ª‘-
-Lsquid:S1948#")Make "address" transient or serializable.(ßÍ˜²ıÿÿÿÿ8Ş»Ò‘-
-Rsquid:S1066C"/Merge this if statement with the enclosing one.(¡äİ›øÿÿÿÿ8Ÿô¹€‘-
-Msquid:S1066="/Merge this if statement with the enclosing one.(…¡ø›8Ÿô¹€‘-

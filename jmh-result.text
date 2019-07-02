@@ -1,0 +1,14 @@
+Benchmark                                                                                                                                                   (provider)  Mode  Cnt    Score    Error  Units
+o.e.persistence.infrastructure.util.annotationetector.BenchmarkAnnotationDetectorClasspathScan.findClassFromPackageByEntityAnnotationViaAnnotationDetector         N/A  avgt   10    7,805 ±  0,641  ms/op
+o.e.persistence.infrastructure.util.classgraph.BenchmarkClassGraphClasspathScan.findAllClassesThatExtendBaseRepositoryViaClassGraph                                N/A  avgt   10  116,617 ± 47,787  ms/op
+o.e.persistence.infrastructure.util.classgraph.BenchmarkClassGraphClasspathScan.findAllClassesThatImplementCityRepositoryViaClassGraph                             N/A  avgt   10  114,525 ± 30,902  ms/op
+o.e.persistence.infrastructure.util.classgraph.BenchmarkClassGraphClasspathScan.findClassFromPackageByEntityAnnotationViaClassGraph                                N/A  avgt   10  117,093 ± 39,312  ms/op
+o.e.persistence.infrastructure.util.reflection.BenchmarkReflectionsClasspathScan.findAllClassesThatExtendBaseRepository                                            N/A  avgt   10   10,977 ±  0,893  ms/op
+o.e.persistence.infrastructure.util.reflection.BenchmarkReflectionsClasspathScan.findAllClassesThatImplementCityRepository                                         N/A  avgt   10   10,684 ±  0,346  ms/op
+o.e.persistence.infrastructure.util.reflection.BenchmarkReflectionsClasspathScan.findClassFromPackageByEntityAnnotation                                            N/A  avgt   10   16,182 ±  3,287  ms/op
+o.e.service.infrastructure.transformation.cache.FieldProviderBenchmark.getFieldNames_targetCityCopy                                                              Basic  avgt    5    0,004 ±  0,001  ms/op
+o.e.service.infrastructure.transformation.cache.FieldProviderBenchmark.getFieldNames_targetCityCopy                                                              Cache  avgt    5   ≈ 10⁻³           ms/op
+o.e.service.infrastructure.transformation.cache.FieldProviderBenchmark.getFieldNames_targetCityCopy                                                              Guava  avgt    5   ≈ 10⁻⁴           ms/op
+o.e.service.infrastructure.transformation.cache.FieldProviderBenchmark.getFieldNames_targetObject                                                                Basic  avgt    5    0,003 ±  0,001  ms/op
+o.e.service.infrastructure.transformation.cache.FieldProviderBenchmark.getFieldNames_targetObject                                                                Cache  avgt    5   ≈ 10⁻⁴           ms/op
+o.e.service.infrastructure.transformation.cache.FieldProviderBenchmark.getFieldNames_targetObject                                                                Guava  avgt    5   ≈ 10⁻⁴           ms/op

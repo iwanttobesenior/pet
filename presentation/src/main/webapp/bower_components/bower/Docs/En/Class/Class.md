@@ -154,8 +154,8 @@ You can use accessors!
 	foo.bar = 21;
 	log(foo.bar); // 'Foo.bar: 42'
 
-### Expanding prototype, no reset
-Unlike the MooTools we dont reset each object. So the objects are links in prototype:
+### Expanding prototype, no resetCommand
+Unlike the MooTools we dont resetCommand each object. So the objects are links in prototype:
 
 	var MyClass = atom.Class({
 		settings: {},

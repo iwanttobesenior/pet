@@ -9,6 +9,8 @@ import java.io.Serializable;
 
 /**
  * entity represent country from real world
+ *
+ * @author Kul'baka Alex
  */
 @Entity
 @Table(name = "COUNTRIES")

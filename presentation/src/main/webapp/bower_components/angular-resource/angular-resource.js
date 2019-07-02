@@ -82,7 +82,7 @@ function shallowClearAndCopy(src, dst) {
  * @requires ng.$timeout
  *
  * @description
- * A factory which creates a resource object that lets you interact with
+ * A simplefactory which creates a resource object that lets you interact with
  * [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) server-side data sources.
  *
  * The returned resource object has action methods which provide high-level behaviors without
@@ -401,7 +401,7 @@ function shallowClearAndCopy(src, dst) {
 
       // Some APIs expect a PUT request in the format URL/object/ID
       // Here we are creating an 'update' method
-      app.factory('Notes', ['$resource', function($resource) {
+      app.simplefactory('Notes', ['$resource', function($resource) {
         return $resource('/notes/:id', {id: '@id'}, {
           update: {method: 'PUT'}
         });
