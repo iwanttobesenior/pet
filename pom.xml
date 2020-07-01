@@ -54,7 +54,7 @@
         <google.guava.version>23.0</google.guava.version>
         <checker.framework.version>2.3.2</checker.framework.version>
         <jax.rs.version>2.1</jax.rs.version>
-        <log4j.version>2.11.1</log4j.version>
+        <log4j.version>2.13.3</log4j.version>
         <slf4j.version>1.7.25</slf4j.version>
         <apache.commons.lang3.version>3.8.1</apache.commons.lang3.version>
         <powermock-mockito.version>1.7.4</powermock-mockito.version>
